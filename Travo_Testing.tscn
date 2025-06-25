@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b27ufh8q8o608"]
+
+[ext_resource type="Script" uid="uid://bum1aim1md2bb" path="res://Scripts/Enemies/Enemy_Spawn.gd" id="1_bg3am"]
+[ext_resource type="PackedScene" uid="uid://cb05dnpufjhql" path="res://Scenes/Towers/Standard_Cat.tscn" id="2_r7ec0"]
+
+[sub_resource type="Curve2D" id="Curve2D_n1ojd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 548, 55, 0, 0, 0, 0, 349, 189, 0, 0, 0, 0, 41, 105, 0, 0, 0, 0, 65, 267, 0, 0, 0, 0, 642, 321)
+}
+point_count = 6
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bg3am")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_n1ojd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = 0.463648
+rotates = false
+loop = false
+
+[node name="Cat" parent="." instance=ExtResource("2_r7ec0")]
+position = Vector2(377, 130)
+
+[node name="Cat2" parent="." instance=ExtResource("2_r7ec0")]
+position = Vector2(146, 220)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
