@@ -5,11 +5,13 @@ var Hunger:float = 1.0
 var HungerDrain:float = 0.05
 var Near_Brooms:Array = []
 
+@onready var range := $Range/CollisionShape2D
 var cooled = false
 
 func _ready():
 	AddState("Base", Cat_Form.new())
 	AddState("Zap", Zap_Cat.new())
+	AddState("Sword", Zap_Cat.new())
 	SetState("Base")
 
 func _physics_process(delta):

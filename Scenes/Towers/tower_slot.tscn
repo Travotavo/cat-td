@@ -1,0 +1,84 @@
+[gd_scene load_steps=19 format=3 uid="uid://dmfmy7258pykw"]
+
+[ext_resource type="Script" uid="uid://tjja3rv727db" path="res://Scripts/Towers/Tower_Slot.gd" id="1_krfsh"]
+[ext_resource type="Texture2D" uid="uid://ciitfx2dqfqog" path="res://icon.svg" id="2_1mlm1"]
+[ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scripts/Menus/enchant_wheel.gd" id="3_1mlm1"]
+[ext_resource type="Script" uid="uid://cdsd857vcud32" path="res://Scripts/Towers/Summon_Button.gd" id="4_bnw8g"]
+[ext_resource type="PackedScene" uid="uid://cb05dnpufjhql" path="res://Scenes/Towers/Standard_Cat.tscn" id="5_ovmhl"]
+[ext_resource type="Texture2D" uid="uid://t7suugw0023b" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/cat_normal.png" id="6_gl5vo"]
+[ext_resource type="Texture2D" uid="uid://bsgd0qgmk5m1b" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover1.png" id="7_nx2sf"]
+[ext_resource type="Texture2D" uid="uid://cfjypxjyksqhb" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover2.png" id="8_481ii"]
+[ext_resource type="Texture2D" uid="uid://dv27ea7ds2c4q" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover3.png" id="9_ye3xf"]
+[ext_resource type="Texture2D" uid="uid://b2ddc3qd6tk18" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover4.png" id="10_vwjy5"]
+[ext_resource type="Texture2D" uid="uid://b11ly3o074pwg" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover5.png" id="11_ret8i"]
+[ext_resource type="Texture2D" uid="uid://dctabqyko1xy8" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover6.png" id="12_ncceo"]
+[ext_resource type="Texture2D" uid="uid://ielx6mr4eb0m" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover7.png" id="13_ptcly"]
+[ext_resource type="Texture2D" uid="uid://dd0juso3jnri4" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover8.png" id="14_0ojxl"]
+[ext_resource type="Texture2D" uid="uid://cqxbw2hxa40jh" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover9.png" id="15_p2yfb"]
+[ext_resource type="Texture2D" uid="uid://c3a5x4ohnsgo1" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover10.png" id="16_futat"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovmhl"]
+radius = 12.0
+height = 42.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_n5urm"]
+frames = 10
+speed_scale = 8.0
+frame_0/texture = ExtResource("7_nx2sf")
+frame_1/texture = ExtResource("8_481ii")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("9_ye3xf")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("10_vwjy5")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("11_ret8i")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("12_ncceo")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("13_ptcly")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("14_0ojxl")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("15_p2yfb")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("16_futat")
+frame_9/duration = 1.0
+
+[node name="Cat_Spot" type="Node2D"]
+script = ExtResource("1_krfsh")
+
+[node name="Bed" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.125)
+texture = ExtResource("2_1mlm1")
+
+[node name="MouseShape" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_ovmhl")
+
+[node name="Enchant_Wheel" type="Node2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(0, -32)
+script = ExtResource("3_1mlm1")
+
+[node name="Node2D" type="Node2D" parent="Enchant_Wheel"]
+script = ExtResource("4_bnw8g")
+summon_option = ExtResource("5_ovmhl")
+
+[node name="Icon2" type="TextureButton" parent="Enchant_Wheel/Node2D"]
+offset_left = -14.0
+offset_top = -13.0
+offset_right = 92.0
+offset_bottom = 79.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_gl5vo")
+texture_hover = SubResource("AnimatedTexture_n5urm")
+stretch_mode = 5
+
+[node name="Active_Slot" type="Node2D" parent="."]
+
+[connection signal="input_event" from="MouseShape" to="." method="_on_mouse_event"]
+[connection signal="button_down" from="Enchant_Wheel/Node2D/Icon2" to="Enchant_Wheel/Node2D" method="_on_button_down"]

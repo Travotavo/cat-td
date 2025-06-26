@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0pf1okjb7s2x"
-path="res://.godot/imported/image.png-6a3b4b1ab6637255503ea6b839cc0643.ctex"
+uid="uid://c78tn71viofju"
+path="res://.godot/imported/lightning_select.png-f079f8fa768fcffdf2396c40584b4a63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/Towers/image.png"
-dest_files=["res://.godot/imported/image.png-6a3b4b1ab6637255503ea6b839cc0643.ctex"]
+source_file="res://Assets/Menus/lightning_select.png"
+dest_files=["res://.godot/imported/lightning_select.png-f079f8fa768fcffdf2396c40584b4a63.ctex"]
 
 [params]
 

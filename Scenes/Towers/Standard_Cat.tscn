@@ -1,8 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=24 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="Texture2D" uid="uid://ciitfx2dqfqog" path="res://icon.svg" id="1_oe747"]
-[ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scenes/Towers/enchant_wheel.gd" id="3_w3uv3"]
+[ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scripts/Menus/enchant_wheel.gd" id="3_w3uv3"]
+[ext_resource type="Script" uid="uid://b0poimx8tn1ah" path="res://Scenes/Towers/Enchant_Button.gd" id="4_yyojs"]
+[ext_resource type="Texture2D" uid="uid://b2tpqi8a2tsth" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/lightning_select_normal.png" id="5_rpm7p"]
+[ext_resource type="Texture2D" uid="uid://nt5r2kc5ydhe" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover1.png" id="6_4ljln"]
+[ext_resource type="Texture2D" uid="uid://b53j86macaklw" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover2.png" id="7_c27c0"]
+[ext_resource type="Texture2D" uid="uid://dricukpxekf2i" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover3.png" id="8_gq4td"]
+[ext_resource type="Texture2D" uid="uid://b2ixby854ackt" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover4.png" id="9_88xq0"]
+[ext_resource type="Texture2D" uid="uid://mjrfbjsdcjo5" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover5.png" id="10_ugh60"]
+[ext_resource type="Texture2D" uid="uid://dip5vcug62jx8" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover6.png" id="11_fue4v"]
+[ext_resource type="Texture2D" uid="uid://cqkr2tipbjjie" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover7.png" id="12_uagdx"]
+[ext_resource type="Texture2D" uid="uid://ddw1xbt8ba5jp" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover8.png" id="13_pesc0"]
 
 [sub_resource type="Animation" id="Animation_1c8eb"]
 resource_name = "Death"
@@ -112,9 +122,8 @@ _data = {
 &"Walk": SubResource("Animation_1ab6d")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe747"]
-radius = 73.0
-height = 238.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_yyojs"]
+radius = 52.1536
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lixlc"]
 bg_color = Color(0.25098, 0.25098, 0.25098, 0)
@@ -123,8 +132,28 @@ bg_color = Color(0.25098, 0.25098, 0.25098, 0)
 bg_color = Color(0.816898, 0.520884, 0.283225, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lixlc"]
-radius = 35.0
-height = 92.0
+radius = 18.0
+height = 56.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yyojs"]
+frames = 8
+speed_scale = 0.8
+frame_0/texture = ExtResource("6_4ljln")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("7_c27c0")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("8_gq4td")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("9_88xq0")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("10_ugh60")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("11_fue4v")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("12_uagdx")
+frame_6/duration = 0.05
+frame_7/texture = ExtResource("13_pesc0")
+frame_7/duration = 0.05
 
 [node name="Cat" type="Node2D"]
 y_sort_enabled = true
@@ -140,7 +169,8 @@ input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 rotation = -1.5708
-shape = SubResource("CapsuleShape2D_oe747")
+scale = Vector2(0.5, 1)
+shape = SubResource("CircleShape2D_yyojs")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 self_modulate = Color(1, 1, 1, 0.505882)
@@ -158,7 +188,7 @@ value = 1.0
 show_percentage = false
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_oe747")
 offset = Vector2(0, -64)
 
@@ -170,7 +200,7 @@ autostart = true
 [node name="MouseShape" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
-position = Vector2(0, -32)
+position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_lixlc")
 
 [node name="Enchant_Wheel" type="Node2D" parent="."]
@@ -178,23 +208,115 @@ z_index = 2
 position = Vector2(0, -32)
 script = ExtResource("3_w3uv3")
 
-[node name="Icon2" type="Sprite2D" parent="Enchant_Wheel"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_oe747")
+[node name="Zap_Button" type="Node2D" parent="Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+script = ExtResource("4_yyojs")
+form = "Zap"
+cost = 25
+cat_parent = NodePath("../..")
 
-[node name="Icon3" type="Sprite2D" parent="Enchant_Wheel"]
+[node name="Enchant_Button" type="TextureButton" parent="Enchant_Wheel/Zap_Button"]
+offset_left = -60.0
+offset_top = -48.0
+offset_right = 62.0
+offset_bottom = 48.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_oe747")
+pivot_offset = Vector2(60, 48)
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_rpm7p")
+texture_hover = SubResource("AnimatedTexture_yyojs")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Icon4" type="Sprite2D" parent="Enchant_Wheel"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_oe747")
+[node name="Label" type="Label" parent="Enchant_Wheel/Zap_Button/Enchant_Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -48.0
+offset_right = 44.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "(25)"
 
-[node name="Icon5" type="Sprite2D" parent="Enchant_Wheel"]
+[node name="Zap_Button2" type="Node2D" parent="Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+script = ExtResource("4_yyojs")
+form = "Zap"
+cost = 25
+cat_parent = NodePath("../..")
+
+[node name="Enchant_Button" type="TextureButton" parent="Enchant_Wheel/Zap_Button2"]
+offset_left = -60.0
+offset_top = -48.0
+offset_right = 62.0
+offset_bottom = 48.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_oe747")
+pivot_offset = Vector2(60, 48)
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_rpm7p")
+texture_hover = SubResource("AnimatedTexture_yyojs")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Enchant_Wheel/Zap_Button2/Enchant_Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -48.0
+offset_right = 44.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "(25)"
+
+[node name="Zap_Button3" type="Node2D" parent="Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+script = ExtResource("4_yyojs")
+form = "Zap"
+cost = 25
+cat_parent = NodePath("../..")
+
+[node name="Enchant_Button" type="TextureButton" parent="Enchant_Wheel/Zap_Button3"]
+offset_left = -60.0
+offset_top = -48.0
+offset_right = 62.0
+offset_bottom = 48.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(60, 48)
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_rpm7p")
+texture_hover = SubResource("AnimatedTexture_yyojs")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Enchant_Wheel/Zap_Button3/Enchant_Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -48.0
+offset_right = 44.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "(25)"
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown"]
 [connection signal="input_event" from="MouseShape" to="." method="_on_mouse_event"]
+[connection signal="button_down" from="Enchant_Wheel/Zap_Button/Enchant_Button" to="Enchant_Wheel/Zap_Button" method="_on_button_down"]
+[connection signal="button_down" from="Enchant_Wheel/Zap_Button2/Enchant_Button" to="Enchant_Wheel/Zap_Button2" method="_on_button_down"]
+[connection signal="button_down" from="Enchant_Wheel/Zap_Button3/Enchant_Button" to="Enchant_Wheel/Zap_Button3" method="_on_button_down"]
