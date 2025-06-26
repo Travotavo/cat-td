@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=13 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="Texture2D" uid="uid://ciitfx2dqfqog" path="res://icon.svg" id="1_oe747"]
+[ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scenes/Towers/enchant_wheel.gd" id="3_w3uv3"]
 
 [sub_resource type="Animation" id="Animation_1c8eb"]
 resource_name = "Death"
@@ -171,6 +172,27 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
 position = Vector2(0, -32)
 shape = SubResource("CapsuleShape2D_lixlc")
+
+[node name="Enchant_Wheel" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(0, -32)
+script = ExtResource("3_w3uv3")
+
+[node name="Icon2" type="Sprite2D" parent="Enchant_Wheel"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_oe747")
+
+[node name="Icon3" type="Sprite2D" parent="Enchant_Wheel"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_oe747")
+
+[node name="Icon4" type="Sprite2D" parent="Enchant_Wheel"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_oe747")
+
+[node name="Icon5" type="Sprite2D" parent="Enchant_Wheel"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_oe747")
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]
