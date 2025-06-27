@@ -15,6 +15,8 @@ func _ready():
 	SetState("Base")
 
 func _physics_process(delta):
+	if not $AnimationPlayer.is_playing():
+		$AnimationPlayer.play("Idle")
 	if cooled and Near_Brooms.size() > 0:
 		cooled = false
 		_cat_fire()
@@ -27,6 +29,7 @@ func _on_cooldown():
 	cooled = true
 
 func _cat_fire():
+	$AnimationPlayer.play("Attack")
 	Hunger -= HungerDrain
 	form._attack(5)
 	$Cooldown.start()

@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var Owner = $".."
-@export var radius = 32
+@export var radius = 16
 @onready var count = get_children().size()
 
 func _show():
