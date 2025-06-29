@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dve0c8g4dmei2"
-path="res://.godot/imported/tile_atlas.png-47f970cd798939266c2c0a0f8b0dc405.ctex"
+uid="uid://dg7xn7d8ysfpm"
+path="res://.godot/imported/mana_bar.png-a2c2d5342032ca7559f497e91989280a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/world tiles/tile_atlas.png"
-dest_files=["res://.godot/imported/tile_atlas.png-47f970cd798939266c2c0a0f8b0dc405.ctex"]
+source_file="res://Assets/Menus/UI buttons/mana_bar.png"
+dest_files=["res://.godot/imported/mana_bar.png-a2c2d5342032ca7559f497e91989280a.ctex"]
 
 [params]
 
