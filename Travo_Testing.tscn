@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://b27ufh8q8o608"]
+[gd_scene load_steps=8 format=4 uid="uid://b27ufh8q8o608"]
 
 [ext_resource type="Script" uid="uid://bum1aim1md2bb" path="res://Scripts/Enemies/Enemy_Spawn.gd" id="1_bg3am"]
 [ext_resource type="PackedScene" uid="uid://dmfmy7258pykw" path="res://Scenes/Towers/tower_slot.tscn" id="2_r7ec0"]
-[ext_resource type="PackedScene" uid="uid://bku3p8ynnt283" path="res://Scenes/Enemies/Blank_Enemy.tscn" id="4_6kjp3"]
 [ext_resource type="Script" uid="uid://vw1u2uxqw8kv" path="res://Scripts/Menus/mana_display.gd" id="4_o1loe"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bg3am"]
@@ -96,10 +95,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -32.0
+offset_right = 48.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -114,7 +116,5 @@ script = ExtResource("4_o1loe")
 metadata/_edit_use_anchors_ = true
 
 [node name="Projectile_Parent" type="Node2D" parent="." groups=["Projectile_Parent"]]
-
-[node name="Enemy" parent="." instance=ExtResource("4_6kjp3")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

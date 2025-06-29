@@ -2,10 +2,14 @@ extends Node2D
 class_name Cat_Form
 
 var node:Cat
+@onready var visual = preload("res://Assets/Towers/Normal_Cat-Sheet.png")
+@onready var visual_lib = preload("res://Assets/Towers/Animation Resources/basic_cat.res")
 
 func on_enter():
 	#Set Animations, Particles, and whatever else necessary
 	node.modulate = Color.WHITE
+	node.set_range(50)
+	node.set_visuals(visual,5,4,visual_lib)
 	pass
 
 func on_exit():

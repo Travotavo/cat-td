@@ -14,6 +14,7 @@ func _add_tower(Tower:PackedScene):
 		$Bed.visible = false
 	$MouseShape/CollisionShape2D.disabled = true
 	$Active_Slot.add_child(summon)
+	summon.connect("cat_leaves", _remove_tower)
 
 func _remove_tower():
 	$MouseShape/CollisionShape2D.disabled = false

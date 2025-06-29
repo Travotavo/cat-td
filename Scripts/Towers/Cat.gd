@@ -11,8 +11,18 @@ var cooled = false
 func _ready():
 	AddState("Base", Cat_Form.new())
 	AddState("Zap", Zap_Cat.new())
-	AddState("Sword", Zap_Cat.new())
+	AddState("Sword", Sword_Cat.new())
 	SetState("Base")
+
+func set_range(new_range:int):
+	range.shape.radius = new_range
+
+func set_visuals(sheet, hframes, vframes ,lib: AnimationLibrary):
+	$Sprite.texture = sheet
+	$Sprite.hframes = hframes
+	$Sprite.vframes = vframes
+	$AnimationPlayer.remove_animation_library("")
+	$AnimationPlayer.add_animation_library("",lib)
 
 func _physics_process(delta):
 	if not $AnimationPlayer.is_playing():
@@ -21,18 +31,21 @@ func _physics_process(delta):
 		cooled = false
 		_cat_fire()
 
-func _process(delta):
-	$ProgressBar.value = 1.0 - Hunger
-
-
 func _on_cooldown():
 	cooled = true
 
 func _cat_fire():
+	if Hunger < 0:
+		_remove_cat()
+		return
 	$AnimationPlayer.play("Attack")
 	Hunger -= HungerDrain
 	form._attack(5)
 	$Cooldown.start()
+
+signal cat_leaves
+func _remove_cat():
+	emit_signal("cat_leaves")
 
 func _on_range_entered(area:Area2D):
 	if area.get_parent().is_in_group("Enemy"):

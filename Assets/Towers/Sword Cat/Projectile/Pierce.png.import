@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6164v8inlolt"
-path="res://.godot/imported/image.png-66fbe00874f5435ccd8820f68c83fa8e.ctex"
+uid="uid://d1vay32ntt6g4"
+path="res://.godot/imported/Pierce.png-a3ba8cb0472594afbfd4c4bd21df2787.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Towers/image.png"
-dest_files=["res://.godot/imported/image.png-66fbe00874f5435ccd8820f68c83fa8e.ctex"]
+source_file="res://Assets/Towers/Sword Cat/Projectile/Pierce.png"
+dest_files=["res://.godot/imported/Pierce.png-a3ba8cb0472594afbfd4c4bd21df2787.ctex"]
 
 [params]
 
