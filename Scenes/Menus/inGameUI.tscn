@@ -84,10 +84,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 574.0
-offset_top = 20.0
-offset_right = 622.0
-offset_bottom = 70.0
+offset_left = 582.0
+offset_top = 10.0
+offset_right = 632.0
+offset_bottom = 60.0
 theme = SubResource("Theme_eepdy")
 toggle_mode = true
 
