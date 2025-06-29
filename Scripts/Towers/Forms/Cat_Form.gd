@@ -9,7 +9,7 @@ func on_enter():
 	#Set Animations, Particles, and whatever else necessary
 	node.modulate = Color.WHITE
 	node.set_range(50)
-	node.set_visuals(visual,5,4,visual_lib)
+	node.set_visuals(visual,5,5,visual_lib)
 	pass
 
 func on_exit():
@@ -17,6 +17,7 @@ func on_exit():
 
 func _attack(damage:int):
 	node.Near_Brooms.sort_custom(pick_sort(0))
+	face_target(node.Near_Brooms[0])
 	node.Near_Brooms[0].take_damage(damage)
 
 func pick_sort(id:int):
@@ -41,3 +42,16 @@ func sort_progress_far(a:Enemy,b:Enemy):
 
 func sort_progress_least(a:Enemy,b:Enemy):
 	return a.follow_point.progress < b.follow_point.progress
+
+func face_target(target):
+	
+	if abs(target.global_position.x - node.global_position.x) > abs(target.global_position.y - node.global_position.y):
+		if target.global_position.x - node.global_position.x > 0:
+			node.sprite.scale.x = -1
+		if target.global_position.x - node.global_position.x < 0:
+			node.sprite.scale.x = 1
+	if abs(target.global_position.x - node.global_position.x) < abs(target.global_position.y - node.global_position.y):
+		if target.global_position.y - node.global_position.y > 0:
+			node.sprite.scale.x = -1
+		if target.global_position.y - node.global_position.y < 0:
+			node.sprite.scale.x = 1

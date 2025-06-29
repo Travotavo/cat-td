@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=33 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
-[ext_resource type="AnimationLibrary" uid="uid://bgob184w5jx2s" path="res://Assets/Towers/Animation Resources/zap_cat.res" id="2_k5b2v"]
-[ext_resource type="Texture2D" uid="uid://dbt5qnpvg4ob" path="res://Assets/Towers/Zap Cat/Lightning_Cat_Sheet.png" id="3_k5b2v"]
+[ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="2_k5b2v"]
+[ext_resource type="Texture2D" uid="uid://q1pfokeuclqr" path="res://Assets/Towers/Normal_Cat-Sheet.png" id="2_rpm7p"]
 [ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scripts/Menus/enchant_wheel.gd" id="3_w3uv3"]
+[ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_x4j68"]
 [ext_resource type="Script" uid="uid://b0poimx8tn1ah" path="res://Scenes/Towers/Enchant_Button.gd" id="4_yyojs"]
 [ext_resource type="Texture2D" uid="uid://b2tpqi8a2tsth" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/lightning_select_normal.png" id="5_rpm7p"]
 [ext_resource type="Texture2D" uid="uid://nt5r2kc5ydhe" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover1.png" id="6_4ljln"]
@@ -32,6 +33,19 @@ radius = 50.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lixlc"]
 radius = 18.0
 height = 56.0
+
+[sub_resource type="Gradient" id="Gradient_x4j68"]
+colors = PackedColorArray(0, 0, 0, 1, 0.440117, 0.857793, 0.910538, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_03hq3"]
+gradient = SubResource("Gradient_x4j68")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_03hq3"]
+resource_local_to_scene = true
+shader = ExtResource("3_x4j68")
+shader_parameter/epsilon = 0.0001
+shader_parameter/colors = SubResource("GradientTexture1D_03hq3")
+shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784, 1, 0.847059, 0.415686, 0.623529, 1, 0.776471, 0.278431, 0.509804, 1, 0.321569, 0.117647, 0.227451, 1, 0.615686, 0.227451, 0.470588, 1, 0.396078, 0.2, 0.372549, 1, 0.211765, 0.0862745, 0.188235, 1, 0.639216, 0.333333, 0.580392, 1, 0.607843, 0.270588, 0.52549, 1, 0.337255, 0.160784, 0.329412, 1, 0.533333, 0.243137, 0.505882, 1, 0.431373, 0.231373, 0.462745, 1, 0.270588, 0.141176, 0.298039, 1, 0.396078, 0.192157, 0.396078, 1, 0.329412, 0.172549, 0.368627, 1)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yyojs"]
 frames = 8
@@ -79,6 +93,7 @@ frame_8/duration = 1.0
 script = ExtResource("1_lixlc")
 
 [node name="Range" type="Area2D" parent="."]
+position = Vector2(0, 16)
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
@@ -104,13 +119,15 @@ libraries = {
 autoplay = "Idle"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_k5b2v")
+material = SubResource("ShaderMaterial_03hq3")
+texture = ExtResource("2_rpm7p")
 offset = Vector2(0, -32)
 hframes = 5
-vframes = 2
-frame = 5
+vframes = 5
+frame = 10
 
 [node name="Enchant_Wheel" type="Node2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(0, -32)
 script = ExtResource("3_w3uv3")

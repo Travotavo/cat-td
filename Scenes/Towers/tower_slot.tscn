@@ -48,10 +48,12 @@ frame_9/duration = 1.0
 script = ExtResource("1_krfsh")
 
 [node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
 scale = Vector2(0.25, 0.125)
 texture = ExtResource("2_1mlm1")
 
 [node name="MouseShape" type="Area2D" parent="."]
+position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
 rotation = -1.5708
@@ -79,6 +81,8 @@ texture_hover = SubResource("AnimatedTexture_n5urm")
 stretch_mode = 5
 
 [node name="Active_Slot" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -16)
 
 [connection signal="input_event" from="MouseShape" to="." method="_on_mouse_event"]
 [connection signal="button_down" from="Enchant_Wheel/Node2D/Icon2" to="Enchant_Wheel/Node2D" method="_on_button_down"]

@@ -3,16 +3,20 @@ class_name Sword_Cat
 
 var projectile = preload("res://Scenes/Towers/Projectiles/sword_swipe.tscn")
 
+func _ready():
+	visual = preload("res://Assets/Towers/Sword Cat/Sword_Cat_Sheet.png")
+	visual_lib = preload("res://Assets/Towers/Animation Resources/sword_cat.res")
+
 func on_enter():
 	#Set Animations, Particles, and whatever else necessary
-	node.modulate = Color.RED
 	node.set_range(75)
-	pass
+	node.set_visuals(visual,5,2,visual_lib)
 
 func _attack(damage):
 	var lightning_targets = node.Near_Brooms.duplicate()
 	node.Near_Brooms.sort_custom(pick_sort(1))
 	var strike = projectile.instantiate()
+	face_target(node.Near_Brooms[0])
 	strike.global_rotation = (node.Near_Brooms[0].global_position - node.global_position).angle()
 	strike.global_position = (node.Near_Brooms[0].global_position + node.global_position)/2
 	strike.damage = damage * 2

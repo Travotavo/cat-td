@@ -16,6 +16,7 @@ func on_enter():
 func _attack(damage):
 	var lightning_targets = node.Near_Brooms.duplicate()
 	node.Near_Brooms.sort_custom(pick_sort(0))
+	face_target(node.Near_Brooms[0])
 	var strike = projectile.instantiate()
 	strike.global_position = node.Near_Brooms[0].global_position
 	node.get_tree().get_first_node_in_group("Projectile_Parent").add_child(strike)

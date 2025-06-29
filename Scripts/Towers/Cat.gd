@@ -7,6 +7,7 @@ var Near_Brooms:Array = []
 
 @onready var range := $Range/CollisionShape2D
 var cooled = false
+@onready var sprite = $Sprite
 
 func _ready():
 	AddState("Base", Cat_Form.new())

@@ -62,7 +62,6 @@ _data = {
 radius = 32.0
 
 [node name="Sword Swipe" type="Node2D"]
-z_index = 1
 script = ExtResource("1_nw1b1")
 
 [node name="Pierce" type="Sprite2D" parent="."]
