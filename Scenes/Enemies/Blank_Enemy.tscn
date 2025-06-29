@@ -135,6 +135,7 @@ shape = SubResource("CapsuleShape2D_xgg7d")
 debug_color = Color(0.999097, 0, 0.123677, 0.42)
 
 [node name="Icon" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = ExtResource("2_1ab6d")
 offset = Vector2(0, -32)
 hframes = 12

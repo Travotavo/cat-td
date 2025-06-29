@@ -14,6 +14,23 @@
 [ext_resource type="Texture2D" uid="uid://cqkr2tipbjjie" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover7.png" id="12_uagdx"]
 [ext_resource type="Texture2D" uid="uid://ddw1xbt8ba5jp" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover8.png" id="13_pesc0"]
 
+[sub_resource type="Animation" id="Animation_c27c0"]
+resource_name = "Attack"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 16]
+}
+
 [sub_resource type="Animation" id="Animation_rpm7p"]
 resource_name = "Idle"
 loop_mode = 1
@@ -44,23 +61,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_c27c0"]
-resource_name = "Attack"
-length = 0.6
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [10, 11, 12, 13, 14, 15, 16]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ljln"]
@@ -104,7 +104,6 @@ frame_7/texture = ExtResource("13_pesc0")
 frame_7/duration = 0.05
 
 [node name="Cat" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_lixlc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
