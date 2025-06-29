@@ -62,10 +62,11 @@ _data = {
 radius = 32.0
 
 [node name="Sword Swipe" type="Node2D"]
+z_index = 1
 script = ExtResource("1_nw1b1")
 
 [node name="Pierce" type="Sprite2D" parent="."]
-position = Vector2(4, -3)
+position = Vector2(27, -3)
 rotation = 0.45304
 texture = ExtResource("2_0v0u2")
 hframes = 3
@@ -78,6 +79,7 @@ libraries = {
 autoplay = "play"
 
 [node name="Range" type="Area2D" parent="."]
+position = Vector2(24, 0)
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
