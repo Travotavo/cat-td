@@ -1,0 +1,80 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cedcotmulrtlr"]
+
+[ext_resource type="Texture2D" uid="uid://dve0c8g4dmei2" path="res://Assets/world tiles/tile_atlas.png" id="1_1ppdk"]
+[ext_resource type="Texture2D" uid="uid://dhm35hiyaj33k" path="res://Assets/Menus/UI buttons/button_atlas.png" id="2_7e50f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g313l"]
+texture = ExtResource("1_1ppdk")
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/0 = 0
+4:0/size_in_atlas = Vector2i(4, 4)
+4:0/0 = 0
+0:4/size_in_atlas = Vector2i(4, 4)
+0:4/0 = 0
+4:4/size_in_atlas = Vector2i(4, 4)
+4:4/0 = 0
+8:4/size_in_atlas = Vector2i(4, 4)
+8:4/0 = 0
+12:4/size_in_atlas = Vector2i(4, 4)
+12:4/0 = 0
+0:8/size_in_atlas = Vector2i(4, 4)
+0:8/0 = 0
+4:8/size_in_atlas = Vector2i(4, 4)
+4:8/0 = 0
+8:8/size_in_atlas = Vector2i(4, 4)
+8:8/0 = 0
+12:8/size_in_atlas = Vector2i(4, 4)
+12:8/0 = 0
+16:8/size_in_atlas = Vector2i(4, 4)
+16:8/0 = 0
+0:12/size_in_atlas = Vector2i(4, 4)
+0:12/0 = 0
+4:12/size_in_atlas = Vector2i(4, 4)
+4:12/0 = 0
+8:12/size_in_atlas = Vector2i(4, 4)
+8:12/0 = 0
+0:16/size_in_atlas = Vector2i(4, 4)
+0:16/0 = 0
+4:16/size_in_atlas = Vector2i(4, 4)
+4:16/0 = 0
+8:16/size_in_atlas = Vector2i(4, 4)
+8:16/0 = 0
+0:20/size_in_atlas = Vector2i(4, 4)
+0:20/0 = 0
+4:20/size_in_atlas = Vector2i(4, 4)
+4:20/0 = 0
+0:24/size_in_atlas = Vector2i(4, 4)
+0:24/0 = 0
+4:24/size_in_atlas = Vector2i(4, 4)
+4:24/0 = 0
+8:24/size_in_atlas = Vector2i(4, 4)
+8:24/0 = 0
+12:24/size_in_atlas = Vector2i(4, 4)
+12:24/0 = 0
+16:24/size_in_atlas = Vector2i(4, 4)
+16:24/0 = 0
+20:24/size_in_atlas = Vector2i(4, 4)
+20:24/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mnsb"]
+texture = ExtResource("2_7e50f")
+texture_region_size = Vector2i(64, 32)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/0 = 0
+0:2/size_in_atlas = Vector2i(1, 2)
+0:2/0 = 0
+1:2/size_in_atlas = Vector2i(1, 2)
+1:2/0 = 0
+0:4/size_in_atlas = Vector2i(1, 2)
+0:4/0 = 0
+1:4/size_in_atlas = Vector2i(1, 2)
+1:4/0 = 0
+
+[resource]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_g313l")
+sources/1 = SubResource("TileSetAtlasSource_1mnsb")
