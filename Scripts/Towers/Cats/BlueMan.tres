@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CatStats" load_steps=4 format=3 uid="uid://det11xub2tra0"]
+
+[ext_resource type="Script" uid="uid://dnh2fgt20k5iw" path="res://Scripts/Towers/Cat_Resource.gd" id="1_hbhre"]
+
+[sub_resource type="Gradient" id="Gradient_hbhre"]
+colors = PackedColorArray(0, 0, 0, 1, 0.2356, 0.492022, 0.87893, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gi6w7"]
+gradient = SubResource("Gradient_hbhre")
+
+[resource]
+script = ExtResource("1_hbhre")
+nickname = "Blue Man"
+color = SubResource("GradientTexture1D_gi6w7")
+metadata/_custom_type_script = "uid://dnh2fgt20k5iw"

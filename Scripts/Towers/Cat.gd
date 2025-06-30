@@ -1,13 +1,15 @@
 extends Node2D
 class_name Cat
 
-var Hunger:float = 1.0
-var HungerDrain:float = 0.05
+var stats:CatStats
 var Near_Brooms:Array = []
 
 @onready var range := $Range/CollisionShape2D
 var cooled = false
 @onready var sprite = $Sprite
+
+func _load():
+	$Sprite.material.set("shader_parameter/colors",stats.color)
 
 func _ready():
 	AddState("Base", Cat_Form.new())
@@ -36,11 +38,12 @@ func _on_cooldown():
 	cooled = true
 
 func _cat_fire():
-	if Hunger < 0:
+	if stats.Hunger < 0:
+		stats.emit_signal('starve')
 		_remove_cat()
 		return
 	$AnimationPlayer.play("Attack")
-	Hunger -= HungerDrain
+	stats.Hunger -= 10
 	form._attack(5)
 	$Cooldown.start()
 

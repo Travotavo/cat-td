@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CatStats" load_steps=4 format=3 uid="uid://cxh0ubqty38kp"]
+
+[ext_resource type="Script" uid="uid://dnh2fgt20k5iw" path="res://Scripts/Towers/Cat_Resource.gd" id="1_70kuv"]
+
+[sub_resource type="Gradient" id="Gradient_x4j68"]
+offsets = PackedFloat32Array(0.114754, 0.385246, 0.786885, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.398936, 0.0698129, 0.387315, 1, 0.957324, 0.604301, 0.558663, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_03hq3"]
+gradient = SubResource("Gradient_x4j68")
+
+[resource]
+script = ExtResource("1_70kuv")
+nickname = "Angel"
+color = SubResource("GradientTexture1D_03hq3")
+metadata/_custom_type_script = "uid://dnh2fgt20k5iw"

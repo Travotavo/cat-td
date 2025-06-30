@@ -48,6 +48,7 @@ frame_9/duration = 1.0
 script = ExtResource("1_krfsh")
 
 [node name="Bed" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.25, 0.125)
 texture = ExtResource("2_1mlm1")
 
