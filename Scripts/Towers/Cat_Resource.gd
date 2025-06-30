@@ -1,9 +1,12 @@
 extends Resource
+class_name CatStats
 
+signal starve
 signal restock
 
-@export var palette:ColorPalette
 @export var nickname:String
+@export var color:Texture2D
+
 var Max_Hunger = 100
 var Hunger = 100
 

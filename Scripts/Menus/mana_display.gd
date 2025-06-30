@@ -1,4 +1,5 @@
-extends Label
+extends Control
 
 func _process(delta):
-	text = "Mana: " + str(LevelResources.Mana)
+	$TextureProgressBar.value = LevelResources.Mana
+	$TextureProgressBar/Label.text = str(LevelResources.Mana) + "/100"
