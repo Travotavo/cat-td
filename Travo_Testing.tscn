@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b27ufh8q8o608"]
+[gd_scene load_steps=9 format=4 uid="uid://b27ufh8q8o608"]
 
 [ext_resource type="Script" uid="uid://bum1aim1md2bb" path="res://Scripts/Enemies/Enemy_Spawn.gd" id="1_bg3am"]
 [ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="2_o1loe"]
@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7ffa3xpwvjcm" path="res://Scenes/Menus/mana_display.tscn" id="4_7nme8"]
 [ext_resource type="PackedScene" uid="uid://2bwmjmw547ym" path="res://Scenes/Menus/cat_display.tscn" id="5_6kjp3"]
 [ext_resource type="Script" uid="uid://2jijo3cvfbo7" path="res://Scripts/Menus/cat_container.gd" id="5_o6uye"]
-[ext_resource type="Resource" uid="uid://bc3l0xmqaiipl" path="res://Scripts/Towers/Cats/Bimplini.tres" id="6_7nme8"]
-[ext_resource type="Resource" uid="uid://det11xub2tra0" path="res://Scripts/Towers/Cats/BlueMan.tres" id="7_l0gwj"]
-[ext_resource type="Resource" uid="uid://cxh0ubqty38kp" path="res://Scripts/Towers/Cats/Cream_Color.tres" id="8_lnyph"]
-[ext_resource type="Resource" uid="uid://dqvx8brdvaxcj" path="res://Scripts/Towers/Cats/AAA.tres" id="9_lp3y4"]
+[ext_resource type="Script" uid="uid://dmgnvo11dyno7" path="res://pause_button.gd" id="11_okqra"]
 
 [sub_resource type="Curve2D" id="Curve2D_n1ojd"]
 _data = {
@@ -28,7 +25,7 @@ tile_set = ExtResource("2_o1loe")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAACAP//BQAAAAIAAAAFAP//BQAEAAIAAAAJAPz/BQAAAAIAAAAJAAEABQACAAIAAAAKAAgABQACAAIAAAAPAAYABQAEAAAAAAAPAAMABQAAAAAAAAAPAPz/BQAAAAAAAAAMAPz/BQAAAAAAAAAMAPr/BQACAAAAAAAPAAAABQAEAAAAAAALAP//BQAEAAAAAAALAP7/BQAEAAAAAAAIAP7/BQACAAIAAAAGAP7/BQACAAAAAAALAAYABQAEAAAAAAANAAgABQAEAAAAAAAGAAYABQAEAAAAAAAJAAgABQACAAAAAAAIAP//BQACAAAAAAAFAAEABQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAP//BQAAAAIAAAAFAP//BQAEAAIAAAAJAPz/BQAAAAIAAAAJAAEABQACAAIAAAAKAAgABQACAAIAAAAPAAYABQAEAAAAAAAPAAMABQAAAAAAAAAPAPz/BQAAAAAAAAAMAPz/BQAAAAAAAAAMAPr/BQACAAAAAAAPAAAABQAEAAAAAAALAP//BQAEAAAAAAALAP7/BQAEAAAAAAAIAP7/BQACAAIAAAAGAP7/BQACAAAAAAALAAYABQAEAAAAAAANAAgABQAEAAAAAAAGAAYABQAEAAAAAAAIAP//BQACAAAAAAAFAAEABQACAAAAAAA=")
 tile_set = ExtResource("2_o1loe")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -85,23 +82,38 @@ script = ExtResource("5_o6uye")
 
 [node name="Cat Display" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_6kjp3")]
 layout_mode = 2
-cat = ExtResource("6_7nme8")
 
 [node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_6kjp3")]
 layout_mode = 2
-cat = ExtResource("7_l0gwj")
 
 [node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_6kjp3")]
 layout_mode = 2
 
 [node name="Cat Display4" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_6kjp3")]
 layout_mode = 2
-cat = ExtResource("8_lnyph")
 
 [node name="Cat Display5" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_6kjp3")]
 layout_mode = 2
-cat = ExtResource("9_lp3y4")
+
+[node name="Pause Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -48.0
+offset_right = -80.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+toggle_mode = true
+text = "Pause"
+script = ExtResource("11_okqra")
 
 [node name="Projectile_Parent" type="Node2D" parent="." groups=["Projectile_Parent"]]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Pause Button" to="CanvasLayer/Control/Pause Button" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/Control/Pause Button" to="CanvasLayer/Control/Pause Button" method="_on_button_up"]

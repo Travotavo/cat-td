@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=46 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="2_k5b2v"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://b0poimx8tn1ah" path="res://Scenes/Towers/Enchant_Button.gd" id="4_yyojs"]
 [ext_resource type="Texture2D" uid="uid://b2tpqi8a2tsth" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/lightning_select_normal.png" id="5_rpm7p"]
 [ext_resource type="Texture2D" uid="uid://nt5r2kc5ydhe" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover1.png" id="6_4ljln"]
+[ext_resource type="Texture2D" uid="uid://d2ka8eo72e4ag" path="res://Assets/Menus/Cat Select Buttons/tower_wheel.png" id="6_50g1d"]
+[ext_resource type="Script" uid="uid://bqipw0mvsnyma" path="res://Scripts/Menus/fire_button.gd" id="6_lb3i7"]
 [ext_resource type="Texture2D" uid="uid://b53j86macaklw" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover2.png" id="7_c27c0"]
 [ext_resource type="Texture2D" uid="uid://dricukpxekf2i" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover3.png" id="8_gq4td"]
 [ext_resource type="Texture2D" uid="uid://b2ixby854ackt" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover4.png" id="9_88xq0"]
@@ -25,6 +27,16 @@
 [ext_resource type="Texture2D" uid="uid://bi18wy551l3vt" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover7.png" id="21_i12j6"]
 [ext_resource type="Texture2D" uid="uid://cg3g7j0u3nsl2" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover8.png" id="22_au1p0"]
 [ext_resource type="Texture2D" uid="uid://bktt53mnaijdm" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover9.png" id="23_ny76y"]
+[ext_resource type="Texture2D" uid="uid://cwis1pkpl77fm" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell1.png" id="26_ejihe"]
+[ext_resource type="Texture2D" uid="uid://dq0b151ovoiai" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell2.png" id="27_lb3i7"]
+[ext_resource type="Texture2D" uid="uid://b2xoll672lgch" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell3.png" id="28_50g1d"]
+[ext_resource type="Texture2D" uid="uid://nrjunxr3yol8" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell4.png" id="29_rwmmp"]
+[ext_resource type="Texture2D" uid="uid://c8o3yfx163gal" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell5.png" id="30_vx6u6"]
+[ext_resource type="Texture2D" uid="uid://bnhgdoqya5anv" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell6.png" id="31_8c63x"]
+[ext_resource type="Texture2D" uid="uid://dvpae6jma4624" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell7.png" id="32_51cub"]
+[ext_resource type="Texture2D" uid="uid://cuqigs6igmej2" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell8.png" id="33_4whvd"]
+[ext_resource type="Texture2D" uid="uid://cc305bsdnoa6g" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell9.png" id="34_nw20b"]
+[ext_resource type="Texture2D" uid="uid://qvr2km578gs" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell10.png" id="35_w2aj8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyojs"]
 resource_local_to_scene = true
@@ -47,6 +59,29 @@ shader = ExtResource("3_x4j68")
 shader_parameter/epsilon = 0.0001
 shader_parameter/colors = SubResource("GradientTexture1D_03hq3")
 shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784, 1, 0.847059, 0.415686, 0.623529, 1, 0.776471, 0.278431, 0.509804, 1, 0.321569, 0.117647, 0.227451, 1, 0.615686, 0.227451, 0.470588, 1, 0.396078, 0.2, 0.372549, 1, 0.211765, 0.0862745, 0.188235, 1, 0.639216, 0.333333, 0.580392, 1, 0.607843, 0.270588, 0.52549, 1, 0.337255, 0.160784, 0.329412, 1, 0.533333, 0.243137, 0.505882, 1, 0.431373, 0.231373, 0.462745, 1, 0.270588, 0.141176, 0.298039, 1, 0.396078, 0.192157, 0.396078, 1, 0.329412, 0.172549, 0.368627, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_8nc00"]
+frames = 10
+speed_scale = 4.0
+frame_0/texture = ExtResource("26_ejihe")
+frame_1/texture = ExtResource("27_lb3i7")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("28_50g1d")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("29_rwmmp")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("30_vx6u6")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("31_8c63x")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("32_51cub")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("33_4whvd")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("34_nw20b")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("35_w2aj8")
+frame_9/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yyojs"]
 frames = 8
@@ -110,7 +145,7 @@ autostart = true
 [node name="MouseShape" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
-position = Vector2(0, -20)
+position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_lixlc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -127,19 +162,56 @@ hframes = 5
 vframes = 5
 frame = 10
 
-[node name="Enchant_Wheel" type="Node2D" parent="."]
-visible = false
-z_index = 2
-position = Vector2(0, -32)
-script = ExtResource("3_w3uv3")
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -20)
 
-[node name="Zap_Button" type="Node2D" parent="Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+[node name="TowerWheel" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, -3)
+texture = ExtResource("6_50g1d")
+
+[node name="Enchant_Wheel" type="Node2D" parent="Node2D"]
+z_index = 2
+position = Vector2(0, -3)
+script = ExtResource("3_w3uv3")
+radius = 24
+offset = 150
+
+[node name="Fire_Button" type="Node2D" parent="Node2D/Enchant_Wheel"]
+script = ExtResource("6_lb3i7")
+
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Fire_Button"]
+offset_left = -7.0
+offset_top = -31.5
+offset_right = 49.0
+offset_bottom = 28.5
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 4
+texture_normal = ExtResource("26_ejihe")
+texture_hover = SubResource("AnimatedTexture_8nc00")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Fire_Button/Enchant_Button"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.441667
+anchor_right = 1.51786
+anchor_bottom = 1.19167
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "(25)"
+metadata/_edit_use_anchors_ = true
+
+[node name="Zap_Button" type="Node2D" parent="Node2D/Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
 script = ExtResource("4_yyojs")
 form = "Zap"
 cost = 25
-cat_parent = NodePath("../..")
+cat_parent = NodePath("../../..")
 
-[node name="Enchant_Button" type="TextureButton" parent="Enchant_Wheel/Zap_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Zap_Button"]
 offset_left = -7.0
 offset_top = -32.0
 offset_right = 53.0
@@ -151,7 +223,7 @@ texture_normal = ExtResource("5_rpm7p")
 texture_hover = SubResource("AnimatedTexture_yyojs")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Enchant_Wheel/Zap_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Zap_Button/Enchant_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.466667
@@ -164,13 +236,13 @@ theme_override_font_sizes/font_size = 32
 text = "(25)"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sword_Button" type="Node2D" parent="Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+[node name="Sword_Button" type="Node2D" parent="Node2D/Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
 script = ExtResource("4_yyojs")
 form = "Sword"
 cost = 25
-cat_parent = NodePath("../..")
+cat_parent = NodePath("../../..")
 
-[node name="Enchant_Button" type="TextureButton" parent="Enchant_Wheel/Sword_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Sword_Button"]
 offset_left = -7.0
 offset_top = -32.0
 offset_right = 53.0
@@ -182,38 +254,7 @@ texture_normal = ExtResource("14_lnm5a")
 texture_hover = SubResource("AnimatedTexture_5bt8e")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Enchant_Wheel/Sword_Button/Enchant_Button"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.466667
-anchor_top = 0.5
-anchor_right = 1.41667
-anchor_bottom = 1.20313
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "(25)"
-metadata/_edit_use_anchors_ = true
-
-[node name="Fire_Button" type="Node2D" parent="Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
-script = ExtResource("4_yyojs")
-form = "Zap"
-cost = 25
-cat_parent = NodePath("../..")
-
-[node name="Enchant_Button" type="TextureButton" parent="Enchant_Wheel/Fire_Button"]
-offset_left = -7.0
-offset_top = -32.0
-offset_right = 53.0
-offset_bottom = 32.0
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(0, 32)
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_rpm7p")
-texture_hover = SubResource("AnimatedTexture_yyojs")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Enchant_Wheel/Fire_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Sword_Button/Enchant_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.466667
@@ -230,6 +271,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown"]
 [connection signal="input_event" from="MouseShape" to="." method="_on_mouse_event"]
-[connection signal="button_down" from="Enchant_Wheel/Zap_Button/Enchant_Button" to="Enchant_Wheel/Zap_Button" method="_on_button_down"]
-[connection signal="button_down" from="Enchant_Wheel/Sword_Button/Enchant_Button" to="Enchant_Wheel/Sword_Button" method="_on_button_down"]
-[connection signal="button_down" from="Enchant_Wheel/Fire_Button/Enchant_Button" to="Enchant_Wheel/Fire_Button" method="_on_button_down"]
+[connection signal="button_down" from="Node2D/Enchant_Wheel/Fire_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Fire_Button" method="_on_button_down"]
+[connection signal="button_down" from="Node2D/Enchant_Wheel/Zap_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Zap_Button" method="_on_button_down"]
+[connection signal="button_down" from="Node2D/Enchant_Wheel/Sword_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Sword_Button" method="_on_button_down"]

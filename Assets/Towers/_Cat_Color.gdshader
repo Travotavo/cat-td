@@ -7,9 +7,9 @@ uniform vec4 target_colors[16] : source_color;
 void fragment() {
 	float data = texture(TEXTURE, UV).r;
 	for (int i = 0; i < target_colors.length(); i++) {
-	    if (length(COLOR - target_colors[i]) < epsilon){
-			COLOR = texture(colors, vec2(data, 0.0));
-			COLOR = vec4(COLOR.r,COLOR.g, COLOR.b, texture(TEXTURE, UV).a);
+	    if (length(COLOR.rgb - target_colors[i].rgb) < epsilon){
+			COLOR = vec4(texture(colors, vec2(data, 0.0)).rgb,COLOR.a);
+			COLOR = vec4(COLOR.r,COLOR.g, COLOR.b, COLOR.a);
 			break;
 		}
 	}

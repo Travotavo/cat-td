@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://7ffa3xpwvjcm"]
+[gd_scene load_steps=8 format=3 uid="uid://7ffa3xpwvjcm"]
 
 [ext_resource type="Script" uid="uid://vw1u2uxqw8kv" path="res://Scripts/Menus/mana_display.gd" id="1_o5w7v"]
 [ext_resource type="Texture2D" uid="uid://dg7xn7d8ysfpm" path="res://Assets/Menus/UI buttons/mana_bar.png" id="2_1fu4h"]
+[ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="3_1fu4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7nme8"]
 atlas = ExtResource("2_1fu4h")
@@ -42,11 +43,13 @@ texture_progress = SubResource("AtlasTexture_lnyph")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.234375
-anchor_top = 0.3125
+anchor_top = 0.328125
 anchor_right = 0.875
-anchor_bottom = 0.6875
+anchor_bottom = 0.703125
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_1fu4h")
+theme_override_font_sizes/font_size = 16
 text = "100/100"
 horizontal_alignment = 1
 vertical_alignment = 1

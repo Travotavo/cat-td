@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cat TD"
-run/main_scene="uid://cppy10uccm6mf"
+run/main_scene="uid://b27ufh8q8o608"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,7 @@ LevelResources="*res://Scripts/level_resources.gd"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [file_customization]
 

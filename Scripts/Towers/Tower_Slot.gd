@@ -1,12 +1,12 @@
 extends Node2D
 
 func _ready():
-	for child in $Enchant_Wheel.get_children():
+	for child in $Node2D/Enchant_Wheel.get_children():
 		child.connect('summon', _add_tower)
 
 func _on_mouse_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-		$Enchant_Wheel._show()
+		$Node2D/Enchant_Wheel._show()
 
 func _add_tower(Tower:PackedScene, stats:CatStats = null):
 	var summon = Tower.instantiate()

@@ -1,21 +1,22 @@
 [gd_scene load_steps=11 format=3 uid="uid://2bwmjmw547ym"]
 
 [ext_resource type="Script" uid="uid://dg1mvwdcurqpe" path="res://Scripts/Menus/cat_display.gd" id="1_fsu8v"]
-[ext_resource type="Resource" uid="uid://cbsbaos7v2gud" path="res://Scripts/Towers/Cats/Tac.tres" id="2_dlkiy"]
 [ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_1vley"]
 [ext_resource type="Texture2D" uid="uid://b4fmrlutyogtb" path="res://Assets/Menus/UI buttons/hunger_bar.png" id="4_iinl0"]
+[ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="5_dlkiy"]
 
-[sub_resource type="Gradient" id="Gradient_lp3y4"]
-colors = PackedColorArray(0, 0, 0, 1, 0.440117, 0.857793, 0.910538, 1)
+[sub_resource type="Gradient" id="Gradient_dlkiy"]
+offsets = PackedFloat32Array(0.138554, 0.283133, 0.463855, 0.686747, 0.915663)
+colors = PackedColorArray(0.0533334, 0, 0.08, 1, 0.879765, 0.983969, 1, 1, 0.338844, 0.911846, 1, 1, 0.27, 0.902667, 1, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_o6uye"]
-gradient = SubResource("Gradient_lp3y4")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1vley"]
+gradient = SubResource("Gradient_dlkiy")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_okqra"]
 resource_local_to_scene = true
 shader = ExtResource("3_1vley")
 shader_parameter/epsilon = 0.0001
-shader_parameter/colors = SubResource("GradientTexture1D_o6uye")
+shader_parameter/colors = SubResource("GradientTexture1D_1vley")
 shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784, 1, 0.847059, 0.415686, 0.623529, 1, 0.776471, 0.278431, 0.509804, 1, 0.321569, 0.117647, 0.227451, 1, 0.615686, 0.227451, 0.470588, 1, 0.396078, 0.2, 0.372549, 1, 0.211765, 0.0862745, 0.188235, 1, 0.639216, 0.333333, 0.580392, 1, 0.607843, 0.270588, 0.52549, 1, 0.337255, 0.160784, 0.329412, 1, 0.533333, 0.243137, 0.505882, 1, 0.431373, 0.231373, 0.462745, 1, 0.270588, 0.141176, 0.298039, 1, 0.396078, 0.192157, 0.396078, 1, 0.329412, 0.172549, 0.368627, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brtj4"]
@@ -36,7 +37,6 @@ anchors_preset = 0
 offset_top = 14.0
 offset_bottom = 14.0
 script = ExtResource("1_fsu8v")
-cat = ExtResource("2_dlkiy")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 material = SubResource("ShaderMaterial_okqra")
@@ -45,21 +45,21 @@ offset_left = 6.0
 offset_top = -16.0
 offset_right = 102.0
 offset_bottom = 24.0
-min_value = -27.0
-max_value = 110.0
-value = 100.0
+min_value = -37.0
+max_value = 120.0
 texture_under = SubResource("AtlasTexture_brtj4")
 texture_over = SubResource("AtlasTexture_g7jon")
 texture_progress = SubResource("AtlasTexture_nybq7")
 
 [node name="Label" type="Label" parent="TextureProgressBar"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 5.0
-offset_right = 82.0
-offset_bottom = 28.0
-theme_override_font_sizes/font_size = 10
-text = "Blue Man"
+offset_left = 22.0
+offset_top = 6.0
+offset_right = 84.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("5_dlkiy")
+theme_override_font_sizes/font_size = 8
+text = "GlepGlorp"
 horizontal_alignment = 1
 vertical_alignment = 1
 

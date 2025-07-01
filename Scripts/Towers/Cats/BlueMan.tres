@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://dnh2fgt20k5iw" path="res://Scripts/Towers/Cat_Resource.gd" id="1_hbhre"]
 
 [sub_resource type="Gradient" id="Gradient_hbhre"]
-colors = PackedColorArray(0, 0, 0, 1, 0.2356, 0.492022, 0.87893, 1)
+offsets = PackedFloat32Array(0, 0.516393, 1)
+colors = PackedColorArray(0.19, 0, 0.0316667, 1, 0.13376, 0.1026, 0.57, 1, 0.24, 1, 0.949333, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_gi6w7"]
 gradient = SubResource("Gradient_hbhre")

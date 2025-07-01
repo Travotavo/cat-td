@@ -12,4 +12,4 @@ func _on_button_down():
 		return
 	LevelResources.Mana -= cost
 	cat_parent.SetState(form)
-	get_parent().visible = false
+	get_parent().get_parent().visible = false

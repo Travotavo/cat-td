@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CatStats" load_steps=4 format=3 uid="uid://b8cugnti1vnf0"]
+
+[ext_resource type="Script" uid="uid://dnh2fgt20k5iw" path="res://Scripts/Towers/Cat_Resource.gd" id="1_yq5h5"]
+
+[sub_resource type="Gradient" id="Gradient_yq5h5"]
+offsets = PackedFloat32Array(0, 0.663934, 1)
+colors = PackedColorArray(0.00466666, 0.28, 0, 1, 0.360818, 0.841836, 0.353923, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h38lg"]
+gradient = SubResource("Gradient_yq5h5")
+
+[resource]
+script = ExtResource("1_yq5h5")
+nickname = "GlepGlorp"
+color = SubResource("GradientTexture1D_h38lg")
+metadata/_custom_type_script = "uid://dnh2fgt20k5iw"

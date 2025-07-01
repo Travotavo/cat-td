@@ -38,9 +38,12 @@ func _on_cooldown():
 	cooled = true
 
 func _cat_fire():
-	if stats.Hunger < 0:
+	if stats.Hunger <= 0:
 		stats.emit_signal('starve')
-		_remove_cat()
+		SetState('Base')
+		$AnimationPlayer.play("Flee")
+		await $AnimationPlayer.animation_finished
+		emit_signal("cat_leaves")
 		return
 	$AnimationPlayer.play("Attack")
 	stats.Hunger -= 10
@@ -49,6 +52,8 @@ func _cat_fire():
 
 signal cat_leaves
 func _remove_cat():
+	LevelResources.Unused_Cats.append(stats)
+	LevelResources.Used_Cats.erase(stats)
 	emit_signal("cat_leaves")
 
 func _on_range_entered(area:Area2D):
@@ -86,4 +91,4 @@ func SetState(newState):
 
 func _on_mouse_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-		$Enchant_Wheel._show()
+		$Node2D/Enchant_Wheel._show()
