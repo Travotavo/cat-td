@@ -1,22 +1,22 @@
-[gd_scene load_steps=46 format=4 uid="uid://bc8bglvqu4vp2"]
+[gd_scene load_steps=46 format=4 uid="uid://cs1hcryp3llnd"]
 
 [ext_resource type="Texture2D" uid="uid://c8i77avx08u0r" path="res://Assets/world tiles/world_background.png" id="1_g8og4"]
 [ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="1_qo16k"]
 [ext_resource type="Script" uid="uid://bum1aim1md2bb" path="res://Scripts/Enemies/Enemy_Spawn.gd" id="1_x4g8q"]
 [ext_resource type="PackedScene" uid="uid://7ffa3xpwvjcm" path="res://Scenes/Menus/mana_display.tscn" id="3_o7kwt"]
 [ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="4_2kw24"]
-[ext_resource type="Script" uid="uid://2jijo3cvfbo7" path="res://Scripts/Menus/cat_container.gd" id="4_rjdov"]
+[ext_resource type="Script" path="res://Scripts/Menus/cat_container.gd" id="4_rjdov"]
 [ext_resource type="PackedScene" uid="uid://2bwmjmw547ym" path="res://Scenes/Menus/cat_display.tscn" id="5_x4g8q"]
 [ext_resource type="Texture2D" uid="uid://dhm35hiyaj33k" path="res://Assets/Menus/UI buttons/button_atlas.png" id="6_p0hjm"]
 [ext_resource type="Texture2D" uid="uid://q1pfokeuclqr" path="res://Assets/Towers/Normal_Cat-Sheet.png" id="6_w12a1"]
-[ext_resource type="Script" uid="uid://dmgnvo11dyno7" path="res://pause_button.gd" id="7_2xk72"]
+[ext_resource type="Script" path="res://pause_button.gd" id="7_2xk72"]
 [ext_resource type="PackedScene" uid="uid://dmfmy7258pykw" path="res://Scenes/Towers/tower_slot.tscn" id="8_rjdov"]
 [ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="11_2kw24"]
 [ext_resource type="Texture2D" uid="uid://csypdykoaeq1b" path="res://Assets/Menus/UI buttons/ff_scroll.png" id="11_8mvp3"]
-[ext_resource type="Script" uid="uid://mtxio0n12ai2" path="res://fast_forward.gd" id="11_w12a1"]
+[ext_resource type="Script" path="res://fast_forward.gd" id="11_w12a1"]
 [ext_resource type="AudioStream" uid="uid://d2rhc8mirxb1h" path="res://Assets/sfx/loser.wav" id="12_xivb0"]
 [ext_resource type="Texture2D" uid="uid://dso0tpvclmsaj" path="res://Assets/Menus/round_counter.png" id="13_r7yy2"]
-[ext_resource type="Script" uid="uid://biat12h2v4iwb" path="res://round_info.gd" id="14_kaolt"]
+[ext_resource type="Script" path="res://round_info.gd" id="14_kaolt"]
 [ext_resource type="Texture2D" uid="uid://bsgd0qgmk5m1b" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover1.png" id="14_u8mqr"]
 [ext_resource type="Texture2D" uid="uid://cfjypxjyksqhb" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover2.png" id="15_kaolt"]
 [ext_resource type="Texture2D" uid="uid://dv27ea7ds2c4q" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover3.png" id="16_dg57v"]
@@ -213,6 +213,45 @@ _data = {
 &"RESET": SubResource("Animation_xivb0")
 }
 
+[sub_resource type="Animation" id="Animation_qdcv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_dg57v"]
 resource_name = "Victory"
 length = 7.0
@@ -266,45 +305,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.9, 2.655), Vector2(2.5, 0.595), Vector2(0.985, 2), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_qdcv2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Panel/Label:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aggam"]
