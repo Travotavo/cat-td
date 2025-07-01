@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3qgjbcq0js0l"]
+
+[ext_resource type="AudioStream" uid="uid://bx8sdw8pjwpck" path="res://Assets/sfx/main_theme.wav" id="1_w306y"]
+
+[node name="BGM" type="AudioStreamPlayer"]
+stream = ExtResource("1_w306y")
+autoplay = true

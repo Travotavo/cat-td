@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b27ufh8q8o608"]
+[gd_scene load_steps=16 format=4 uid="uid://b27ufh8q8o608"]
 
 [ext_resource type="Script" uid="uid://bum1aim1md2bb" path="res://Scripts/Enemies/Enemy_Spawn.gd" id="1_bg3am"]
 [ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="2_o1loe"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7ffa3xpwvjcm" path="res://Scenes/Menus/mana_display.tscn" id="4_7nme8"]
 [ext_resource type="PackedScene" uid="uid://2bwmjmw547ym" path="res://Scenes/Menus/cat_display.tscn" id="5_6kjp3"]
 [ext_resource type="Script" uid="uid://2jijo3cvfbo7" path="res://Scripts/Menus/cat_container.gd" id="5_o6uye"]
+[ext_resource type="Texture2D" uid="uid://dhm35hiyaj33k" path="res://Assets/Menus/UI buttons/button_atlas.png" id="7_lnyph"]
 [ext_resource type="Script" uid="uid://dmgnvo11dyno7" path="res://pause_button.gd" id="11_okqra"]
 
 [sub_resource type="Curve2D" id="Curve2D_n1ojd"]
@@ -13,6 +14,28 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 56, -8, 0, 0, 0, 0, 408, 168, 0, 0, 0, 0, 504, 120, 0, 0, 0, 0, 344, 40, 0, 0, 0, 0, 408, 8, 0, 0, 0, 0, 696, 152, 0, 0, 0, 0, 312, 344, 0, 0, 0, 0, 24, 200)
 }
 point_count = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp3y4"]
+atlas = ExtResource("7_lnyph")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6uye"]
+texture = SubResource("AtlasTexture_lp3y4")
+
+[sub_resource type="Theme" id="Theme_okqra"]
+Button/styles/normal = SubResource("StyleBoxTexture_o6uye")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brtj4"]
+atlas = ExtResource("7_lnyph")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7jon"]
+atlas = ExtResource("7_lnyph")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nybq7"]
+atlas = ExtResource("7_lnyph")
+region = Rect2(0, 256, 64, 62)
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -73,7 +96,7 @@ layout_mode = 1
 
 [node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 536.0
+offset_left = 528.0
 offset_right = 640.0
 offset_bottom = 106.0
 theme_override_constants/separation = 18
@@ -95,25 +118,27 @@ layout_mode = 2
 [node name="Cat Display5" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_6kjp3")]
 layout_mode = 2
 
-[node name="Pause Button" type="Button" parent="CanvasLayer/Control"]
+[node name="Pause Button" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -144.0
-offset_top = -48.0
-offset_right = -80.0
+offset_left = -76.0
+offset_top = -77.0
+offset_right = -12.0
 offset_bottom = -13.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = SubResource("Theme_okqra")
 toggle_mode = true
-text = "Pause"
+texture_normal = SubResource("AtlasTexture_brtj4")
+texture_pressed = SubResource("AtlasTexture_g7jon")
+texture_hover = SubResource("AtlasTexture_nybq7")
 script = ExtResource("11_okqra")
 
 [node name="Projectile_Parent" type="Node2D" parent="." groups=["Projectile_Parent"]]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Pause Button" to="CanvasLayer/Control/Pause Button" method="_on_button_down"]
-[connection signal="button_up" from="CanvasLayer/Control/Pause Button" to="CanvasLayer/Control/Pause Button" method="_on_button_up"]

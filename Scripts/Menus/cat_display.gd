@@ -23,3 +23,9 @@ func refresh():
 	cat.feed()
 	LevelResources.Timeout_cats.erase(cat)
 	LevelResources.Unused_Cats.append(cat)
+
+
+func _on_feed_button_button_down():
+	if LevelResources.Mana >= 5:
+		LevelResources.Mana -= 5
+		cat.feed()

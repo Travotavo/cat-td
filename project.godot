@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelResources="*res://Scripts/level_resources.gd"
+Bgm="*res://Scenes/globals/bgm.tscn"
 
 [display]
 
@@ -25,6 +26,10 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[editor]
+
+export/convert_text_resources_to_binary=false
 
 [file_customization]
 
@@ -41,3 +46,4 @@ Projectile_Parent="Houses all the games projectiles"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true

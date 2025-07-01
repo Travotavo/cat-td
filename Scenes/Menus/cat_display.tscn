@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://2bwmjmw547ym"]
+[gd_scene load_steps=12 format=3 uid="uid://2bwmjmw547ym"]
 
 [ext_resource type="Script" uid="uid://dg1mvwdcurqpe" path="res://Scripts/Menus/cat_display.gd" id="1_fsu8v"]
 [ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_1vley"]
 [ext_resource type="Texture2D" uid="uid://b4fmrlutyogtb" path="res://Assets/Menus/UI buttons/hunger_bar.png" id="4_iinl0"]
+[ext_resource type="Texture2D" uid="uid://h6l2tlgp370p" path="res://Assets/Menus/UI buttons/feedCat.png" id="5_1vley"]
 [ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="5_dlkiy"]
 
 [sub_resource type="Gradient" id="Gradient_dlkiy"]
@@ -63,8 +64,38 @@ text = "GlepGlorp"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Feed_Button" type="TextureButton" parent="TextureProgressBar"]
+offset_left = 79.0
+offset_top = -16.0
+offset_right = 139.0
+offset_bottom = 48.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_1vley")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureProgressBar/Feed_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.625
+anchor_right = 1.55
+anchor_bottom = 1.32813
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("5_dlkiy")
+theme_override_font_sizes/font_size = 32
+text = "5"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Scavenge" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 
+[connection signal="button_down" from="TextureProgressBar/Feed_Button" to="." method="_on_feed_button_button_down"]
 [connection signal="timeout" from="Scavenge" to="." method="refresh"]

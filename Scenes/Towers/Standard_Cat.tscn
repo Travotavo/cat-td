@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=47 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="2_k5b2v"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cwis1pkpl77fm" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell1.png" id="26_ejihe"]
 [ext_resource type="Texture2D" uid="uid://dq0b151ovoiai" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell2.png" id="27_lb3i7"]
 [ext_resource type="Texture2D" uid="uid://b2xoll672lgch" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell3.png" id="28_50g1d"]
+[ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="28_rwmmp"]
 [ext_resource type="Texture2D" uid="uid://nrjunxr3yol8" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell4.png" id="29_rwmmp"]
 [ext_resource type="Texture2D" uid="uid://c8o3yfx163gal" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell5.png" id="30_vx6u6"]
 [ext_resource type="Texture2D" uid="uid://bnhgdoqya5anv" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell6.png" id="31_8c63x"]
@@ -43,8 +44,8 @@ resource_local_to_scene = true
 radius = 50.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lixlc"]
-radius = 18.0
-height = 56.0
+radius = 14.0
+height = 46.0
 
 [sub_resource type="Gradient" id="Gradient_x4j68"]
 offsets = PackedFloat32Array(0.139344, 0.483607, 0.983607)
@@ -145,7 +146,7 @@ autostart = true
 [node name="MouseShape" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
-position = Vector2(-1, -20)
+position = Vector2(-1, -16)
 shape = SubResource("CapsuleShape2D_lixlc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -232,8 +233,12 @@ anchor_right = 1.41667
 anchor_bottom = 1.20313
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("28_rwmmp")
 theme_override_font_sizes/font_size = 32
-text = "(25)"
+text = "25"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sword_Button" type="Node2D" parent="Node2D/Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
@@ -263,8 +268,12 @@ anchor_right = 1.41667
 anchor_bottom = 1.20313
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("28_rwmmp")
 theme_override_font_sizes/font_size = 32
-text = "(25)"
+text = "25"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
