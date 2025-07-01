@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2cjgemnv8t8d"]
+[gd_scene load_steps=4 format=3 uid="uid://b2cjgemnv8t8d"]
 
 [ext_resource type="Texture2D" uid="uid://72tflvics8w6" path="res://Assets/Menus/UI buttons/credits page.png" id="1_s3uxa"]
 [ext_resource type="Theme" uid="uid://b8audwx8lb704" path="res://Assets/font/CAPTIAL.tres" id="2_u4td2"]
 [ext_resource type="Theme" uid="uid://jtkwhd2oc24b" path="res://Assets/font/Credits.tres" id="3_o1u8u"]
-[ext_resource type="Script" uid="uid://bvxs14e6k07hw" path="res://Scenes/Menus/MainMenu_Button.gd" id="4_o1u8u"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -14,7 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 0
 offset_left = 18.0
 offset_top = 20.0
 offset_right = 333.0
@@ -109,7 +107,6 @@ theme = ExtResource("2_u4td2")
 text = "SPECIAL THANKS"
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-layout_mode = 0
 offset_left = 347.0
 offset_top = 63.0
 offset_right = 623.0
@@ -153,14 +150,3 @@ press-start.font
 	Pixel Arial: @Max, 
 DaFonts.com: www.dafont.com/
 pixel-arial-11.font "
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 12.0
-offset_right = 626.0
-offset_bottom = 43.0
-text = "Main Menu"
-script = ExtResource("4_o1u8u")
-
-[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

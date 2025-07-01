@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds78dln418m6s"]
+[gd_scene load_steps=4 format=3 uid="uid://ds78dln418m6s"]
 
 [ext_resource type="Texture2D" uid="uid://dani6ki4ntfuo" path="res://Assets/Menus/Cat_screen_isekai.png" id="1_7vrkn"]
 [ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="2_fu7sn"]
-[ext_resource type="Script" path="res://play_button.gd" id="3_fu7sn"]
-[ext_resource type="Script" uid="uid://b1t3i33hgmgpo" path="res://credits_button.gd" id="4_jix8l"]
+[ext_resource type="Script" uid="uid://o1eck66i4ymt" path="res://play_button.gd" id="3_fu7sn"]
 
 [node name="Main Menu" type="Node2D"]
 
@@ -54,7 +53,5 @@ offset_top = 293.0
 offset_right = 539.0
 offset_bottom = 324.0
 text = "Credits"
-script = ExtResource("4_jix8l")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
-[connection signal="button_down" from="Button2" to="Button2" method="_on_button_down"]
