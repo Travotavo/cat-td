@@ -7,8 +7,8 @@ var node:Cat
 
 func on_enter():
 	#Set Animations, Particles, and whatever else necessary
-	node.modulate = Color.WHITE
 	node.set_range(50)
+	node.set_cooldown(1)
 	node.set_visuals(visual,5,5,visual_lib)
 	pass
 
@@ -18,7 +18,7 @@ func on_exit():
 func _attack(damage:int):
 	node.Near_Brooms.sort_custom(pick_sort(0))
 	face_target(node.Near_Brooms[0])
-	node.Near_Brooms[0].take_damage(damage)
+	node.Near_Brooms[0].take_damage(damage/2)
 
 func pick_sort(id:int):
 	match id:

@@ -1,7 +1,7 @@
 extends Node2D
 
 var Near_Brooms:Array = []
-var damage := 5
+var damage := 6
 
 func _damage():
 	for broom in Near_Brooms:

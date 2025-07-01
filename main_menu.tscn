@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds78dln418m6s"]
+
+[ext_resource type="Texture2D" uid="uid://dani6ki4ntfuo" path="res://Assets/Menus/Cat_screen_isekai.png" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="2_fu7sn"]
+[ext_resource type="Script" uid="uid://o1eck66i4ymt" path="res://play_button.gd" id="3_fu7sn"]
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="CatScreenIsekaiExample" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_7vrkn")
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 228.0
+offset_top = 6.0
+offset_right = 676.0
+offset_bottom = 183.0
+theme_override_colors/default_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_fonts/normal_font = ExtResource("2_fu7sn")
+bbcode_enabled = true
+text = "My[font_size=32] Wizard [font_size=8][outline_size=8][color=dfbb89]Doesn't Feed Me[/color][/outline_size]
+[font_size=16]so I [font_size=32][wave]Trashed[/wave][font_size=8] his Room.
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="."]
+offset_left = 111.0
+offset_top = 70.0
+offset_right = 500.0
+offset_bottom = 199.0
+theme_override_colors/default_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_fonts/normal_font = ExtResource("2_fu7sn")
+bbcode_enabled = true
+text = "
+[font_size=16][outline_size=12][color=dfbb89]Now He's Sending[/color][/outline_size] [font_size=32][tornado radius=6.0]Brooms[/tornado] [font_size=8]
+to Pour Buckets of Water on
+my head ?!?!!?"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 246.0
+offset_right = 528.0
+offset_bottom = 277.0
+text = "Play"
+script = ExtResource("3_fu7sn")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 293.0
+offset_right = 539.0
+offset_bottom = 324.0
+text = "Credits"
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

@@ -146,7 +146,7 @@ scale = Vector2(0.5, 1)
 shape = SubResource("CircleShape2D_yyojs")
 
 [node name="Cooldown" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
@@ -282,6 +282,8 @@ theme_override_fonts/font = ExtResource("28_rwmmp")
 theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
+
+[node name="BaseSwipe" type="AudioStreamPlayer" parent="."]
 
 [node name="Meow" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_vx6u6")

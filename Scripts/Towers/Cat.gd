@@ -5,6 +5,7 @@ var stats:CatStats
 var Near_Brooms:Array = []
 
 @onready var range := $Range/CollisionShape2D
+@onready var cooldown := $Cooldown
 var cooled = false
 @onready var sprite = $Sprite
 
@@ -20,6 +21,9 @@ func _ready():
 func set_range(new_range:int):
 	range.shape.radius = new_range
 
+func set_cooldown(new_time:int):
+	cooldown.wait_time = new_time
+
 func set_visuals(sheet, hframes, vframes ,lib: AnimationLibrary):
 	$Sprite.texture = sheet
 	$Sprite.hframes = hframes
@@ -28,6 +32,10 @@ func set_visuals(sheet, hframes, vframes ,lib: AnimationLibrary):
 	$AnimationPlayer.add_animation_library("",lib)
 
 func _physics_process(delta):
+	if LevelResources.game_end:
+		set_process(false)
+		$AnimationPlayer.stop()
+		return
 	if not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play("Idle")
 	if cooled and Near_Brooms.size() > 0:
@@ -49,13 +57,12 @@ func _cat_fire():
 	stats.Hunger -= 10
 	if stats.Hunger <= 20:
 		$Meow.play()
-	form._attack(5)
+	form._attack(6)
 	$Cooldown.start()
 
 signal cat_leaves
 func _remove_cat():
-	LevelResources.Unused_Cats.append(stats)
-	LevelResources.Used_Cats.erase(stats)
+	stats.emit_signal('starve')
 	emit_signal("cat_leaves")
 
 func _on_range_entered(area:Area2D):

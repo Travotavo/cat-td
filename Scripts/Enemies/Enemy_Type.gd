@@ -5,7 +5,7 @@ signal damage_cat
 
 #Unit stats
 @export var SPEED:int = 1
-@export var Health:int = 10
+@export var Health:int = 12
 @export var reward:int = 1
 #Onready components
 @onready var animator:= $AnimationPlayer
@@ -16,6 +16,10 @@ var follow_point:PathFollow2D
 var marching = true
 
 func _physics_process(delta):
+	if LevelResources.game_end:
+		set_process(false)
+		$AnimationPlayer.stop()
+		return
 	if not marching:
 		return
 	var following_rotation = abs(follow_point.rotation_degrees)
@@ -46,6 +50,8 @@ func _deal_damage():
 	animator.play("Spill")
 	await animator.animation_finished
 	LevelResources.Lives -= 1
+	animator.play("Death")
+	await animator.animation_finished
 	damage_cat.emit()
 	follow_point.queue_free()
 	queue_free()

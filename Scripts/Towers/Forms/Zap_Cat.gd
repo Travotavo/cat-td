@@ -9,6 +9,7 @@ func _ready():
 
 func on_enter():
 	#Set Animations, Particles, and whatever else necessary
+	node.set_cooldown(4)
 	node.set_range(160)
 	node.set_visuals(visual,5,2,visual_lib)
 	pass

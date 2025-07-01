@@ -1,13 +1,15 @@
 extends Node
-var Mana = 25
+var Mana = 15
 var Lives = 9
 var Cats:Array[CatStats] = []
 var Unused_Cats = []
 var Used_Cats = []
+var round = 1
 var Timeout_cats = []
 
 var cat_directory := "res://Scripts/Towers/Cats/"
 var cat_files:Array
+var game_end = false
 func _enter_tree():
 	var dir := DirAccess.open(cat_directory)
 	cat_files = dir.get_files()
