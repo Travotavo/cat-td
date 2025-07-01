@@ -21,9 +21,3 @@ func _process(delta):
 		child.global_position.x = lerpf(child.global_position.x, int(Owner.global_position.x + (radius+count) * sin(deg_to_rad((360/count)*iter+(count*90 + offset)))), delta*10) 
 		child.global_position.y = lerpf(child.global_position.y, int(Owner.global_position.y + (radius+count) * cos(deg_to_rad((360/count)*iter+(count*90 + offset)))), delta*10)
 		iter += 1
-
-func _input(event):
-	if (event is InputEventMouseButton) and event.pressed:
-		var evLocal = make_input_local(event)
-		if !Rect2(Vector2(-60,-60), Vector2(120,120)).has_point(evLocal.position):
-			get_parent().visible = false

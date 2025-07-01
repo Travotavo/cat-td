@@ -1,0 +1,1541 @@
+[gd_scene load_steps=94 format=4 uid="uid://cf6baax68ubya"]
+
+[ext_resource type="Script" uid="uid://cb71mwu6k5k48" path="res://tutorial.gd" id="1_ncphv"]
+[ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="1_yb1ct"]
+[ext_resource type="Texture2D" uid="uid://c8i77avx08u0r" path="res://Assets/world tiles/world_background.png" id="2_ehuit"]
+[ext_resource type="Texture2D" uid="uid://0njcv7v50d0v" path="res://Assets/Enemies/broom.png" id="3_0gmok"]
+[ext_resource type="Texture2D" uid="uid://drma11te6iy7m" path="res://Assets/Menus/UI buttons/speech_bubble.png" id="3_ehuit"]
+[ext_resource type="AudioStream" uid="uid://dp240anvp2yrh" path="res://Assets/sfx/broom_break.wav" id="4_ns12n"]
+[ext_resource type="Texture2D" uid="uid://dg7xn7d8ysfpm" path="res://Assets/Menus/UI buttons/mana_bar.png" id="5_nghrg"]
+[ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="6_qs7l5"]
+[ext_resource type="Script" uid="uid://2jijo3cvfbo7" path="res://Scripts/Menus/cat_container.gd" id="7_k62om"]
+[ext_resource type="PackedScene" uid="uid://2bwmjmw547ym" path="res://Scenes/Menus/cat_display.tscn" id="8_bb16k"]
+[ext_resource type="Texture2D" uid="uid://dso0tpvclmsaj" path="res://Assets/Menus/round_counter.png" id="9_0yspx"]
+[ext_resource type="Script" uid="uid://biat12h2v4iwb" path="res://round_info.gd" id="10_pm7ge"]
+[ext_resource type="Texture2D" uid="uid://bsgd0qgmk5m1b" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover1.png" id="11_brok5"]
+[ext_resource type="Texture2D" uid="uid://cfjypxjyksqhb" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover2.png" id="12_e3xdn"]
+[ext_resource type="Texture2D" uid="uid://dv27ea7ds2c4q" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover3.png" id="13_12dxd"]
+[ext_resource type="Texture2D" uid="uid://b2ddc3qd6tk18" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover4.png" id="14_bsapx"]
+[ext_resource type="Texture2D" uid="uid://b11ly3o074pwg" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover5.png" id="15_em2yn"]
+[ext_resource type="Texture2D" uid="uid://dctabqyko1xy8" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover6.png" id="16_gdd2h"]
+[ext_resource type="Texture2D" uid="uid://ielx6mr4eb0m" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover7.png" id="17_7xxcv"]
+[ext_resource type="Texture2D" uid="uid://dd0juso3jnri4" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover8.png" id="18_jl032"]
+[ext_resource type="Texture2D" uid="uid://cqxbw2hxa40jh" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover9.png" id="19_foqjq"]
+[ext_resource type="Texture2D" uid="uid://c3a5x4ohnsgo1" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover10.png" id="20_b2tru"]
+[ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="21_fac2q"]
+[ext_resource type="AudioStream" uid="uid://d2rhc8mirxb1h" path="res://Assets/sfx/loser.wav" id="22_85t2i"]
+[ext_resource type="AudioStream" uid="uid://b1o1akv66b51c" path="res://Assets/sfx/victory.wav" id="23_8kc7p"]
+[ext_resource type="AudioStream" uid="uid://dc58hshgb3p0b" path="res://Assets/sfx/meow.wav" id="24_ermjs"]
+[ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="26_cd6k6"]
+[ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="27_ncphv"]
+[ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="28_jwptw"]
+[ext_resource type="Texture2D" uid="uid://q1pfokeuclqr" path="res://Assets/Towers/Normal_Cat-Sheet.png" id="29_5lgmm"]
+[ext_resource type="AudioStream" uid="uid://g14tv4367lgj" path="res://Assets/sfx/swipework.wav" id="30_6gldp"]
+[ext_resource type="AudioStream" uid="uid://drpridb0ksixs" path="res://Assets/sfx/uipopupwork.wav" id="32_3emqg"]
+[ext_resource type="Texture2D" uid="uid://d2ka8eo72e4ag" path="res://Assets/Menus/Cat Select Buttons/tower_wheel.png" id="33_nvrx2"]
+[ext_resource type="AudioStream" uid="uid://u5t0s5pgohx3" path="res://Assets/sfx/button_click.wav" id="34_yrkc0"]
+[ext_resource type="Script" uid="uid://df36rykbjfm8i" path="res://tutorial_enchant_wheel.gd" id="35_g7qnt"]
+[ext_resource type="Texture2D" uid="uid://cwis1pkpl77fm" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell1.png" id="36_ksqha"]
+[ext_resource type="Texture2D" uid="uid://dq0b151ovoiai" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell2.png" id="37_phpvg"]
+[ext_resource type="Texture2D" uid="uid://b2xoll672lgch" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell3.png" id="38_kshmo"]
+[ext_resource type="Texture2D" uid="uid://nrjunxr3yol8" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell4.png" id="39_vdfh6"]
+[ext_resource type="Texture2D" uid="uid://c8o3yfx163gal" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell5.png" id="40_mvasm"]
+[ext_resource type="Texture2D" uid="uid://bnhgdoqya5anv" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell6.png" id="41_t7c0y"]
+[ext_resource type="Texture2D" uid="uid://dvpae6jma4624" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell7.png" id="42_8pejn"]
+[ext_resource type="Texture2D" uid="uid://cuqigs6igmej2" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell8.png" id="43_to36q"]
+[ext_resource type="Texture2D" uid="uid://cc305bsdnoa6g" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell9.png" id="44_gjcm5"]
+[ext_resource type="Texture2D" uid="uid://qvr2km578gs" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell10.png" id="45_a4f6l"]
+[ext_resource type="Texture2D" uid="uid://b2tpqi8a2tsth" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/lightning_select_normal.png" id="46_mks64"]
+[ext_resource type="Texture2D" uid="uid://nt5r2kc5ydhe" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover1.png" id="47_cxo1j"]
+[ext_resource type="Texture2D" uid="uid://b53j86macaklw" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover2.png" id="48_y088c"]
+[ext_resource type="Texture2D" uid="uid://dricukpxekf2i" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover3.png" id="49_hp0qc"]
+[ext_resource type="Texture2D" uid="uid://b2ixby854ackt" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover4.png" id="50_ro2d5"]
+[ext_resource type="Texture2D" uid="uid://mjrfbjsdcjo5" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover5.png" id="51_qynro"]
+[ext_resource type="Texture2D" uid="uid://dip5vcug62jx8" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover6.png" id="52_mvsrw"]
+[ext_resource type="Texture2D" uid="uid://cqkr2tipbjjie" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover7.png" id="53_0bpsr"]
+[ext_resource type="Texture2D" uid="uid://ddw1xbt8ba5jp" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover8.png" id="54_csjkp"]
+[ext_resource type="Texture2D" uid="uid://dsl1s6k62uda" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/sword-normal.png" id="55_6sd4y"]
+[ext_resource type="Texture2D" uid="uid://cp6xpsuxrhwie" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover1.png" id="56_advjx"]
+[ext_resource type="Texture2D" uid="uid://cutb4jxm3by5a" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover2.png" id="57_wuaa5"]
+[ext_resource type="Texture2D" uid="uid://c1xc76jq72c2" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover3.png" id="58_jdcp8"]
+[ext_resource type="Texture2D" uid="uid://xiybw6bscd15" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover4.png" id="59_cbgwy"]
+[ext_resource type="Texture2D" uid="uid://dxk8e1h0wo5hf" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover5.png" id="60_vmkq8"]
+[ext_resource type="Texture2D" uid="uid://bwbrttgh3jt0n" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover6.png" id="61_i5r6n"]
+[ext_resource type="Texture2D" uid="uid://bi18wy551l3vt" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover7.png" id="62_spf4l"]
+[ext_resource type="Texture2D" uid="uid://cg3g7j0u3nsl2" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover8.png" id="63_lhppr"]
+[ext_resource type="Texture2D" uid="uid://bktt53mnaijdm" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover9.png" id="64_f4q7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nme8"]
+atlas = ExtResource("5_nghrg")
+region = Rect2(0, 0, 192, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0gwj"]
+atlas = ExtResource("5_nghrg")
+region = Rect2(0, 128, 192, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnyph"]
+atlas = ExtResource("5_nghrg")
+region = Rect2(0, 64, 192, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp3y4"]
+atlas = ExtResource("5_nghrg")
+region = Rect2(0, 192, 192, 64)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_7t0w2"]
+frames = 10
+speed_scale = 8.0
+frame_0/texture = ExtResource("11_brok5")
+frame_1/texture = ExtResource("12_e3xdn")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("13_12dxd")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("14_bsapx")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("15_em2yn")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("16_gdd2h")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("17_7xxcv")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("18_jl032")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("19_foqjq")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("20_b2tru")
+frame_9/duration = 1.0
+
+[sub_resource type="Animation" id="Animation_2kw24"]
+resource_name = "Game_Over"
+length = 9.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Label:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.48, 2.5, 3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(168.369, -102), Vector2(90, 10), Vector2(262, 49.069), Vector2(168.369, 103.85)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(7.52, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xivb0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168.369, 103.85)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xivb0"]
+_data = {
+&"Game_Over": SubResource("Animation_2kw24"),
+&"RESET": SubResource("Animation_xivb0")
+}
+
+[sub_resource type="Animation" id="Animation_qdcv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dg57v"]
+resource_name = "Victory"
+length = 4.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 0.8, 1.05, 1.25, 1.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 2.655), Vector2(2.5, 0.595), Vector2(0.985, 2), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/Label3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aggam"]
+_data = {
+&"RESET": SubResource("Animation_qdcv2"),
+&"Victory": SubResource("Animation_dg57v")
+}
+
+[sub_resource type="Animation" id="Animation_1ab6d"]
+resource_name = "Death"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.266667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.1), Vector2(1, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_s782l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icon:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1c8eb"]
+resource_name = "Spill"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(-1, 1.13239), Vector2(-1, 0.772), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.1587, -0.405446, -0.405446, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 9, 0]
+}
+
+[sub_resource type="Animation" id="Animation_u20oq"]
+resource_name = "Walk_Left"
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xgg7d"]
+resource_name = "Walk_Right"
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gmok"]
+_data = {
+&"Death": SubResource("Animation_1ab6d"),
+&"RESET": SubResource("Animation_s782l"),
+&"Spill": SubResource("Animation_1c8eb"),
+&"Walk_Left": SubResource("Animation_u20oq"),
+&"Walk_Right": SubResource("Animation_xgg7d")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgg7d"]
+radius = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ab6d"]
+bg_color = Color(0.25098, 0.25098, 0.25098, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c8eb"]
+bg_color = Color(0.85098, 0.160784, 0.305882, 1)
+
+[sub_resource type="Gradient" id="Gradient_x4j68"]
+offsets = PackedFloat32Array(0.139344, 0.483607, 0.983607)
+colors = PackedColorArray(0, 0.2555, 0.73, 1, 0.608333, 0.708404, 0.89425, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_03hq3"]
+gradient = SubResource("Gradient_x4j68")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34a04"]
+resource_local_to_scene = true
+shader = ExtResource("28_jwptw")
+shader_parameter/epsilon = 0.0001
+shader_parameter/colors = SubResource("GradientTexture1D_03hq3")
+shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784, 1, 0.847059, 0.415686, 0.623529, 1, 0.776471, 0.278431, 0.509804, 1, 0.321569, 0.117647, 0.227451, 1, 0.615686, 0.227451, 0.470588, 1, 0.396078, 0.2, 0.372549, 1, 0.211765, 0.0862745, 0.188235, 1, 0.639216, 0.333333, 0.580392, 1, 0.607843, 0.270588, 0.52549, 1, 0.337255, 0.160784, 0.329412, 1, 0.533333, 0.243137, 0.505882, 1, 0.431373, 0.231373, 0.462745, 1, 0.270588, 0.141176, 0.298039, 1, 0.396078, 0.192157, 0.396078, 1, 0.329412, 0.172549, 0.368627, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8c63x"]
+random_pitch = 1.25
+streams_count = 1
+stream_0/stream = ExtResource("30_6gldp")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vx6u6"]
+random_pitch = 1.2
+random_volume_offset_db = 5.0
+streams_count = 1
+stream_0/stream = ExtResource("24_ermjs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x0dt"]
+resource_local_to_scene = true
+shader = ExtResource("28_jwptw")
+shader_parameter/epsilon = 0.0001
+shader_parameter/colors = SubResource("GradientTexture1D_03hq3")
+shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784, 1, 0.847059, 0.415686, 0.623529, 1, 0.776471, 0.278431, 0.509804, 1, 0.321569, 0.117647, 0.227451, 1, 0.615686, 0.227451, 0.470588, 1, 0.396078, 0.2, 0.372549, 1, 0.211765, 0.0862745, 0.188235, 1, 0.639216, 0.333333, 0.580392, 1, 0.607843, 0.270588, 0.52549, 1, 0.337255, 0.160784, 0.329412, 1, 0.533333, 0.243137, 0.505882, 1, 0.431373, 0.231373, 0.462745, 1, 0.270588, 0.141176, 0.298039, 1, 0.396078, 0.192157, 0.396078, 1, 0.329412, 0.172549, 0.368627, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_8nc00"]
+frames = 10
+speed_scale = 4.0
+frame_0/texture = ExtResource("36_ksqha")
+frame_1/texture = ExtResource("37_phpvg")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("38_kshmo")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("39_vdfh6")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("40_mvasm")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("41_t7c0y")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("42_8pejn")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("43_to36q")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("44_gjcm5")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("45_a4f6l")
+frame_9/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yyojs"]
+frames = 8
+speed_scale = 0.8
+frame_0/texture = ExtResource("47_cxo1j")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("48_y088c")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("49_hp0qc")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("50_ro2d5")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("51_qynro")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("52_mvsrw")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("53_0bpsr")
+frame_6/duration = 0.05
+frame_7/texture = ExtResource("54_csjkp")
+frame_7/duration = 0.05
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5bt8e"]
+frames = 9
+one_shot = true
+frame_0/texture = ExtResource("56_advjx")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("57_wuaa5")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("58_jdcp8")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("59_cbgwy")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("60_vmkq8")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("61_i5r6n")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("62_spf4l")
+frame_6/duration = 0.05
+frame_7/texture = ExtResource("63_lhppr")
+frame_7/duration = 0.05
+frame_8/texture = ExtResource("64_f4q7g")
+frame_8/duration = 1.0
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_ncphv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(320, 180)
+texture = ExtResource("2_ehuit")
+metadata/_edit_lock_ = true
+
+[node name="floor" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(13, 37)
+tile_map_data = PackedByteArray("AAAIAAMAAAADAA4AAAAJAAMAAAADAA4AAAAKAAMAAAADAA4AAAALAAMAAAABAAAAAAAMAAMAAAAAAA4AAAANAAMAAAABAAAAAAAOAAIAAAABAAAAAAAOAAEAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAAAAAAAAAAIAAAAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAAKAAEAAAABAAAAAAAKAAAAAAACAA4AAAAJAAAAAAADAA4AAAAJAP//AAACAA4AAAAIAP//AAABAAAAAAAIAP7/AAACAA4AAAAJAAEAAAABAAAAAAAJAP7/AAADAA4AAAAKAP7/AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAAMAAAAAAACAA4AAAANAAAAAAADAA4AAAANAAEAAAADAA4AAAALAAAAAAACAA4AAAAKAP//AAABAAAAAAALAAIAAAABAAAAAAALAAEAAAABAAAAAAANAAIAAAADAA4AAAAMAAQAAAADAA4AAAALAAQAAAABAAAAAAAKAAQAAAADAA4AAAAJAAQAAAABAAAAAAAIAAQAAAAAAA4AAAAIAAUAAAABAA4AAAAJAAUAAAABAAAAAAAKAAUAAAABAA4AAAALAAUAAAAAAA4AAAAHAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAABAAAAAAAGAAMAAAABAAAAAAAGAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAABAAAAAAAFAAIAAAABAAQAAAAFAAEAAAAEAAQAAAAFAAAAAAADAAQAAAAFAP//AAABAAQAAAAGAP7/AAABAA4AAAAHAP7/AAABAA4AAAAHAP3/AAAAAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAAIAPz/AAAAAA4AAAAJAPz/AAADAA4AAAAFAAMAAAAEAAQAAAAGAAQAAAABAAAAAAAKAP3/AAABAAAAAAALAP7/AAADAA4AAAAEAAIAAAADAAQAAAAEAAEAAAACAAQAAAAEAAAAAAAAAAQAAAAEAP//AAACAAQAAAAKAPz/AAAAAA4AAAALAP3/AAACAA4AAAAMAP7/AAADAA4AAAANAP//AAABAAAAAAAOAAAAAAABAAAAAAALAPz/AAAAAA4AAAAMAP3/AAABAAAAAAANAP7/AAABAA4AAAAOAP//AAABAAAAAAAMAAUAAAADAA4AAAANAAUAAAABAAAAAAANAAQAAAABAAAAAAAOAAMAAAABAAAAAAAGAP3/AAADAA4AAAAHAPz/AAABAA4AAAAGAPz/AAADAA4AAAAOAAQAAAABAAAAAAAOAAUAAAABAAAAAAANAP3/AAABAAAAAAAOAP7/AAABAAAAAAAPAAQAAAABAAAAAAAPAAMAAAABAAAAAAAPAAIAAAABAAAAAAAPAAEAAAABAAAAAAAPAAAAAAACAAQAAAAPAP//AAAAAAQAAAAHAAYAAAAAAAAAAAAGAAYAAAABAAAAAAAGAAUAAAABAA4AAAAFAAUAAAACAAQAAAAFAAQAAAAEAAQAAAAEAAQAAAAEAAQAAAAEAAMAAAAEAAQAAAAKAAYAAAABAAAAAAALAAYAAAAAAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAABAAAAAAAPAAUAAAABAAAAAAAPAAYAAAABAAAAAAADAAQAAAABAAAAAAADAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAFAP3/AAABAAAAAAAFAPz/AAABAAAAAAAMAPz/AAABAAAAAAANAPz/AAABAAAAAAAFAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAABAAAAAAAKAPv/AAABAAAAAAALAPv/AAABAAAAAAAMAPv/AAABAAAAAAANAPv/AAABAAAAAAAFAAYAAAACAAQAAAAEAAUAAAADAAQAAAAEAAYAAAABAAQAAAADAAUAAAABAAAAAAAMAAIAAAABAA4AAAAMAAEAAAAAAAAAAAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAQAAAAAAACAAQAAAAQAP//AAAEAAQAAAARAAAAAAAAAAoAAAARAP//AAAAAAoAAAAIAPv/AAABAAAAAAAJAPv/AAABAAAAAAAOAPz/AAABAAAAAAAOAP3/AAABAAAAAAAPAP7/AAABAAAAAAAPAP3/AAABAAAAAAAHAAUAAAADAA4AAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAEAAcAAAAEAAQAAAAFAAcAAAAAAAQAAAA=")
+tile_set = ExtResource("1_yb1ct")
+metadata/_edit_lock_ = true
+
+[node name="wall" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(-46, 37)
+tile_map_data = PackedByteArray("AAAEAAIAAwABAAAAAAAEAAEAAAAIAAwAAAAEAAAAAwABAAAAAAAEAP//AAAIAAwAAAAEAP7/AwABAAAAAAAGAPz/AAACAAwAAAAGAPv/AAACAAwAAAAHAPr/AAAFAAwAAAAMAPr/AAALAAwAAAANAPr/AAAFAAwAAAAOAPr/AAAFAAwAAAAGAPr/AAAAAAgAAAAEAP3/AAAAAAgAAAAFAP3/AwAAAAAAAAAGAP3/AAACAAYAAAADAP7/AAAIAAwAAAAEAAMAAwABAAAAAAAEAAQAAAACAAwAAAAKAPr/AAALAAwAAAAIAPn/AAABAAoAAAAJAPn/AAABAAoAAAADAP//AwABAAAAAAAIAPr/AAALAAwAAAAJAPr/AwAAAAAAAAALAPr/AwAAAAAAAAA=")
+tile_set = ExtResource("1_yb1ct")
+metadata/_edit_lock_ = true
+
+[node name="wall 2" type="TileMapLayer" parent="."]
+position = Vector2(-46, 37)
+tile_map_data = PackedByteArray("AAADAAEAAwABAAAAAAADAAAAAAAHAAwAAAADAP//AwABAAAAAAADAP7/AAAHAAwAAAADAP3/AwABAAAAAAAFAPv/AAABAAwAAAAFAPr/AAABAAwAAAAHAPn/AAAKAAwAAAALAPn/AAAKAAwAAAAGAPn/AAAEAAwAAAAMAPn/AAAEAAwAAAANAPn/AAAEAAwAAAAFAPn/AAABAAgAAAADAPz/AAABAAgAAAAEAPz/AwABAAAAABAFAPz/AAABAAYAAAADAAIAAwABAAAAAAADAAMAAAABAAwAAAAKAPn/AAAEAAwAAAAIAPn/AAAEAAwAAAAJAPn/AAAKAAwAAAA=")
+tile_set = ExtResource("1_yb1ct")
+metadata/_edit_lock_ = true
+
+[node name="wall 3" type="TileMapLayer" parent="."]
+position = Vector2(-46, 37)
+tile_map_data = PackedByteArray("AAACAP//AAAGAAwAAAACAP3/AAAGAAwAAAAGAPj/AAAJAAwAAAAKAPj/AAAJAAwAAAAEAPj/AAACAAgAAAACAPv/AAACAAgAAAADAPv/AAADAAwAAAAFAPj/AAADAAwAAAALAPj/AAADAAwAAAAMAPj/AAADAAwAAAAEAPn/AAAAAAwAAAAEAPr/AAAAAAwAAAACAPz/AAAAAAwAAAACAP7/AAAAAAwAAAACAAAAAAAAAAwAAAAEAPv/AAAAAAYAAAACAAEAAAAAAAwAAAACAAIAAAAAAAwAAAAIAPj/AAAJAAwAAAAHAPj/AAADAAwAAAAJAPj/AAADAAwAAAA=")
+tile_set = ExtResource("1_yb1ct")
+metadata/_edit_lock_ = true
+
+[node name="Objects" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAQAAIABQAEAAAAAAAQAP7/BQAEAAAAABAIAAUABQACAAAAABAJAAAABQAAAAAAAAAOAP3/BQACAAIAABAPAAUABQAAAAIAABAFAAUABQAAAAAAABAFAAQABQAAAAAAAAAGAAMABQAEAAAAAAAIAAMABQAEAAIAABA=")
+tile_set = ExtResource("1_yb1ct")
+metadata/_edit_lock_ = true
+
+[node name="Decor" type="TileMapLayer" parent="."]
+z_index = 1
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Mana Display" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control/Mana Display"]
+layout_mode = 0
+offset_top = -64.0
+offset_right = 192.0
+mouse_filter = 2
+min_value = -25.0
+max_value = 110.0
+value = 100.0
+texture_under = SubResource("AtlasTexture_7nme8")
+texture_over = SubResource("AtlasTexture_l0gwj")
+texture_progress = SubResource("AtlasTexture_lnyph")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Mana Display/TextureProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234375
+anchor_top = 0.328125
+anchor_right = 0.875
+anchor_bottom = 0.703125
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_qs7l5")
+theme_override_font_sizes/font_size = 16
+text = "100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Mana Display"]
+layout_mode = 0
+offset_top = -64.0
+offset_right = 192.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_lp3y4")
+
+[node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 528.0
+offset_right = 640.0
+offset_bottom = 106.0
+theme_override_constants/separation = 18
+alignment = 1
+script = ExtResource("7_k62om")
+
+[node name="Cat Display" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("8_bb16k")]
+layout_mode = 2
+
+[node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("8_bb16k")]
+layout_mode = 2
+
+[node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("8_bb16k")]
+layout_mode = 2
+
+[node name="Round Info" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_0yspx")
+script = ExtResource("10_pm7ge")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Round Info"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 25.0
+offset_right = 53.0
+offset_bottom = 40.0
+texture = SubResource("AnimatedTexture_7t0w2")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Round Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317708
+anchor_top = 0.34375
+anchor_right = 0.526042
+anchor_bottom = 0.703125
+theme_override_fonts/font = ExtResource("6_qs7l5")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Round Info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.572917
+anchor_top = 0.34375
+anchor_right = 0.864583
+anchor_bottom = 0.703125
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 8
+text = "Round 1"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Game_Over" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Game_Over"]
+libraries = {
+&"": SubResource("AnimationLibrary_xivb0")
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Game_Over"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.382651
+anchor_top = -0.16272
+anchor_right = 0.888901
+anchor_bottom = 0.090058
+offset_left = -92.599
+offset_top = 169.263
+offset_right = -92.599
+offset_bottom = 169.263
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 32
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404687
+anchor_top = 0.597222
+anchor_right = 0.595312
+anchor_bottom = 0.677778
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 16
+text = "continue  "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404687
+anchor_top = 0.597222
+anchor_right = 0.595312
+anchor_bottom = 0.677778
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 16
+text = "                            ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Game_Over"]
+stream = ExtResource("22_85t2i")
+
+[node name="Win_State" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Win_State"]
+libraries = {
+&"": SubResource("AnimationLibrary_aggam")
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Win_State"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Win_State/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.246875
+anchor_top = 0.228856
+anchor_right = 0.753125
+anchor_bottom = 0.481634
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(171.631, 54)
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 32
+text = "Victory!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Win_State/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404687
+anchor_top = 0.597222
+anchor_right = 0.595312
+anchor_bottom = 0.677778
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 16
+text = "Nap time    "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="CanvasLayer/Win_State/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404687
+anchor_top = 0.597222
+anchor_right = 0.595312
+anchor_bottom = 0.677778
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_fac2q")
+theme_override_font_sizes/font_size = 16
+text = "                            :3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Win_State"]
+stream = ExtResource("23_8kc7p")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Win_State"]
+stream = ExtResource("24_ermjs")
+
+[node name="Slide1" type="CanvasLayer" parent="."]
+
+[node name="Enemy2" type="Node2D" parent="Slide1" groups=["Enemy"]]
+y_sort_enabled = true
+position = Vector2(571, 258)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide1/Enemy2"]
+libraries = {
+&"": SubResource("AnimationLibrary_0gmok")
+}
+autoplay = "Walk_Left"
+blend_times = [&"Walk_Right", &"Walk_Right", 0.05]
+
+[node name="HurtBox" type="Area2D" parent="Slide1/Enemy2" groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slide1/Enemy2/HurtBox"]
+y_sort_enabled = true
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_xgg7d")
+debug_color = Color(0.999097, 0, 0.123677, 0.42)
+
+[node name="Icon" type="Sprite2D" parent="Slide1/Enemy2"]
+y_sort_enabled = true
+texture = ExtResource("3_0gmok")
+offset = Vector2(0, -32)
+hframes = 12
+
+[node name="ProgressBar" type="ProgressBar" parent="Slide1/Enemy2"]
+self_modulate = Color(1, 1, 1, 0.505882)
+z_index = 1
+offset_left = -18.0
+offset_top = -46.0
+offset_right = 18.0
+offset_bottom = -43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1ab6d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1c8eb")
+max_value = 10.0
+step = 0.001
+value = 1.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Slide1/Enemy2"]
+stream = ExtResource("4_ns12n")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Slide1"]
+offset_left = 178.0
+offset_top = 305.0
+offset_right = 247.0
+offset_bottom = 353.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide1/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "Win by reaching 100 mana"
+autowrap_mode = 3
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Slide1"]
+offset_left = 36.0
+offset_top = 52.0
+offset_right = 167.0
+offset_bottom = 126.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide1/NinePatchRect3/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "When Brooms reach the end of the track. You lose a life. After all lives are lost, the game is over."
+autowrap_mode = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Slide1"]
+offset_left = 511.0
+offset_top = 165.0
+offset_right = 610.0
+offset_bottom = 202.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide1/NinePatchRect2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "Obtain mana by slaying Brooms"
+autowrap_mode = 3
+
+[node name="Slide2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Cat" type="Node2D" parent="Slide2"]
+position = Vector2(365, 117)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide2/Cat"]
+libraries = {
+&"": ExtResource("27_ncphv")
+}
+autoplay = "Idle"
+
+[node name="Sprite" type="Sprite2D" parent="Slide2/Cat"]
+material = SubResource("ShaderMaterial_34a04")
+texture = ExtResource("29_5lgmm")
+offset = Vector2(0, -32)
+hframes = 5
+vframes = 5
+frame = 10
+
+[node name="BaseSwipe" type="AudioStreamPlayer" parent="Slide2/Cat"]
+stream = SubResource("AudioStreamRandomizer_8c63x")
+pitch_scale = 1.1
+
+[node name="Meow" type="AudioStreamPlayer" parent="Slide2/Cat"]
+stream = SubResource("AudioStreamRandomizer_vx6u6")
+volume_db = -10.0
+pitch_scale = 0.9
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Slide2"]
+offset_left = 304.0
+offset_top = 126.0
+offset_right = 439.0
+offset_bottom = 160.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide2/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "Click on purple tiles to summon your cats"
+autowrap_mode = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Slide2"]
+offset_left = 401.0
+offset_top = 36.0
+offset_right = 532.0
+offset_bottom = 70.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide2/NinePatchRect2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "Cats get hungry the more they attack"
+autowrap_mode = 3
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Slide2"]
+offset_left = 504.0
+offset_top = 85.0
+offset_right = 635.0
+offset_bottom = 131.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide2/NinePatchRect3/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "Click the fish to feed them in exchange for mana"
+autowrap_mode = 3
+
+[node name="Slide3" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Cat2" type="Node2D" parent="Slide3"]
+position = Vector2(365, 117)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide3/Cat2"]
+libraries = {
+&"": ExtResource("27_ncphv")
+}
+autoplay = "Idle"
+
+[node name="Sprite" type="Sprite2D" parent="Slide3/Cat2"]
+material = SubResource("ShaderMaterial_4x0dt")
+texture = ExtResource("29_5lgmm")
+offset = Vector2(0, -32)
+hframes = 5
+vframes = 5
+frame = 10
+
+[node name="Node2D" type="Node2D" parent="Slide3/Cat2"]
+position = Vector2(0, -20)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Slide3/Cat2/Node2D"]
+stream = ExtResource("32_3emqg")
+
+[node name="TowerWheel" type="Sprite2D" parent="Slide3/Cat2/Node2D"]
+position = Vector2(0, -3)
+texture = ExtResource("33_nvrx2")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Slide3/Cat2/Node2D"]
+stream = ExtResource("34_yrkc0")
+volume_db = -5.0
+
+[node name="Enchant_Wheel" type="Node2D" parent="Slide3/Cat2/Node2D"]
+z_index = 2
+position = Vector2(0, -3)
+script = ExtResource("35_g7qnt")
+
+[node name="Fire_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
+
+[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button"]
+offset_left = -7.0
+offset_top = -31.5
+offset_right = 49.0
+offset_bottom = 28.5
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 4
+texture_normal = ExtResource("36_ksqha")
+texture_hover = SubResource("AnimatedTexture_8nc00")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button/Enchant_Button"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.441667
+anchor_right = 1.51786
+anchor_bottom = 1.19167
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "(25)"
+metadata/_edit_use_anchors_ = true
+
+[node name="Zap_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
+
+[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button"]
+offset_left = -7.0
+offset_top = -32.0
+offset_right = 53.0
+offset_bottom = 32.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 4
+texture_normal = ExtResource("46_mks64")
+texture_hover = SubResource("AnimatedTexture_yyojs")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button/Enchant_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.466667
+anchor_top = 0.5
+anchor_right = 1.41667
+anchor_bottom = 1.20313
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 32
+text = "25"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sword_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
+
+[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button"]
+offset_left = -7.0
+offset_top = -32.0
+offset_right = 53.0
+offset_bottom = 32.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 4
+texture_normal = ExtResource("55_6sd4y")
+texture_hover = SubResource("AnimatedTexture_5bt8e")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button/Enchant_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.466667
+anchor_top = 0.5
+anchor_right = 1.41667
+anchor_bottom = 1.20313
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 32
+text = "25"
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseSwipe" type="AudioStreamPlayer" parent="Slide3/Cat2"]
+stream = SubResource("AudioStreamRandomizer_8c63x")
+pitch_scale = 1.1
+
+[node name="Meow" type="AudioStreamPlayer" parent="Slide3/Cat2"]
+stream = SubResource("AudioStreamRandomizer_vx6u6")
+volume_db = -10.0
+pitch_scale = 0.9
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Slide3"]
+offset_left = 298.0
+offset_top = 130.0
+offset_right = 433.0
+offset_bottom = 234.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide3/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "You can enchant cats with powerful magic in exchange for mana, these cats are powerful, but be careful not to let them go hungry"
+autowrap_mode = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Slide3"]
+offset_left = 505.0
+offset_top = 85.0
+offset_right = 636.0
+offset_bottom = 173.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide3/NinePatchRect2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "When a cat runs out of food, it will run away to find some. It will return for redeployment after a short time."
+autowrap_mode = 3
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Slide3"]
+offset_left = 298.0
+offset_top = 12.0
+offset_right = 429.0
+offset_bottom = 58.0
+texture = ExtResource("3_ehuit")
+region_rect = Rect2(0, 0, 128, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Slide3/NinePatchRect3/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
+theme_override_fonts/font = ExtResource("26_cd6k6")
+theme_override_font_sizes/font_size = 8
+text = "You can dismiss cats early to cycle them sooner."
+autowrap_mode = 3
+
+[connection signal="button_down" from="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button/Enchant_Button" to="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button" method="_on_button_down"]
+[connection signal="button_down" from="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button/Enchant_Button" to="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button" method="_on_button_down"]
+[connection signal="button_down" from="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button/Enchant_Button" to="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button" method="_on_button_down"]

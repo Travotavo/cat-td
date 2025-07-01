@@ -10,6 +10,7 @@ func _ready():
 func _on_button_down():
 	if cost > LevelResources.Mana:
 		return
+	$"../../AudioStreamPlayer2".play()
 	LevelResources.Mana -= cost
 	cat_parent.SetState(form)
 	get_parent().get_parent().visible = false

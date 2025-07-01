@@ -1,11 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmfmy7258pykw"]
+[gd_scene load_steps=21 format=3 uid="uid://dmfmy7258pykw"]
 
 [ext_resource type="Script" uid="uid://tjja3rv727db" path="res://Scripts/Towers/Tower_Slot.gd" id="1_krfsh"]
 [ext_resource type="Texture2D" uid="uid://ciitfx2dqfqog" path="res://icon.svg" id="2_1mlm1"]
 [ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scripts/Menus/enchant_wheel.gd" id="3_1mlm1"]
+[ext_resource type="AudioStream" uid="uid://drpridb0ksixs" path="res://Assets/sfx/uipopupwork.wav" id="3_nx2sf"]
 [ext_resource type="Script" uid="uid://cdsd857vcud32" path="res://Scripts/Towers/Summon_Button.gd" id="4_bnw8g"]
 [ext_resource type="PackedScene" uid="uid://cb05dnpufjhql" path="res://Scenes/Towers/Standard_Cat.tscn" id="5_ovmhl"]
 [ext_resource type="Texture2D" uid="uid://t7suugw0023b" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/cat_normal.png" id="6_gl5vo"]
+[ext_resource type="AudioStream" uid="uid://clv4mguybskmd" path="res://Assets/sfx/button_hover.wav" id="7_481ii"]
 [ext_resource type="Texture2D" uid="uid://bsgd0qgmk5m1b" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover1.png" id="7_nx2sf"]
 [ext_resource type="Texture2D" uid="uid://cfjypxjyksqhb" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover2.png" id="8_481ii"]
 [ext_resource type="Texture2D" uid="uid://dv27ea7ds2c4q" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Animated Hover/cat_hover3.png" id="9_ye3xf"]
@@ -61,6 +63,9 @@ shape = SubResource("CapsuleShape2D_ovmhl")
 [node name="Node2D" type="Node2D" parent="."]
 visible = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("3_nx2sf")
+
 [node name="Enchant_Wheel" type="Node2D" parent="Node2D"]
 z_index = 2
 position = Vector2(0, -24)
@@ -69,6 +74,10 @@ script = ExtResource("3_1mlm1")
 [node name="Node2D" type="Node2D" parent="Node2D/Enchant_Wheel"]
 script = ExtResource("4_bnw8g")
 summon_option = ExtResource("5_ovmhl")
+
+[node name="click" type="AudioStreamPlayer" parent="Node2D/Enchant_Wheel/Node2D"]
+stream = ExtResource("7_481ii")
+volume_db = -10.0
 
 [node name="Icon2" type="TextureButton" parent="Node2D/Enchant_Wheel/Node2D"]
 offset_left = -28.0

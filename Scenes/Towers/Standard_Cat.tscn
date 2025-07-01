@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=53 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="2_k5b2v"]
@@ -6,11 +6,13 @@
 [ext_resource type="Script" uid="uid://bf2qkr1fc4hyg" path="res://Scripts/Menus/enchant_wheel.gd" id="3_w3uv3"]
 [ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_x4j68"]
 [ext_resource type="Script" uid="uid://b0poimx8tn1ah" path="res://Scenes/Towers/Enchant_Button.gd" id="4_yyojs"]
+[ext_resource type="AudioStream" uid="uid://drpridb0ksixs" path="res://Assets/sfx/uipopupwork.wav" id="5_51cub"]
 [ext_resource type="Texture2D" uid="uid://b2tpqi8a2tsth" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/lightning_select_normal.png" id="5_rpm7p"]
 [ext_resource type="Texture2D" uid="uid://nt5r2kc5ydhe" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover1.png" id="6_4ljln"]
 [ext_resource type="Texture2D" uid="uid://d2ka8eo72e4ag" path="res://Assets/Menus/Cat Select Buttons/tower_wheel.png" id="6_50g1d"]
 [ext_resource type="Script" uid="uid://bqipw0mvsnyma" path="res://Scripts/Menus/fire_button.gd" id="6_lb3i7"]
 [ext_resource type="Texture2D" uid="uid://b53j86macaklw" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover2.png" id="7_c27c0"]
+[ext_resource type="AudioStream" uid="uid://u5t0s5pgohx3" path="res://Assets/sfx/button_click.wav" id="8_4whvd"]
 [ext_resource type="Texture2D" uid="uid://dricukpxekf2i" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover3.png" id="8_gq4td"]
 [ext_resource type="Texture2D" uid="uid://b2ixby854ackt" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover4.png" id="9_88xq0"]
 [ext_resource type="Texture2D" uid="uid://mjrfbjsdcjo5" path="res://Assets/Menus/Cat Select Buttons/Zap Cat/Animated Hover/lightning_select_hover5.png" id="10_ugh60"]
@@ -38,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cuqigs6igmej2" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell8.png" id="33_4whvd"]
 [ext_resource type="Texture2D" uid="uid://cc305bsdnoa6g" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell9.png" id="34_nw20b"]
 [ext_resource type="Texture2D" uid="uid://qvr2km578gs" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell10.png" id="35_w2aj8"]
+[ext_resource type="AudioStream" uid="uid://g14tv4367lgj" path="res://Assets/sfx/swipework.wav" id="39_8c63x"]
 [ext_resource type="AudioStream" uid="uid://dc58hshgb3p0b" path="res://Assets/sfx/meow.wav" id="39_vx6u6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyojs"]
@@ -127,6 +130,11 @@ frame_7/duration = 0.05
 frame_8/texture = ExtResource("23_ny76y")
 frame_8/duration = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8c63x"]
+random_pitch = 1.25
+streams_count = 1
+stream_0/stream = ExtResource("39_8c63x")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vx6u6"]
 random_pitch = 1.2
 random_volume_offset_db = 5.0
@@ -173,9 +181,16 @@ frame = 10
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, -20)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("5_51cub")
+
 [node name="TowerWheel" type="Sprite2D" parent="Node2D"]
 position = Vector2(0, -3)
 texture = ExtResource("6_50g1d")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("8_4whvd")
+volume_db = -5.0
 
 [node name="Enchant_Wheel" type="Node2D" parent="Node2D"]
 z_index = 2
@@ -284,6 +299,8 @@ text = "25"
 metadata/_edit_use_anchors_ = true
 
 [node name="BaseSwipe" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_8c63x")
+pitch_scale = 1.1
 
 [node name="Meow" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_vx6u6")
