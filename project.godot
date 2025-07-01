@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cat TD"
-run/main_scene="uid://b27ufh8q8o608"
+run/main_scene="uid://bc8bglvqu4vp2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

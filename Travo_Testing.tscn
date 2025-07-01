@@ -19,11 +19,11 @@ point_count = 8
 atlas = ExtResource("7_lnyph")
 region = Rect2(0, 256, 64, 64)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6uye"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lnyph"]
 texture = SubResource("AtlasTexture_lp3y4")
 
 [sub_resource type="Theme" id="Theme_okqra"]
-Button/styles/normal = SubResource("StyleBoxTexture_o6uye")
+Button/styles/normal = SubResource("StyleBoxTexture_lnyph")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brtj4"]
 atlas = ExtResource("7_lnyph")
@@ -54,12 +54,6 @@ tile_set = ExtResource("2_o1loe")
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-56, 8)
 curve = SubResource("Curve2D_n1ojd")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(56, -8)
-rotation = 0.463648
-rotates = false
-loop = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

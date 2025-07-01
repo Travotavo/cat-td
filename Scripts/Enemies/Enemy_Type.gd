@@ -45,8 +45,10 @@ func _deal_damage():
 	marching = false
 	animator.play("Spill")
 	await animator.animation_finished
+	LevelResources.Lives -= 1
 	damage_cat.emit()
-	death()
+	follow_point.queue_free()
+	queue_free()
 
 func death():
 	LevelResources.Mana += reward

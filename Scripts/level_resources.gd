@@ -1,5 +1,6 @@
 extends Node
 var Mana = 25
+var Lives = 9
 var Cats:Array[CatStats] = []
 var Unused_Cats = []
 var Used_Cats = []

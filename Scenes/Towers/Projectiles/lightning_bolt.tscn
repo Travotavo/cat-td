@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://xgyvxq45r2yj"]
+[gd_scene load_steps=9 format=3 uid="uid://xgyvxq45r2yj"]
 
 [ext_resource type="Script" uid="uid://dy4uawt487jbl" path="res://lightning_bolt.gd" id="1_irvl1"]
 [ext_resource type="Texture2D" uid="uid://n25qm28pfqc7" path="res://Assets/Towers/Zap Cat/Projectile/Lightning-Sheet.png" id="2_af1ar"]
+[ext_resource type="AudioStream" uid="uid://bfveardqliw7l" path="res://Assets/sfx/lightningwork.wav" id="3_af1ar"]
 
 [sub_resource type="Animation" id="Animation_yifdr"]
 length = 0.001
@@ -65,7 +66,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.05, 0.6),
+"times": PackedFloat32Array(0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -73,6 +74,20 @@ tracks/2/keys = {
 }, {
 "args": [],
 "method": &"queue_free"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioListener2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
 }]
 }
 
@@ -84,6 +99,11 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hip84"]
 radius = 52.1536
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_af1ar"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("3_af1ar")
 
 [node name="Lightning Bolt" type="Node2D"]
 script = ExtResource("1_irvl1")
@@ -108,6 +128,10 @@ rotation = -1.5708
 scale = Vector2(0.5, 1)
 shape = SubResource("CircleShape2D_hip84")
 debug_color = Color(0.995026, 0, 0.212353, 0.42)
+
+[node name="AudioListener2D" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_af1ar")
+pitch_scale = 1.2
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene load_steps=49 format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="2_k5b2v"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cuqigs6igmej2" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell8.png" id="33_4whvd"]
 [ext_resource type="Texture2D" uid="uid://cc305bsdnoa6g" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell9.png" id="34_nw20b"]
 [ext_resource type="Texture2D" uid="uid://qvr2km578gs" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell10.png" id="35_w2aj8"]
+[ext_resource type="AudioStream" uid="uid://dc58hshgb3p0b" path="res://Assets/sfx/meow.wav" id="39_vx6u6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyojs"]
 resource_local_to_scene = true
@@ -125,6 +126,12 @@ frame_7/texture = ExtResource("22_au1p0")
 frame_7/duration = 0.05
 frame_8/texture = ExtResource("23_ny76y")
 frame_8/duration = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vx6u6"]
+random_pitch = 1.2
+random_volume_offset_db = 5.0
+streams_count = 1
+stream_0/stream = ExtResource("39_vx6u6")
 
 [node name="Cat" type="Node2D"]
 script = ExtResource("1_lixlc")
@@ -275,6 +282,11 @@ theme_override_fonts/font = ExtResource("28_rwmmp")
 theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
+
+[node name="Meow" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_vx6u6")
+volume_db = -10.0
+pitch_scale = 0.9
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]

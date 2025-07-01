@@ -19,7 +19,7 @@ func _attack(damage):
 	face_target(node.Near_Brooms[0])
 	strike.global_rotation = (node.Near_Brooms[0].global_position - node.global_position).angle()
 	strike.global_position = (node.Near_Brooms[0].global_position + node.global_position)/2
-	strike.damage = damage * 2
+	strike.damage = damage
 	node.get_tree().get_first_node_in_group("Projectile_Parent").add_child(strike)
 
 func _close_broom_sort(a:Enemy,b:Enemy):

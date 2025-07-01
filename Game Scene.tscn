@@ -1,9 +1,48 @@
-[gd_scene load_steps=3 format=4 uid="uid://cs1hcryp3llnd"]
+[gd_scene load_steps=19 format=4 uid="uid://bc8bglvqu4vp2"]
 
 [ext_resource type="Texture2D" uid="uid://c8i77avx08u0r" path="res://Assets/world tiles/world_background.png" id="1_g8og4"]
 [ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="1_qo16k"]
+[ext_resource type="Script" uid="uid://bum1aim1md2bb" path="res://Scripts/Enemies/Enemy_Spawn.gd" id="1_x4g8q"]
+[ext_resource type="PackedScene" uid="uid://7ffa3xpwvjcm" path="res://Scenes/Menus/mana_display.tscn" id="3_o7kwt"]
+[ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="4_2kw24"]
+[ext_resource type="Script" uid="uid://2jijo3cvfbo7" path="res://Scripts/Menus/cat_container.gd" id="4_rjdov"]
+[ext_resource type="PackedScene" uid="uid://2bwmjmw547ym" path="res://Scenes/Menus/cat_display.tscn" id="5_x4g8q"]
+[ext_resource type="Texture2D" uid="uid://dhm35hiyaj33k" path="res://Assets/Menus/UI buttons/button_atlas.png" id="6_p0hjm"]
+[ext_resource type="Texture2D" uid="uid://q1pfokeuclqr" path="res://Assets/Towers/Normal_Cat-Sheet.png" id="6_w12a1"]
+[ext_resource type="Script" uid="uid://dmgnvo11dyno7" path="res://pause_button.gd" id="7_2xk72"]
+[ext_resource type="PackedScene" uid="uid://dmfmy7258pykw" path="res://Scenes/Towers/tower_slot.tscn" id="8_rjdov"]
+
+[sub_resource type="Curve2D" id="Curve2D_g8og4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 708, 324, 0, 0, 0, 0, 692, 324, 0, 0, 0, 0, 660, 276, 0, 0, 0, 0, 612, 252, 0, 0, 0, 0, 580, 220, 0, 0, 0, 0, 516, 188, 0, 0, 0, 0, 580, 156, 0, 0, 0, 0, 420, 76, 0, 0, 0, 0, 356, 108, 0, 0, 0, 0, 452, 156, 0, 0, 0, 0, 388, 188, 0, 0, 0, 0, 516, 252, 0, 0, 0, 0, 452, 284, 0, 0, 0, 0, 420, 268, 0, 0, 0, 0, 324, 316, 0, 0, 0, 0, 260, 284, 0, 0, 0, 0, 324, 252, 0, 0, 0, 0, 260, 220, 0, 0, 0, 0, 196, 252, 0, 0, 0, 0, 132, 220)
+}
+point_count = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kw24"]
+atlas = ExtResource("6_p0hjm")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6uye"]
+texture = SubResource("AtlasTexture_2kw24")
+
+[sub_resource type="Theme" id="Theme_xivb0"]
+Button/styles/normal = SubResource("StyleBoxTexture_o6uye")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w12a1"]
+atlas = ExtResource("6_p0hjm")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mvp3"]
+atlas = ExtResource("6_p0hjm")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d18lo"]
+atlas = ExtResource("6_p0hjm")
+region = Rect2(0, 256, 64, 62)
 
 [node name="GameScene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_x4g8q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
@@ -33,8 +72,116 @@ tile_map_data = PackedByteArray("AAACAP//AAAGAAwAAAACAP3/AAAGAAwAAAAGAPj/AAAJAAw
 tile_set = ExtResource("1_qo16k")
 
 [node name="Objects" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAQAAIABQAEAAAAAAAQAP7/BQAEAAAAABAIAAUABQACAAAAABAJAAAABQAAAAAAAAAOAP3/BQACAAIAABAPAAUABQAAAAIAABAFAAUABQAAAAAAABAFAAQABQAAAAAAAAAGAAMABQAEAAAAAAAIAAMABQAEAAIAABA=")
 tile_set = ExtResource("1_qo16k")
 
 [node name="Decor" type="TileMapLayer" parent="."]
 z_index = 1
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-56, 8)
+curve = SubResource("Curve2D_g8og4")
+
+[node name="Cat" type="Node2D" parent="."]
+position = Vector2(45, 197)
+
+[node name="Defeat" type="AudioStreamPlayer" parent="Cat"]
+
+[node name="Hiss" type="AudioStreamPlayer" parent="Cat"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat"]
+libraries = {
+&"": ExtResource("4_2kw24")
+}
+autoplay = "Idle"
+
+[node name="Sprite" type="Sprite2D" parent="Cat"]
+scale = Vector2(-1, 1)
+texture = ExtResource("6_w12a1")
+offset = Vector2(0, -32)
+hframes = 5
+vframes = 5
+frame = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Mana Display" parent="CanvasLayer/Control" instance=ExtResource("3_o7kwt")]
+layout_mode = 1
+
+[node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 528.0
+offset_right = 640.0
+offset_bottom = 106.0
+theme_override_constants/separation = 18
+alignment = 1
+script = ExtResource("4_rjdov")
+
+[node name="Cat Display" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+layout_mode = 2
+
+[node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+layout_mode = 2
+
+[node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+layout_mode = 2
+
+[node name="Cat Display4" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+layout_mode = 2
+
+[node name="Cat Display5" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+layout_mode = 2
+
+[node name="Pause Button" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -77.0
+offset_right = -60.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_xivb0")
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_w12a1")
+texture_pressed = SubResource("AtlasTexture_8mvp3")
+texture_hover = SubResource("AtlasTexture_d18lo")
+script = ExtResource("7_2xk72")
+
+[node name="Cat_Spot" parent="." instance=ExtResource("8_rjdov")]
+position = Vector2(365, 117)
+
+[node name="Cat_Spot2" parent="." instance=ExtResource("8_rjdov")]
+position = Vector2(397, 261)
+
+[node name="Cat_Spot3" parent="." instance=ExtResource("8_rjdov")]
+position = Vector2(205, 325)
+
+[node name="Cat_Spot4" parent="." instance=ExtResource("8_rjdov")]
+position = Vector2(237, 213)
+
+[node name="Cat_Spot5" parent="." instance=ExtResource("8_rjdov")]
+position = Vector2(76, 261)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Projectile_Parent" type="Node2D" parent="." groups=["Projectile_Parent"]]
+
+[connection signal="button_down" from="CanvasLayer/Control/Pause Button" to="CanvasLayer/Control/Pause Button" method="_on_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

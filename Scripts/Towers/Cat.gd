@@ -47,6 +47,8 @@ func _cat_fire():
 		return
 	$AnimationPlayer.play("Attack")
 	stats.Hunger -= 10
+	if stats.Hunger <= 20:
+		$Meow.play()
 	form._attack(5)
 	$Cooldown.start()
 

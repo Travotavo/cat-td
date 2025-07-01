@@ -26,12 +26,14 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
+mouse_filter = 2
 script = ExtResource("1_o5w7v")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_top = -64.0
 offset_right = 192.0
+mouse_filter = 2
 min_value = -25.0
 max_value = 110.0
 value = 100.0
@@ -59,4 +61,5 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_top = -64.0
 offset_right = 192.0
+mouse_filter = 2
 texture = SubResource("AtlasTexture_lp3y4")
