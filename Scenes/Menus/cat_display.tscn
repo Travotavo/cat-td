@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://2bwmjmw547ym"]
 
 [ext_resource type="Script" uid="uid://dg1mvwdcurqpe" path="res://Scripts/Menus/cat_display.gd" id="1_fsu8v"]
-[ext_resource type="Shader" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_1vley"]
+[ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_1vley"]
 [ext_resource type="Texture2D" uid="uid://b4fmrlutyogtb" path="res://Assets/Menus/UI buttons/hunger_bar.png" id="4_iinl0"]
 [ext_resource type="Texture2D" uid="uid://h6l2tlgp370p" path="res://Assets/Menus/UI buttons/feedCat.png" id="5_1vley"]
 [ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="5_dlkiy"]
@@ -65,7 +65,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Feed_Button" type="TextureButton" parent="TextureProgressBar"]
-layout_mode = 0
 offset_left = 79.0
 offset_top = -16.0
 offset_right = 139.0
