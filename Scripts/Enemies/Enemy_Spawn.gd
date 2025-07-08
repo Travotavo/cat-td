@@ -46,6 +46,7 @@ func _on_scale_up():
 
 func _process(delta):
 	if Input.is_action_just_pressed("leave"):
+		Engine.time_scale = 1
 		SceneTransition.change_scene_to_file("res://main_menu.tscn")
 	if LevelResources.game_end:
 		if Input.is_action_just_pressed("press"):
@@ -57,11 +58,13 @@ func _process(delta):
 		return
 	if LevelResources.Lives == 0:
 		Bgm.stop()
+		Engine.time_scale = 1
 		LevelResources.game_end = true
 		$CanvasLayer/Game_Over.visible = true
 		$CanvasLayer/Game_Over/AnimationPlayer.play("Game_Over")
 	if LevelResources.Mana >= 100:
 		Bgm.stop()
+		Engine.time_scale = 1
 		LevelResources.game_end = true
 		$CanvasLayer/Win_State.visible = true
 		$CanvasLayer/Win_State/AnimationPlayer.play("Victory")

@@ -9,6 +9,7 @@ func _load():
 
 func _process(delta):
 	$TextureProgressBar.value = cat.Hunger
+	$TextureProgressBar/Feed_Button/Label.text = str(cat.feed_cost)
 	if LevelResources.Timeout_cats.has(cat):
 		modulate = Color.DIM_GRAY
 	else:
@@ -26,6 +27,10 @@ func refresh():
 
 
 func _on_feed_button_button_down():
-	if LevelResources.Mana >= 5:
-		LevelResources.Mana -= 5
+	if LevelResources.Mana >= cat.feed_cost:
+		LevelResources.Mana -= cat.feed_cost
 		cat.feed()
+		if LevelResources.Timeout_cats.has(cat):
+			LevelResources.Timeout_cats.erase(cat)
+			LevelResources.Unused_Cats.append(cat)
+			$Scavenge.stop()

@@ -145,7 +145,6 @@ stream_0/stream = ExtResource("39_vx6u6")
 script = ExtResource("1_lixlc")
 
 [node name="Range" type="Area2D" parent="."]
-position = Vector2(0, 16)
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]

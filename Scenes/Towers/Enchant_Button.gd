@@ -13,4 +13,5 @@ func _on_button_down():
 	$"../../AudioStreamPlayer2".play()
 	LevelResources.Mana -= cost
 	cat_parent.SetState(form)
+	cat_parent.stats.feed()
 	get_parent().get_parent().visible = false

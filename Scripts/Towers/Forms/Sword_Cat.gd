@@ -12,6 +12,7 @@ func on_enter():
 	node.set_cooldown(2.5)
 	node.set_range(75)
 	node.set_visuals(visual,5,2,visual_lib)
+	node.stats.feed_cost = 5
 
 func _attack(damage):
 	var lightning_targets = node.Near_Brooms.duplicate()

@@ -10,6 +10,7 @@ func on_enter():
 	node.set_range(50)
 	node.set_cooldown(1)
 	node.set_visuals(visual,5,5,visual_lib)
+	node.stats.feed_cost = 1
 	pass
 
 func on_exit():

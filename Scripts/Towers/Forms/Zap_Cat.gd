@@ -12,6 +12,7 @@ func on_enter():
 	node.set_cooldown(4)
 	node.set_range(160)
 	node.set_visuals(visual,5,2,visual_lib)
+	node.stats.feed_cost = 5
 	pass
 
 func _attack(damage):
