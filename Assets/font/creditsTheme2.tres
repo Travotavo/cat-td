@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://diak8m1a3fsj7"]
+
+[ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="1_ws0mp"]
+
+[resource]
+Label/colors/font_color = Color(0.164706, 0.129412, 0.207843, 1)
+Label/colors/font_outline_color = Color(0.941176, 0.878431, 0.721569, 1)
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_ws0mp")

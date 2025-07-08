@@ -4,8 +4,8 @@
 [ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="2_fu7sn"]
 [ext_resource type="Script" uid="uid://o1eck66i4ymt" path="res://play_button.gd" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="3_nlkkf"]
-[ext_resource type="Script" path="res://credits_button.gd" id="4_jix8l"]
-[ext_resource type="Script" uid="uid://0uykri4ntnxg" path="res://button_3.gd" id="5_glbon"]
+[ext_resource type="Script" path="res://button_3.gd" id="5_glbon"]
+[ext_resource type="Script" uid="uid://cogqodlyrmha4" path="res://credits_button.gd" id="5_nlkkf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
 bg_color = Color(0, 0, 0, 0.596078)
@@ -88,7 +88,7 @@ theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
 text = "Credits"
 alignment = 0
-script = ExtResource("4_jix8l")
+script = ExtResource("5_nlkkf")
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
