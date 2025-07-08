@@ -65,7 +65,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Feed_Button" type="TextureButton" parent="TextureProgressBar"]
-layout_mode = 0
 offset_left = 79.0
 offset_top = -16.0
 offset_right = 139.0
