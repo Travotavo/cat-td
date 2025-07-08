@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cppy10uccm6mf"]
+[gd_scene load_steps=15 format=3 uid="uid://cuuy7dx0ewm30"]
 
 [ext_resource type="Texture2D" uid="uid://dhm35hiyaj33k" path="res://Assets/Menus/UI buttons/button_atlas.png" id="1_fs7v1"]
 [ext_resource type="Script" uid="uid://dibybep1ehc3v" path="res://Scripts/Menus/in_game_ui_manager.gd" id="1_ntyt8"]

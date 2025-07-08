@@ -1337,6 +1337,8 @@ volume_db = -5.0
 z_index = 2
 position = Vector2(0, -3)
 script = ExtResource("35_g7qnt")
+radius = 24
+offset = 150
 
 [node name="Fire_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
 

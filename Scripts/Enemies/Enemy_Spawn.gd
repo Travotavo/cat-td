@@ -45,12 +45,15 @@ func _on_scale_up():
 	
 
 func _process(delta):
+	if Input.is_action_just_pressed("leave"):
+		SceneTransition.change_scene_to_file("res://main_menu.tscn")
 	if LevelResources.game_end:
 		if Input.is_action_just_pressed("press"):
 			if LevelResources.Lives == 0:
 				SceneTransition.change_scene_to_file("res://Game Scene.tscn")
 			else:
 				SceneTransition.change_scene_to_file("res://main_menu.tscn")
+				Bgm.play()
 		return
 	if LevelResources.Lives == 0:
 		Bgm.stop()

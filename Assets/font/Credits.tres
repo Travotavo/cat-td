@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://jtkwhd2oc24b"]
+
+[ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="1_hdbkq"]
+[ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="2_4rb1x"]
+
+[resource]
+default_font = ExtResource("2_4rb1x")
+Label/colors/font_color = Color(0.164706, 0.129412, 0.207843, 1)
+Label/colors/font_outline_color = Color(0.941176, 0.878431, 0.721569, 1)
+Label/constants/line_spacing = 4
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_hdbkq")
