@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2bwmjmw547ym"]
+[gd_scene format=3 uid="uid://2bwmjmw547ym"]
 
 [ext_resource type="Script" uid="uid://dg1mvwdcurqpe" path="res://Scripts/Menus/cat_display.gd" id="1_fsu8v"]
 [ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="3_1vley"]
@@ -36,14 +36,14 @@ region = Rect2(0, 32, 96, 32)
 atlas = ExtResource("5_1vley")
 region = Rect2(0, -1, 15, 16)
 
-[node name="Cat Display" type="Control"]
+[node name="Cat Display" type="Control" unique_id=733667520]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 14.0
 offset_bottom = 14.0
 script = ExtResource("1_fsu8v")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=261303572]
 material = SubResource("ShaderMaterial_okqra")
 layout_mode = 0
 offset_left = 6.0
@@ -56,7 +56,7 @@ texture_under = SubResource("AtlasTexture_brtj4")
 texture_over = SubResource("AtlasTexture_g7jon")
 texture_progress = SubResource("AtlasTexture_nybq7")
 
-[node name="Label" type="Label" parent="TextureProgressBar"]
+[node name="Label" type="Label" parent="TextureProgressBar" unique_id=638298319]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 6.0
@@ -68,7 +68,7 @@ text = "GlepGlorp"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Feed_Button" type="TextureButton" parent="TextureProgressBar"]
+[node name="Feed_Button" type="TextureButton" parent="TextureProgressBar" unique_id=1510484736]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 8.0
@@ -80,7 +80,7 @@ texture_normal = ExtResource("5_1vley")
 texture_hover = SubResource("AtlasTexture_dlkiy")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="TextureProgressBar/Feed_Button"]
+[node name="Label" type="Label" parent="TextureProgressBar/Feed_Button" unique_id=685188013]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6
@@ -99,9 +99,9 @@ text = "5"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Scavenge" type="Timer" parent="."]
-wait_time = 7.5
-one_shot = true
+[node name="Scavenge" type="Timer" parent="." unique_id=1340341878]
+wait_time = 0.5
+autostart = true
 
 [connection signal="button_down" from="TextureProgressBar/Feed_Button" to="." method="_on_feed_button_button_down"]
 [connection signal="timeout" from="Scavenge" to="." method="refresh"]

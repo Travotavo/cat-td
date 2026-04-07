@@ -16,7 +16,7 @@ func _ready():
 	AddState("Base", Cat_Form.new())
 	AddState("Zap", Zap_Cat.new())
 	AddState("Sword", Sword_Cat.new())
-	SetState("Base")
+	SetState(stats.State)
 
 func set_range(new_range:int):
 	range.shape.radius = new_range
@@ -48,10 +48,10 @@ func _on_cooldown():
 func _cat_fire():
 	if stats.Hunger <= 0:
 		stats.emit_signal('starve')
-		SetState('Base')
 		$AnimationPlayer.play("Flee")
 		await $AnimationPlayer.animation_finished
 		emit_signal("cat_leaves")
+		LevelResources.Unused_Cats.append(stats)
 		return
 	$AnimationPlayer.play("Attack")
 	stats.Hunger -= 10
@@ -64,6 +64,7 @@ signal cat_leaves
 func _remove_cat():
 	stats.emit_signal('starve')
 	emit_signal("cat_leaves")
+	LevelResources.Unused_Cats.append(stats)
 
 func _on_range_entered(area:Area2D):
 	if area.get_parent().is_in_group("Enemy"):
@@ -95,6 +96,7 @@ func SetState(newState):
 		else:
 			print("ERROR: State " + newState + " does not exist")
 	if (form != null):
+		stats.State = newState
 		form.on_enter()
 
 

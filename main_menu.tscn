@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds78dln418m6s"]
+[gd_scene format=3 uid="uid://ds78dln418m6s"]
 
 [ext_resource type="Texture2D" uid="uid://dani6ki4ntfuo" path="res://Assets/Menus/Cat_screen_isekai.png" id="1_7vrkn"]
 [ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="2_fu7sn"]
 [ext_resource type="Script" uid="uid://o1eck66i4ymt" path="res://play_button.gd" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="3_nlkkf"]
-[ext_resource type="Script" path="res://button_3.gd" id="5_glbon"]
-[ext_resource type="Script" uid="uid://cogqodlyrmha4" path="res://credits_button.gd" id="5_nlkkf"]
+[ext_resource type="Script" uid="uid://0uykri4ntnxg" path="res://button_3.gd" id="5_glbon"]
+[ext_resource type="Script" path="res://credits_button.gd" id="5_nlkkf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
 bg_color = Color(0, 0, 0, 0.596078)
@@ -32,13 +32,13 @@ Button/styles/hover = SubResource("StyleBoxFlat_nlkkf")
 Button/styles/normal = SubResource("StyleBoxFlat_qe12f")
 Button/styles/pressed = SubResource("StyleBoxFlat_qe12f")
 
-[node name="Main Menu" type="Node2D"]
+[node name="Main Menu" type="Node2D" unique_id=1533609627]
 
-[node name="CatScreenIsekaiExample" type="Sprite2D" parent="."]
+[node name="CatScreenIsekaiExample" type="Sprite2D" parent="." unique_id=913363972]
 position = Vector2(320, 180)
 texture = ExtResource("1_7vrkn")
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=741104449]
 offset_left = 228.0
 offset_top = 6.0
 offset_right = 676.0
@@ -52,7 +52,7 @@ text = "My[font_size=32] Wizard [font_size=8][outline_size=8][color=dfbb89]Doesn
 "
 horizontal_alignment = 1
 
-[node name="Label2" type="RichTextLabel" parent="."]
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1248694622]
 offset_left = 111.0
 offset_top = 70.0
 offset_right = 500.0
@@ -67,14 +67,14 @@ to Pour Buckets of Water on
 my head ?!?!!?"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1163722457]
 offset_left = 457.0
 offset_top = 207.0
 offset_right = 641.0
 offset_bottom = 332.0
 theme_override_constants/separation = 16
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=184353114]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
@@ -82,7 +82,14 @@ text = "Play"
 alignment = 0
 script = ExtResource("3_fu7sn")
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=259398417]
+layout_mode = 2
+theme = SubResource("Theme_8qtwp")
+theme_override_fonts/font = ExtResource("3_nlkkf")
+text = "Settings(X)"
+alignment = 0
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1313371]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
@@ -90,7 +97,7 @@ text = "Credits"
 alignment = 0
 script = ExtResource("5_nlkkf")
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1838047287]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
@@ -99,5 +106,6 @@ alignment = 0
 script = ExtResource("5_glbon")
 
 [connection signal="button_down" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button4" to="VBoxContainer/Button4" method="_on_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button3" to="VBoxContainer/Button3" method="_on_button_down"]

@@ -5,13 +5,28 @@ extends Node2D
 @export var offset = -45
 @onready var count = get_children().size()
 
+@export var buttonTemplate:PackedScene
+
 func _show():
+	if buttonTemplate:
+		var children = get_children()
+		for child in children:
+			child.queue_free()
+		count = LevelResources.Unused_Cats.size()
+		for cat in LevelResources.Unused_Cats:
+			var button = buttonTemplate.instantiate()
+			button.cat = cat
+			button._load()
+			add_child(button)
+			button.connect('summon', get_parent().get_parent()._add_tower)
 	$"../AudioStreamPlayer".play()
 	for child in get_children():
 		child.position = Vector2.ZERO
 	get_parent().visible = true
 
 func _process(delta):
+	if not visible:
+		return
 	var iter = 1
 	for child in get_children():
 		if count == 1:

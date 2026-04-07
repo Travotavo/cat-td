@@ -5,7 +5,6 @@ var Cats:Array[CatStats] = []
 var Unused_Cats = []
 var Used_Cats = []
 var round = 1
-var Timeout_cats = []
 
 var cat_directory := "res://Scripts/Towers/Cats/"
 var cat_files:Array

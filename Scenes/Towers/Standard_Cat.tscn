@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cb05dnpufjhql"]
+[gd_scene format=3 uid="uid://cb05dnpufjhql"]
 
 [ext_resource type="Script" uid="uid://cuibcc3kn5ciy" path="res://Scripts/Towers/Cat.gd" id="1_lixlc"]
 [ext_resource type="AnimationLibrary" uid="uid://cgegi3eyng1ga" path="res://Assets/Towers/Animation Resources/basic_cat.res" id="2_k5b2v"]
@@ -141,35 +141,33 @@ random_volume_offset_db = 5.0
 streams_count = 1
 stream_0/stream = ExtResource("39_vx6u6")
 
-[node name="Cat" type="Node2D"]
+[node name="Cat" type="Node2D" unique_id=1254297430]
 script = ExtResource("1_lixlc")
 
-[node name="Range" type="Area2D" parent="."]
+[node name="Range" type="Area2D" parent="." unique_id=1344556450]
 input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1996134972]
 rotation = -1.5708
 scale = Vector2(0.5, 1)
 shape = SubResource("CircleShape2D_yyojs")
 
-[node name="Cooldown" type="Timer" parent="."]
+[node name="Cooldown" type="Timer" parent="." unique_id=1986193441]
 wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="MouseShape" type="Area2D" parent="."]
+[node name="MouseShape" type="Area2D" parent="." unique_id=874531636]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseShape" unique_id=1455451511]
 position = Vector2(-1, -16)
 shape = SubResource("CapsuleShape2D_lixlc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": ExtResource("2_k5b2v")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=905673133]
+libraries/ = ExtResource("2_k5b2v")
+autoplay = &"Idle"
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=733842490]
 material = SubResource("ShaderMaterial_03hq3")
 texture = ExtResource("2_rpm7p")
 offset = Vector2(0, -32)
@@ -177,31 +175,31 @@ hframes = 5
 vframes = 5
 frame = 10
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=929330399]
 position = Vector2(0, -20)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D" unique_id=1442522783]
 stream = ExtResource("5_51cub")
 
-[node name="TowerWheel" type="Sprite2D" parent="Node2D"]
+[node name="TowerWheel" type="Sprite2D" parent="Node2D" unique_id=1526693823]
 position = Vector2(0, -3)
 texture = ExtResource("6_50g1d")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node2D"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node2D" unique_id=1686152706]
 stream = ExtResource("8_4whvd")
 volume_db = -5.0
 
-[node name="Enchant_Wheel" type="Node2D" parent="Node2D"]
+[node name="Enchant_Wheel" type="Node2D" parent="Node2D" unique_id=1498878591]
 z_index = 2
 position = Vector2(0, -3)
 script = ExtResource("3_w3uv3")
 radius = 24
 offset = 150
 
-[node name="Fire_Button" type="Node2D" parent="Node2D/Enchant_Wheel"]
+[node name="Fire_Button" type="Node2D" parent="Node2D/Enchant_Wheel" unique_id=1389865451]
 script = ExtResource("6_lb3i7")
 
-[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Fire_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Fire_Button" unique_id=2052156177]
 offset_left = -7.0
 offset_top = -31.5
 offset_right = 49.0
@@ -213,7 +211,7 @@ texture_normal = ExtResource("26_ejihe")
 texture_hover = SubResource("AnimatedTexture_8nc00")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Fire_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Fire_Button/Enchant_Button" unique_id=429259370]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -227,13 +225,13 @@ theme_override_font_sizes/font_size = 32
 text = "(25)"
 metadata/_edit_use_anchors_ = true
 
-[node name="Zap_Button" type="Node2D" parent="Node2D/Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+[node name="Zap_Button" type="Node2D" parent="Node2D/Enchant_Wheel" unique_id=1650339283 node_paths=PackedStringArray("cat_parent")]
 script = ExtResource("4_yyojs")
 form = "Zap"
 cost = 25
 cat_parent = NodePath("../../..")
 
-[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Zap_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Zap_Button" unique_id=494588709]
 offset_left = -7.0
 offset_top = -32.0
 offset_right = 53.0
@@ -245,7 +243,7 @@ texture_normal = ExtResource("5_rpm7p")
 texture_hover = SubResource("AnimatedTexture_yyojs")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Zap_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Zap_Button/Enchant_Button" unique_id=1135608951]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.466667
@@ -262,13 +260,13 @@ theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sword_Button" type="Node2D" parent="Node2D/Enchant_Wheel" node_paths=PackedStringArray("cat_parent")]
+[node name="Sword_Button" type="Node2D" parent="Node2D/Enchant_Wheel" unique_id=1840502223 node_paths=PackedStringArray("cat_parent")]
 script = ExtResource("4_yyojs")
 form = "Sword"
 cost = 25
 cat_parent = NodePath("../../..")
 
-[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Sword_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Sword_Button" unique_id=1172438105]
 offset_left = -7.0
 offset_top = -32.0
 offset_right = 53.0
@@ -280,7 +278,7 @@ texture_normal = ExtResource("14_lnm5a")
 texture_hover = SubResource("AnimatedTexture_5bt8e")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Sword_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Sword_Button/Enchant_Button" unique_id=1597142093]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.466667
@@ -297,11 +295,11 @@ theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
 
-[node name="BaseSwipe" type="AudioStreamPlayer" parent="."]
+[node name="BaseSwipe" type="AudioStreamPlayer" parent="." unique_id=706518787]
 stream = SubResource("AudioStreamRandomizer_8c63x")
 pitch_scale = 1.1
 
-[node name="Meow" type="AudioStreamPlayer" parent="."]
+[node name="Meow" type="AudioStreamPlayer" parent="." unique_id=1898413733]
 stream = SubResource("AudioStreamRandomizer_vx6u6")
 volume_db = -10.0
 pitch_scale = 0.9

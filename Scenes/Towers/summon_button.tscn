@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://xkwt0bfhsa2s"]
+
+[ext_resource type="Script" uid="uid://cdsd857vcud32" path="res://Scripts/Towers/Summon_Button.gd" id="1_p7mtw"]
+[ext_resource type="PackedScene" uid="uid://cb05dnpufjhql" path="res://Scenes/Towers/Standard_Cat.tscn" id="2_ekkdd"]
+[ext_resource type="AudioStream" uid="uid://clv4mguybskmd" path="res://Assets/sfx/button_hover.wav" id="3_5mxv4"]
+[ext_resource type="Shader" uid="uid://cvlpd831rsmno" path="res://Assets/Towers/_Cat_Color.gdshader" id="4_06agj"]
+[ext_resource type="Texture2D" uid="uid://b7thl2a186jv8" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Summon.png" id="5_nknyy"]
+[ext_resource type="Texture2D" uid="uid://dbghybma2lt2l" path="res://Assets/Menus/Cat Select Buttons/Cat Spawn/Summon_Highlight.png" id="6_tffq0"]
+
+[sub_resource type="Gradient" id="Gradient_p7mtw"]
+offsets = PackedFloat32Array(0.138554, 0.283133, 0.463855, 0.686747, 0.915663)
+colors = PackedColorArray(0.0533334, 0, 0.08, 1, 0.879765, 0.983969, 1, 1, 0.338844, 0.911846, 1, 1, 0.27, 0.902667, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ekkdd"]
+gradient = SubResource("Gradient_p7mtw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mxv4"]
+resource_local_to_scene = true
+shader = ExtResource("4_06agj")
+shader_parameter/epsilon = 0.0001
+shader_parameter/colors = SubResource("GradientTexture1D_ekkdd")
+shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784, 1, 0.847059, 0.415686, 0.623529, 1, 0.776471, 0.278431, 0.509804, 1, 0.321569, 0.117647, 0.227451, 1, 0.615686, 0.227451, 0.470588, 1, 0.396078, 0.2, 0.372549, 1, 0.211765, 0.0862745, 0.188235, 1, 0.639216, 0.333333, 0.580392, 1, 0.607843, 0.270588, 0.52549, 1, 0.337255, 0.160784, 0.329412, 1, 0.533333, 0.243137, 0.505882, 1, 0.431373, 0.231373, 0.462745, 1, 0.270588, 0.141176, 0.298039, 1, 0.396078, 0.192157, 0.396078, 1, 0.329412, 0.172549, 0.368627, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1764608288]
+script = ExtResource("1_p7mtw")
+summon_option = ExtResource("2_ekkdd")
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=1930405021]
+stream = ExtResource("3_5mxv4")
+volume_db = -10.0
+
+[node name="Icon2" type="TextureButton" parent="." unique_id=535799412]
+material = SubResource("ShaderMaterial_5mxv4")
+offset_left = -28.0
+offset_top = -29.0
+offset_right = 28.0
+offset_bottom = 31.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(28, 28.5)
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_nknyy")
+texture_hover = ExtResource("6_tffq0")
+stretch_mode = 5
+
+[connection signal="button_down" from="Icon2" to="." method="_on_button_down"]

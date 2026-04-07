@@ -22,7 +22,6 @@ func _ready():
 	$WaveTimers/Density_Timer.wait_time = Starting_Wave_Density
 	$WaveTimers/Density_Timer.start()
 
-
 func _on_timer_timeout():
 	var enemy:Enemy = enemy_template.instantiate()
 	enemy.path = $Path2D
@@ -42,7 +41,6 @@ func _on_scale_up():
 	Starting_Wave_Count += scaling_number
 	scaling_number += 1
 	$WaveTimers/Density_Timer.start()
-	
 
 func _process(delta):
 	if Input.is_action_just_pressed("leave"):

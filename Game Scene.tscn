@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://bc8bglvqu4vp2"]
+[gd_scene format=4 uid="uid://bc8bglvqu4vp2"]
 
 [ext_resource type="Texture2D" uid="uid://c8i77avx08u0r" path="res://Assets/world tiles/world_background.png" id="1_g8og4"]
 [ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="1_qo16k"]
@@ -352,81 +352,79 @@ _data = {
 &"Victory": SubResource("Animation_dg57v")
 }
 
-[node name="GameScene" type="Node2D"]
+[node name="GameScene" type="Node2D" unique_id=899532236]
 y_sort_enabled = true
 script = ExtResource("1_x4g8q")
 
-[node name="WaveTimers" type="Node2D" parent="."]
+[node name="WaveTimers" type="Node2D" parent="." unique_id=649517513]
 
-[node name="Density_Timer" type="Timer" parent="WaveTimers"]
+[node name="Density_Timer" type="Timer" parent="WaveTimers" unique_id=396592709]
 wait_time = 2.5
 one_shot = true
 
-[node name="Wave_Timer" type="Timer" parent="WaveTimers"]
+[node name="Wave_Timer" type="Timer" parent="WaveTimers" unique_id=2086167150]
 one_shot = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193688627]
 z_index = -2
 position = Vector2(320, 180)
 texture = ExtResource("1_g8og4")
 
-[node name="floor" type="TileMapLayer" parent="."]
+[node name="floor" type="TileMapLayer" parent="." unique_id=2063976332]
 z_index = -1
 position = Vector2(13, 37)
 tile_map_data = PackedByteArray("AAAIAAMAAAADAA4AAAAJAAMAAAADAA4AAAAKAAMAAAADAA4AAAALAAMAAAABAAAAAAAMAAMAAAAAAA4AAAANAAMAAAABAAAAAAAOAAIAAAABAAAAAAAOAAEAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAAAAAAAAAAIAAAAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAAKAAEAAAABAAAAAAAKAAAAAAACAA4AAAAJAAAAAAADAA4AAAAJAP//AAACAA4AAAAIAP//AAABAAAAAAAIAP7/AAACAA4AAAAJAAEAAAABAAAAAAAJAP7/AAADAA4AAAAKAP7/AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAAMAAAAAAACAA4AAAANAAAAAAADAA4AAAANAAEAAAADAA4AAAALAAAAAAACAA4AAAAKAP//AAABAAAAAAALAAIAAAABAAAAAAALAAEAAAABAAAAAAANAAIAAAADAA4AAAAMAAQAAAADAA4AAAALAAQAAAABAAAAAAAKAAQAAAADAA4AAAAJAAQAAAABAAAAAAAIAAQAAAAAAA4AAAAIAAUAAAABAA4AAAAJAAUAAAABAAAAAAAKAAUAAAABAA4AAAALAAUAAAAAAA4AAAAHAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAABAAAAAAAGAAMAAAABAAAAAAAGAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAABAAAAAAAFAAIAAAABAAQAAAAFAAEAAAAEAAQAAAAFAAAAAAADAAQAAAAFAP//AAABAAQAAAAGAP7/AAABAA4AAAAHAP7/AAABAA4AAAAHAP3/AAAAAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAAIAPz/AAAAAA4AAAAJAPz/AAADAA4AAAAFAAMAAAAEAAQAAAAGAAQAAAABAAAAAAAKAP3/AAABAAAAAAALAP7/AAADAA4AAAAEAAIAAAADAAQAAAAEAAEAAAACAAQAAAAEAAAAAAAAAAQAAAAEAP//AAACAAQAAAAKAPz/AAAAAA4AAAALAP3/AAACAA4AAAAMAP7/AAADAA4AAAANAP//AAABAAAAAAAOAAAAAAABAAAAAAALAPz/AAAAAA4AAAAMAP3/AAABAAAAAAANAP7/AAABAA4AAAAOAP//AAABAAAAAAAMAAUAAAADAA4AAAANAAUAAAABAAAAAAANAAQAAAABAAAAAAAOAAMAAAABAAAAAAAGAP3/AAADAA4AAAAHAPz/AAABAA4AAAAGAPz/AAADAA4AAAAOAAQAAAABAAAAAAAOAAUAAAABAAAAAAANAP3/AAABAAAAAAAOAP7/AAABAAAAAAAPAAQAAAABAAAAAAAPAAMAAAABAAAAAAAPAAIAAAABAAAAAAAPAAEAAAABAAAAAAAPAAAAAAACAAQAAAAPAP//AAAAAAQAAAAHAAYAAAABAAAAAAAGAAYAAAABAAAAAAAGAAUAAAABAA4AAAAFAAUAAAACAAQAAAAFAAQAAAAEAAQAAAAEAAQAAAAEAAQAAAAEAAMAAAAEAAQAAAAKAAYAAAABAAAAAAALAAYAAAAAAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAABAAAAAAAPAAUAAAABAAAAAAAPAAYAAAABAAAAAAADAAQAAAABAAAAAAADAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAFAP3/AAABAAAAAAAFAPz/AAABAAAAAAAMAPz/AAABAAAAAAANAPz/AAABAAAAAAAFAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAABAAAAAAAKAPv/AAABAAAAAAALAPv/AAABAAAAAAAMAPv/AAABAAAAAAANAPv/AAABAAAAAAAFAAYAAAACAAQAAAAEAAUAAAADAAQAAAAEAAYAAAABAAQAAAADAAUAAAABAAAAAAAMAAIAAAABAA4AAAAMAAEAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAABAAAAAAAQAAAAAAACAAQAAAAQAP//AAAEAAQAAAARAAAAAAAAAAoAAAARAP//AAAAAAoAAAAIAPv/AAABAAAAAAAJAPv/AAABAAAAAAAOAPz/AAABAAAAAAAOAP3/AAABAAAAAAAPAP7/AAABAAAAAAAPAP3/AAABAAAAAAAHAAUAAAADAA4AAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAEAAcAAAAEAAQAAAAFAAcAAAAAAAQAAAA=")
 tile_set = ExtResource("1_qo16k")
 
-[node name="wall" type="TileMapLayer" parent="."]
+[node name="wall" type="TileMapLayer" parent="." unique_id=854902075]
 z_index = -1
 position = Vector2(-46, 37)
 tile_map_data = PackedByteArray("AAAEAAIAAwABAAAAAAAEAAEAAAAIAAwAAAAEAAAAAwABAAAAAAAEAP//AAAIAAwAAAAEAP7/AwABAAAAAAAGAPz/AAACAAwAAAAGAPv/AAACAAwAAAAHAPr/AAAFAAwAAAAMAPr/AAALAAwAAAANAPr/AAAFAAwAAAAOAPr/AAAFAAwAAAAGAPr/AAAAAAgAAAAEAP3/AAAAAAgAAAAFAP3/AwAAAAAAAAAGAP3/AAACAAYAAAADAP7/AAAIAAwAAAAEAAMAAwABAAAAAAAEAAQAAAACAAwAAAAKAPr/AAALAAwAAAAIAPn/AAABAAoAAAAJAPn/AAABAAoAAAADAP//AwABAAAAAAAIAPr/AAALAAwAAAAJAPr/AwAAAAAAAAALAPr/AwAAAAAAAAA=")
 tile_set = ExtResource("1_qo16k")
 
-[node name="wall 2" type="TileMapLayer" parent="."]
+[node name="wall 2" type="TileMapLayer" parent="." unique_id=288964380]
 position = Vector2(-46, 37)
 tile_map_data = PackedByteArray("AAADAAEAAwABAAAAAAADAAAAAAAHAAwAAAADAP//AwABAAAAAAADAP7/AAAHAAwAAAADAP3/AwABAAAAAAAFAPv/AAABAAwAAAAFAPr/AAABAAwAAAAHAPn/AAAKAAwAAAALAPn/AAAKAAwAAAAGAPn/AAAEAAwAAAAMAPn/AAAEAAwAAAANAPn/AAAEAAwAAAAFAPn/AAABAAgAAAADAPz/AAABAAgAAAAEAPz/AwABAAAAABAFAPz/AAABAAYAAAADAAIAAwABAAAAAAADAAMAAAABAAwAAAAKAPn/AAAEAAwAAAAIAPn/AAAEAAwAAAAJAPn/AAAKAAwAAAA=")
 tile_set = ExtResource("1_qo16k")
 
-[node name="wall 3" type="TileMapLayer" parent="."]
+[node name="wall 3" type="TileMapLayer" parent="." unique_id=512633771]
 position = Vector2(-46, 37)
 tile_map_data = PackedByteArray("AAACAP//AAAGAAwAAAACAP3/AAAGAAwAAAAGAPj/AAAJAAwAAAAKAPj/AAAJAAwAAAAEAPj/AAACAAgAAAACAPv/AAACAAgAAAADAPv/AAADAAwAAAAFAPj/AAADAAwAAAALAPj/AAADAAwAAAAMAPj/AAADAAwAAAAEAPn/AAAAAAwAAAAEAPr/AAAAAAwAAAACAPz/AAAAAAwAAAACAP7/AAAAAAwAAAACAAAAAAAAAAwAAAAEAPv/AAAAAAYAAAACAAEAAAAAAAwAAAACAAIAAAAAAAwAAAAIAPj/AAAJAAwAAAAHAPj/AAADAAwAAAAJAPj/AAADAAwAAAA=")
 tile_set = ExtResource("1_qo16k")
 
-[node name="Objects" type="TileMapLayer" parent="."]
+[node name="Objects" type="TileMapLayer" parent="." unique_id=1682584816]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAQAAIABQAEAAAAAAAQAP7/BQAEAAAAABAIAAUABQACAAAAABAJAAAABQAAAAAAAAAOAP3/BQACAAIAABAPAAUABQAAAAIAABAFAAUABQAAAAAAABAFAAQABQAAAAAAAAAGAAMABQAEAAAAAAAIAAMABQAEAAIAABA=")
 tile_set = ExtResource("1_qo16k")
 
-[node name="Decor" type="TileMapLayer" parent="."]
+[node name="Decor" type="TileMapLayer" parent="." unique_id=2004799067]
 z_index = 1
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Path2D" type="Path2D" parent="." unique_id=226957578]
 position = Vector2(-56, 8)
 curve = SubResource("Curve2D_g8og4")
 
-[node name="Cat" type="Node2D" parent="."]
+[node name="Cat" type="Node2D" parent="." unique_id=507124570]
 position = Vector2(45, 197)
 
-[node name="Defeat" type="AudioStreamPlayer" parent="Cat"]
+[node name="Defeat" type="AudioStreamPlayer" parent="Cat" unique_id=288936766]
 
-[node name="Hiss" type="AudioStreamPlayer" parent="Cat"]
+[node name="Hiss" type="AudioStreamPlayer" parent="Cat" unique_id=2055906410]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat"]
-libraries = {
-&"": ExtResource("4_2kw24")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat" unique_id=1238710343]
+libraries/ = ExtResource("4_2kw24")
+autoplay = &"Idle"
 
-[node name="Sprite" type="Sprite2D" parent="Cat"]
+[node name="Sprite" type="Sprite2D" parent="Cat" unique_id=1275192112]
 scale = Vector2(-1, 1)
 texture = ExtResource("5_dg57v")
 offset = Vector2(0, -32)
 hframes = 10
 frame = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1905433016]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=81936926]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -435,10 +433,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Mana Display" parent="CanvasLayer/Control" instance=ExtResource("3_o7kwt")]
+[node name="Mana Display" parent="CanvasLayer/Control" unique_id=96444721 instance=ExtResource("3_o7kwt")]
 layout_mode = 1
 
-[node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1046585287]
 layout_mode = 0
 offset_left = 528.0
 offset_right = 640.0
@@ -447,16 +445,16 @@ theme_override_constants/separation = 18
 alignment = 1
 script = ExtResource("4_rjdov")
 
-[node name="Cat Display" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+[node name="Cat Display" parent="CanvasLayer/Control/CatContainer" unique_id=1730168002 instance=ExtResource("5_x4g8q")]
 layout_mode = 2
 
-[node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+[node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" unique_id=521343010 instance=ExtResource("5_x4g8q")]
 layout_mode = 2
 
-[node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("5_x4g8q")]
+[node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" unique_id=1045930323 instance=ExtResource("5_x4g8q")]
 layout_mode = 2
 
-[node name="Pause Button" type="TextureButton" parent="CanvasLayer/Control"]
+[node name="Pause Button" type="TextureButton" parent="CanvasLayer/Control" unique_id=694042856]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -476,7 +474,7 @@ texture_pressed = SubResource("AtlasTexture_8mvp3")
 texture_hover = SubResource("AtlasTexture_d18lo")
 script = ExtResource("7_2xk72")
 
-[node name="Fast Forward" type="TextureButton" parent="CanvasLayer/Control"]
+[node name="Fast Forward" type="TextureButton" parent="CanvasLayer/Control" unique_id=1763200745]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -495,14 +493,14 @@ texture_normal = SubResource("AtlasTexture_i7rvm")
 texture_pressed = SubResource("AtlasTexture_nvvbi")
 script = ExtResource("11_w12a1")
 
-[node name="Round Info" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="Round Info" type="TextureRect" parent="CanvasLayer/Control" unique_id=762631645]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("13_r7yy2")
 script = ExtResource("14_kaolt")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Round Info"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Round Info" unique_id=412413390]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 25.0
@@ -510,7 +508,7 @@ offset_right = 53.0
 offset_bottom = 40.0
 texture = SubResource("AnimatedTexture_wl6r6")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Round Info"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/Round Info" unique_id=711166776]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.317708
@@ -523,7 +521,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/Round Info"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Round Info" unique_id=477556937]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.572917
@@ -536,7 +534,7 @@ text = "Round 1"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Game_Over" type="Control" parent="CanvasLayer"]
+[node name="Game_Over" type="Control" parent="CanvasLayer" unique_id=1269826385]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -545,12 +543,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Game_Over"]
-libraries = {
-&"": SubResource("AnimationLibrary_xivb0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Game_Over" unique_id=431305618]
+libraries/ = SubResource("AnimationLibrary_xivb0")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Game_Over"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Game_Over" unique_id=373117765]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -563,17 +559,17 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Game_Over/Panel" unique_id=983306703]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.382651
 anchor_top = -0.16272
 anchor_right = 0.888901
 anchor_bottom = 0.090058
-offset_left = -92.599
-offset_top = 169.263
+offset_left = -92.59898
+offset_top = 169.26343
 offset_right = -92.599
-offset_bottom = 169.263
+offset_bottom = 169.26343
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("11_2kw24")
@@ -583,7 +579,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+[node name="Label2" type="Label" parent="CanvasLayer/Game_Over/Panel" unique_id=112513317]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -600,7 +596,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+[node name="Label3" type="Label" parent="CanvasLayer/Game_Over/Panel" unique_id=1570582317]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -617,10 +613,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Game_Over"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Game_Over" unique_id=1050939668]
 stream = ExtResource("12_xivb0")
 
-[node name="Win_State" type="Control" parent="CanvasLayer"]
+[node name="Win_State" type="Control" parent="CanvasLayer" unique_id=1814724527]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -629,12 +625,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Win_State"]
-libraries = {
-&"": SubResource("AnimationLibrary_aggam")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Win_State" unique_id=968205641]
+libraries/ = SubResource("AnimationLibrary_aggam")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Win_State"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Win_State" unique_id=898020489]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -647,7 +641,7 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Win_State/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Win_State/Panel" unique_id=152277541]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -666,7 +660,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Win_State/Panel"]
+[node name="Label2" type="Label" parent="CanvasLayer/Win_State/Panel" unique_id=1333715724]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -683,7 +677,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/Win_State/Panel"]
+[node name="Label3" type="Label" parent="CanvasLayer/Win_State/Panel" unique_id=955371756]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -700,28 +694,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Win_State"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Win_State" unique_id=1902138857]
 stream = ExtResource("28_kaolt")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Win_State"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Win_State" unique_id=703235803]
 stream = ExtResource("29_dg57v")
 
-[node name="Cat_Spot" parent="." instance=ExtResource("8_rjdov")]
+[node name="Cat_Spot" parent="." unique_id=1567770788 instance=ExtResource("8_rjdov")]
 position = Vector2(365, 117)
 
-[node name="Cat_Spot2" parent="." instance=ExtResource("8_rjdov")]
+[node name="Cat_Spot2" parent="." unique_id=367058254 instance=ExtResource("8_rjdov")]
 position = Vector2(397, 261)
 
-[node name="Cat_Spot3" parent="." instance=ExtResource("8_rjdov")]
+[node name="Cat_Spot3" parent="." unique_id=599642393 instance=ExtResource("8_rjdov")]
 position = Vector2(205, 325)
 
-[node name="Cat_Spot4" parent="." instance=ExtResource("8_rjdov")]
+[node name="Cat_Spot4" parent="." unique_id=708088982 instance=ExtResource("8_rjdov")]
 position = Vector2(237, 213)
 
-[node name="Cat_Spot5" parent="." instance=ExtResource("8_rjdov")]
+[node name="Cat_Spot5" parent="." unique_id=786248260 instance=ExtResource("8_rjdov")]
 position = Vector2(108, 277)
 
-[node name="Projectile_Parent" type="Node2D" parent="." groups=["Projectile_Parent"]]
+[node name="Projectile_Parent" type="Node2D" parent="." unique_id=1909179815 groups=["Projectile_Parent"]]
 
 [connection signal="timeout" from="WaveTimers/Density_Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WaveTimers/Wave_Timer" to="." method="_on_scale_up"]
