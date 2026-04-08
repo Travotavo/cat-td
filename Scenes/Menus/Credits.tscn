@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctavjmvy5y50"]
+[gd_scene format=3 uid="uid://ctavjmvy5y50"]
 
 [ext_resource type="Theme" uid="uid://bl115gu3yqtdx" path="res://Assets/font/creditsTheme.tres" id="1_bktca"]
 [ext_resource type="Texture2D" uid="uid://cqnuya387gpxa" path="res://Assets/Menus/UI buttons/credits page.png" id="1_tqkf6"]
@@ -32,7 +32,7 @@ Button/styles/hover = SubResource("StyleBoxFlat_nlkkf")
 Button/styles/normal = SubResource("StyleBoxFlat_qe12f")
 Button/styles/pressed = SubResource("StyleBoxFlat_qe12f")
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" unique_id=308782216]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1800784428]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 20.0
@@ -53,7 +53,7 @@ patch_margin_top = 12
 patch_margin_right = 18
 patch_margin_bottom = 12
 
-[node name="Label" type="Label" parent="NinePatchRect"]
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=1091427219]
 layout_mode = 0
 offset_left = 102.0
 offset_top = 19.0
@@ -62,7 +62,7 @@ offset_bottom = 42.0
 theme = ExtResource("1_bktca")
 text = "CREDITS"
 
-[node name="Label2" type="Label" parent="NinePatchRect"]
+[node name="Label2" type="Label" parent="NinePatchRect" unique_id=209722576]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 43.0
@@ -74,26 +74,26 @@ Athena Patronas, Travis Carlen,
 Yasmin Roberts"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="NinePatchRect"]
+[node name="Label3" type="Label" parent="NinePatchRect" unique_id=1156810022]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 115.0
 offset_right = 625.0
 offset_bottom = 291.0
 theme = ExtResource("2_tqkf6")
-text = "Antenna: Production Coordinator, 
+text = "Athena: Production Coordinator, 
 UI Artist, Environmental World 
 Designer and Art Implentation 
 
-Traviata: Programmer, Character
+Travis: Programmer, Character
  Animator, and Asset Implementation
 
-Yasmilicious: Character Color 
+Yasmin: Character Color 
 Animator and Sound Designer
 
 "
 
-[node name="Label4" type="Label" parent="NinePatchRect"]
+[node name="Label4" type="Label" parent="NinePatchRect" unique_id=1744339458]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 96.0
@@ -102,7 +102,7 @@ offset_bottom = 119.0
 theme = ExtResource("2_tqkf6")
 text = "ROLES"
 
-[node name="Label6" type="Label" parent="NinePatchRect"]
+[node name="Label6" type="Label" parent="NinePatchRect" unique_id=54112216]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 265.0
@@ -117,7 +117,7 @@ text = "@ecaroh.games for hosting the
 "
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="NinePatchRect"]
+[node name="Label7" type="Label" parent="NinePatchRect" unique_id=2118032127]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 241.0
@@ -126,7 +126,7 @@ offset_bottom = 290.0
 theme = ExtResource("1_bktca")
 text = "SPECIAL THANKS"
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1496626651]
 layout_mode = 0
 offset_left = 347.0
 offset_top = 63.0
@@ -139,7 +139,7 @@ patch_margin_top = 14
 patch_margin_right = 20
 patch_margin_bottom = 13
 
-[node name="Label" type="Label" parent="NinePatchRect2"]
+[node name="Label" type="Label" parent="NinePatchRect2" unique_id=312612060]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 20.0
@@ -148,7 +148,7 @@ offset_bottom = 43.0
 theme = ExtResource("1_bktca")
 text = "ASSETS USED"
 
-[node name="Label3" type="Label" parent="NinePatchRect2"]
+[node name="Label3" type="Label" parent="NinePatchRect2" unique_id=125929633]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 53.0
@@ -176,7 +176,7 @@ press-start.font
 DaFonts.com: www.dafont.com/
 pixel-arial-11.font "
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1049036437]
 layout_mode = 0
 offset_left = 477.0
 offset_top = 12.0
@@ -187,7 +187,7 @@ theme_override_fonts/font = ExtResource("4_tqkf6")
 text = "Main Menu"
 script = ExtResource("2_s3uxa")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=283833488]
 z_index = -2
 position = Vector2(320, 180)
 texture = ExtResource("6_a2kxq")
