@@ -1,24 +1,88 @@
 [gd_scene format=3 uid="uid://81t3nl8kr1x4"]
 
-[ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="1_8mfmb"]
+[ext_resource type="Texture2D" uid="uid://d14uwldy4c0o2" path="res://Assets/Menus/PAUSE MENU.png" id="1_cianu"]
+[ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="2_rqyw7"]
+[ext_resource type="Script" uid="uid://bhnkpk7co8xgq" path="res://Scenes/Menus/volume_slider.gd" id="3_cvc81"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqyw7"]
+bg_color = Color(0.14901961, 0.2901961, 0.44313726, 0.69411767)
 
 [node name="PauseMenu" type="Node2D" unique_id=994878576]
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=672409982]
-offset_left = 56.0
-offset_top = 40.0
-offset_right = 234.0
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=486965628]
+offset_right = 640.0
 offset_bottom = 360.0
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1188741947]
+[node name="PauseMenu" type="Sprite2D" parent="MarginContainer2" unique_id=1630569881]
+position = Vector2(320, 180)
+texture = ExtResource("1_cianu")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=672409982]
+offset_left = 168.0
+offset_top = 24.0
+offset_right = 488.0
+offset_bottom = 344.0
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1105049590]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqyw7")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer" unique_id=2032294853]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Options Header" type="VBoxContainer" parent="MarginContainer/MarginContainer2" unique_id=1188741947]
 layout_mode = 2
 
-[node name="Header" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1690512982]
+[node name="Header" type="Label" parent="MarginContainer/MarginContainer2/Options Header" unique_id=1690512982]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_8mfmb")
-theme_override_font_sizes/font_size = 18
-text = "Main Menu"
+theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
+theme_override_fonts/font = ExtResource("2_rqyw7")
+theme_override_font_sizes/font_size = 25
+text = "options"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2" unique_id=1001092073]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 51
+theme_override_constants/margin_right = 27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer2/MarginContainer" unique_id=1211577067]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1152184643]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
+theme_override_fonts/font = ExtResource("2_rqyw7")
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1094851176]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_cvc81")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=623091427]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rqyw7")
+text = "SFX Volume"
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=410157302]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_cvc81")
+bus_name = "Master"
+
+[node name="Button" type="Button" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1327693598]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
+theme_override_fonts/font = ExtResource("2_rqyw7")
+text = "Quit"
+flat = true
+alignment = 0
