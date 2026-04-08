@@ -1,10 +1,12 @@
 extends Node
-var Mana = 15
+var Mana = 25
 var Lives = 9
 var Cats:Array[CatStats] = []
 var Unused_Cats = []
 var Used_Cats = []
 var round = 1
+var Wave = 0
+
 
 var cat_directory := "res://Scripts/Towers/Cats/"
 var cat_files:Array

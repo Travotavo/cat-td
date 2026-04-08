@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7ffa3xpwvjcm"]
+[gd_scene format=3 uid="uid://7ffa3xpwvjcm"]
 
 [ext_resource type="Script" uid="uid://vw1u2uxqw8kv" path="res://Scripts/Menus/mana_display.gd" id="1_o5w7v"]
 [ext_resource type="Texture2D" uid="uid://dg7xn7d8ysfpm" path="res://Assets/Menus/UI buttons/mana_bar.png" id="2_1fu4h"]
@@ -20,7 +20,7 @@ region = Rect2(0, 64, 192, 64)
 atlas = ExtResource("2_1fu4h")
 region = Rect2(0, 192, 192, 64)
 
-[node name="Mana Display" type="Control"]
+[node name="Mana Display" type="Control" unique_id=1383789367]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -29,7 +29,7 @@ grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("1_o5w7v")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1477430151]
 layout_mode = 0
 offset_top = -64.0
 offset_right = 192.0
@@ -41,7 +41,7 @@ texture_under = SubResource("AtlasTexture_7nme8")
 texture_over = SubResource("AtlasTexture_l0gwj")
 texture_progress = SubResource("AtlasTexture_lnyph")
 
-[node name="Label" type="Label" parent="TextureProgressBar"]
+[node name="Label" type="Label" parent="TextureProgressBar" unique_id=2140849647]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.234375
@@ -57,7 +57,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1631002033]
 layout_mode = 0
 offset_top = -64.0
 offset_right = 192.0

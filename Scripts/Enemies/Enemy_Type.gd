@@ -15,6 +15,8 @@ signal damage_cat
 var follow_point:PathFollow2D
 var marching = true
 
+static var living_enemies = []
+
 func _physics_process(delta):
 	if LevelResources.game_end:
 		set_process(false)
@@ -39,10 +41,12 @@ func _ready():
 	follow_point = PathFollow2D.new()
 	follow_point.loop = false
 	path.add_child(follow_point)
+	living_enemies.append(self)
 
 func take_damage(damage:int):
 	Health -= damage
 	if Health <= 0:
+		LevelResources.Mana += reward
 		death()
 
 func _deal_damage():
@@ -57,9 +61,9 @@ func _deal_damage():
 	queue_free()
 
 func death():
-	LevelResources.Mana += reward
 	marching = false
 	animator.play("Death")
 	await animator.animation_finished
 	follow_point.queue_free()
+	living_enemies.erase(self)
 	queue_free()

@@ -2,4 +2,5 @@ extends Control
 
 func _process(delta):
 	$TextureProgressBar.value = LevelResources.Mana
-	$TextureProgressBar/Label.text = str(LevelResources.Mana) + "/100"
+	$TextureProgressBar.max_value = 25 + LevelResources.Wave * 50
+	$TextureProgressBar/Label.text = str(LevelResources.Mana) + "/" + str(25 + LevelResources.Wave * 50)

@@ -48,8 +48,9 @@ func _on_cooldown():
 func _cat_fire():
 	if stats.Hunger <= 0:
 		stats.emit_signal('starve')
-		$AnimationPlayer.play("Flee")
-		await $AnimationPlayer.animation_finished
+		if $AnimationPlayer.has_animation("Flee"):
+			$AnimationPlayer.play("Flee")
+			await $AnimationPlayer.animation_finished
 		emit_signal("cat_leaves")
 		LevelResources.Unused_Cats.append(stats)
 		return
