@@ -14,7 +14,7 @@ func _ready():
 	LevelResources.game_end = false
 	if not Bgm.playing:
 		Bgm.play()
-	LevelResources.Mana = 5
+	LevelResources.Mana = 25
 	LevelResources.Lives = 9
 	LevelResources.round = 1
 	LevelResources.Wave = 0
@@ -68,12 +68,15 @@ func _process(delta):
 		LevelResources.Wave += 1
 		match(LevelResources.Wave):
 			2:
+				$CanvasLayer/Control/CatContainer._addCat()
 				LevelResources.Mana = 0
 				spawnables.append(additional_enemy_templates[1])
 			3:
+				$CanvasLayer/Control/CatContainer._addCat()
 				LevelResources.Mana = 0
 				spawnables.append(additional_enemy_templates[0])
 			4:
+				$CanvasLayer/Control/CatContainer._addCat()
 				LevelResources.Mana = 0
 				spawnables.remove_at(0)
 			5:

@@ -266,3 +266,4 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=395761370]
 stream = ExtResource("3_et3ih")
+bus = &"Sfx"

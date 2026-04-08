@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b562edfc8fxal"]
+[gd_scene format=3 uid="uid://b562edfc8fxal"]
 
 [ext_resource type="Script" uid="uid://dy4uawt487jbl" path="res://lightning_bolt.gd" id="1_nw1b1"]
 [ext_resource type="Texture2D" uid="uid://d1vay32ntt6g4" path="res://Assets/Towers/Sword Cat/Projectile/Pierce.png" id="2_0v0u2"]
@@ -81,35 +81,34 @@ random_pitch = 1.25
 streams_count = 1
 stream_0/stream = ExtResource("3_17v6b")
 
-[node name="Sword Swipe" type="Node2D"]
+[node name="Sword Swipe" type="Node2D" unique_id=1704442011]
 z_index = 1
 script = ExtResource("1_nw1b1")
 
-[node name="Pierce" type="Sprite2D" parent="."]
+[node name="Pierce" type="Sprite2D" parent="." unique_id=1092633699]
 position = Vector2(27, -3)
 rotation = 0.45304
 texture = ExtResource("2_0v0u2")
 hframes = 3
 vframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5l4w6")
-}
-autoplay = "play"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=422962107]
+libraries/ = SubResource("AnimationLibrary_5l4w6")
+autoplay = &"play"
 
-[node name="Range" type="Area2D" parent="."]
+[node name="Range" type="Area2D" parent="." unique_id=685106483]
 position = Vector2(24, 0)
 input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1263090541]
 rotation = -1.5708
 scale = Vector2(0.5, 1)
 shape = SubResource("CircleShape2D_hip84")
 debug_color = Color(0.995026, 0, 0.212353, 0.42)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1430377752]
 stream = SubResource("AudioStreamRandomizer_0v0u2")
+bus = &"Sfx"
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]
