@@ -12,6 +12,5 @@ func _load():
 
 func _on_button_down():
 	$click.play()
-	print("Yurp")
 	emit_signal('summon', summon_option,cat)
 	get_parent().get_parent().visible = false

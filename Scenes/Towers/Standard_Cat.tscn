@@ -180,6 +180,7 @@ position = Vector2(0, -20)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D" unique_id=1442522783]
 stream = ExtResource("5_51cub")
+bus = &"Sfx"
 
 [node name="TowerWheel" type="Sprite2D" parent="Node2D" unique_id=1526693823]
 position = Vector2(0, -3)
@@ -188,6 +189,7 @@ texture = ExtResource("6_50g1d")
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node2D" unique_id=1686152706]
 stream = ExtResource("8_4whvd")
 volume_db = -5.0
+bus = &"Sfx"
 
 [node name="Enchant_Wheel" type="Node2D" parent="Node2D" unique_id=1498878591]
 z_index = 2
@@ -298,11 +300,13 @@ metadata/_edit_use_anchors_ = true
 [node name="BaseSwipe" type="AudioStreamPlayer" parent="." unique_id=706518787]
 stream = SubResource("AudioStreamRandomizer_8c63x")
 pitch_scale = 1.1
+bus = &"Sfx"
 
 [node name="Meow" type="AudioStreamPlayer" parent="." unique_id=1898413733]
 stream = SubResource("AudioStreamRandomizer_vx6u6")
 volume_db = -10.0
 pitch_scale = 0.9
+bus = &"Sfx"
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
 [connection signal="area_exited" from="Range" to="." method="_on_range_exited"]

@@ -26,4 +26,4 @@ func refresh():
 func _on_feed_button_button_down():
 	if LevelResources.Mana >= cat.feed_cost:
 		LevelResources.Mana -= cat.feed_cost
-		cat.feed(25)
+		cat.feed(50)

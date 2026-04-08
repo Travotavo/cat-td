@@ -615,6 +615,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Game_Over" unique_id=1050939668]
 stream = ExtResource("12_xivb0")
+bus = &"Music"
 
 [node name="Win_State" type="Control" parent="CanvasLayer" unique_id=1814724527]
 visible = false
@@ -696,9 +697,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Win_State" unique_id=1902138857]
 stream = ExtResource("28_kaolt")
+bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Win_State" unique_id=703235803]
 stream = ExtResource("29_dg57v")
+bus = &"Sfx"
 
 [node name="Cat_Spot" parent="." unique_id=1567770788 instance=ExtResource("8_rjdov")]
 position = Vector2(365, 117)

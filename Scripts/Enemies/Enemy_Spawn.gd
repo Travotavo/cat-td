@@ -1,11 +1,12 @@
 extends Node
 
-var enemy_template = preload("res://Scenes/Enemies/Blank_Enemy.tscn")
+var spawnables = [preload("res://Scenes/Enemies/Blank_Enemy.tscn")]
+var additional_enemy_templates = [preload("res://Scenes/Enemies/Tanky_Enemy.tscn"),preload("res://Scenes/Enemies/Speedy_Enemy.tscn")]
 
-@export var Starting_Wave_Count:int = 5
+@export var Starting_Wave_Allowance:int = 4
 var spawned = 0
 @export var scaling_number = 3
-@export var Starting_Wave_Density:float = 4
+@export var Starting_Wave_Density:float = 2
 
 @export var Wave_Interval:float = 20.0
 
@@ -13,9 +14,10 @@ func _ready():
 	LevelResources.game_end = false
 	if not Bgm.playing:
 		Bgm.play()
-	LevelResources.Mana = 15
+	LevelResources.Mana = 25
 	LevelResources.Lives = 9
 	LevelResources.round = 1
+	LevelResources.Wave = 0
 	for cat in LevelResources.Cats:
 		cat.Hunger = cat.Max_Hunger
 	Engine.time_scale = 1
@@ -23,22 +25,24 @@ func _ready():
 	$WaveTimers/Density_Timer.start()
 
 func _on_timer_timeout():
-	var enemy:Enemy = enemy_template.instantiate()
+	var enemy:Enemy = spawnables.pick_random().instantiate()
 	enemy.path = $Path2D
 	add_child(enemy)
-	spawned += 1
-	if spawned != Starting_Wave_Count:
+	spawned += enemy.reward
+	if spawned <= Starting_Wave_Allowance:
+		$WaveTimers/Density_Timer.wait_time = Starting_Wave_Density * enemy.reward
 		$WaveTimers/Density_Timer.start()
 	else:
+		print("Next Wave")
 		$WaveTimers/Wave_Timer.wait_time = Wave_Interval
 		$WaveTimers/Wave_Timer.start()
 
 func _on_scale_up():
 	LevelResources.round += 1
-	Starting_Wave_Density = lerpf(Starting_Wave_Density, 0.5, 0.25)
+	Starting_Wave_Density = lerpf(Starting_Wave_Density, 0.25, 0.25)
 	spawned = 0
 	$WaveTimers/Density_Timer.wait_time = Starting_Wave_Density
-	Starting_Wave_Count += scaling_number
+	Starting_Wave_Allowance += scaling_number
 	scaling_number += 1
 	$WaveTimers/Density_Timer.start()
 
@@ -60,9 +64,34 @@ func _process(delta):
 		LevelResources.game_end = true
 		$CanvasLayer/Game_Over.visible = true
 		$CanvasLayer/Game_Over/AnimationPlayer.play("Game_Over")
-	if LevelResources.Mana >= 100:
-		Bgm.stop()
-		Engine.time_scale = 1
-		LevelResources.game_end = true
-		$CanvasLayer/Win_State.visible = true
-		$CanvasLayer/Win_State/AnimationPlayer.play("Victory")
+	if LevelResources.Mana >= 25 + LevelResources.Wave * 50:
+		LevelResources.Wave += 1
+		match(LevelResources.Wave):
+			2:
+				$CanvasLayer/Control/CatContainer._addCat()
+				LevelResources.Mana = 0
+				spawnables.append(additional_enemy_templates[1])
+			3:
+				$CanvasLayer/Control/CatContainer._addCat()
+				LevelResources.Mana = 0
+				spawnables.append(additional_enemy_templates[0])
+			4:
+				$CanvasLayer/Control/CatContainer._addCat()
+				LevelResources.Mana = 0
+				spawnables.remove_at(0)
+			5:
+				#This is spawn boss only
+				pass
+		Starting_Wave_Allowance /= 2
+		scaling_number = 3
+		if LevelResources.Wave == 4:
+			Bgm.stop()
+			Engine.time_scale = 1
+			LevelResources.game_end = true
+			$CanvasLayer/Win_State.visible = true
+			$CanvasLayer/Win_State/AnimationPlayer.play("Victory")
+		var the_enemies = Enemy.living_enemies.duplicate()
+		for broom in the_enemies:
+			if broom != null:
+				broom.death()
+			await get_tree().create_timer(0.2).timeout
