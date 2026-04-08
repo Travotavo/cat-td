@@ -3,9 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://d14uwldy4c0o2" path="res://Assets/Menus/PAUSE MENU.png" id="1_cianu"]
 [ext_resource type="FontFile" uid="uid://b4mk3fybhx2ch" path="res://Assets/font/PIXEAB__.TTF" id="2_rqyw7"]
 [ext_resource type="Script" uid="uid://bhnkpk7co8xgq" path="res://Scenes/Menus/volume_slider.gd" id="3_cvc81"]
+[ext_resource type="Script" uid="uid://bwimsmp3prun8" path="res://Scenes/Menus/pauseQuitButton.gd" id="4_cvc81"]
+[ext_resource type="AudioStream" uid="uid://dp240anvp2yrh" path="res://Assets/sfx/broom_break.wav" id="4_x6o4q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqyw7"]
 bg_color = Color(0.14901961, 0.2901961, 0.44313726, 0.69411767)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.07058824, 0.08235294, 0.19607843, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="PauseMenu" type="Node2D" unique_id=994878576]
 
@@ -53,36 +64,58 @@ theme_override_constants/margin_right = 27
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer2/MarginContainer" unique_id=1211577067]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1152184643]
+[node name="Master" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1152184643]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
 theme_override_fonts/font = ExtResource("2_rqyw7")
 text = "Master Volume"
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1094851176]
+[node name="Master HSlider" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1094851176]
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_cvc81")
 bus_name = "Master"
 
-[node name="Label2" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=623091427]
+[node name="Music" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=2095410538]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rqyw7")
+text = "Music  Volume"
+
+[node name="Music HSlider3" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1511410676]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_cvc81")
+bus_name = "Music"
+
+[node name="SFX" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=623091427]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rqyw7")
 text = "SFX Volume"
 
-[node name="HSlider2" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=410157302]
+[node name="SFX HSlider2" type="HSlider" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=410157302 node_paths=PackedStringArray("sfx_name")]
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_cvc81")
-bus_name = "Master"
+bus_name = "Sfx"
+sfx_name = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/SFX HSlider2" unique_id=1393617659]
+stream = ExtResource("4_x6o4q")
+bus = &"Sfx"
 
 [node name="Button" type="Button" parent="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1327693598]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
 theme_override_fonts/font = ExtResource("2_rqyw7")
-text = "Quit"
+text = "Main Menu"
 flat = true
 alignment = 0
+script = ExtResource("4_cvc81")
+
+[connection signal="drag_ended" from="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/SFX HSlider2" to="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/SFX HSlider2" method="_on_drag_ended"]
+[connection signal="button_down" from="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/Button" to="MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/Button" method="_on_button_down"]

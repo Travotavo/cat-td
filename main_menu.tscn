@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://o1eck66i4ymt" path="res://play_button.gd" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="3_nlkkf"]
 [ext_resource type="Script" uid="uid://0uykri4ntnxg" path="res://button_3.gd" id="5_glbon"]
-[ext_resource type="Script" path="res://credits_button.gd" id="5_nlkkf"]
+[ext_resource type="Script" uid="uid://cogqodlyrmha4" path="res://credits_button.gd" id="5_nlkkf"]
+[ext_resource type="Script" uid="uid://di7b7lts0a11w" path="res://pauseMenuButton.gd" id="5_qe12f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
 bg_color = Color(0, 0, 0, 0.596078)
@@ -88,6 +89,7 @@ theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
 text = "Settings(X)"
 alignment = 0
+script = ExtResource("5_qe12f")
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=1313371]
 layout_mode = 2
