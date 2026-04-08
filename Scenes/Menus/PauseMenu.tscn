@@ -18,6 +18,10 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6o4q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52or0"]
+
 [node name="PauseMenu" type="Node2D" unique_id=994878576]
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=486965628]
@@ -41,7 +45,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rqyw7")
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer" unique_id=2032294853]
 layout_mode = 2
 theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
+theme_override_constants/margin_top = 18
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
@@ -53,13 +57,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
 theme_override_fonts/font = ExtResource("2_rqyw7")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 32
 text = "options"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2" unique_id=1001092073]
 layout_mode = 2
 theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 51
+theme_override_constants/margin_top = 53
 theme_override_constants/margin_right = 27
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer2/MarginContainer" unique_id=1211577067]
@@ -112,6 +116,8 @@ bus = &"Sfx"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85490197, 0.88235295, 0.8980392, 1)
 theme_override_fonts/font = ExtResource("2_rqyw7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_x6o4q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_52or0")
 text = "Main Menu"
 flat = true
 alignment = 0

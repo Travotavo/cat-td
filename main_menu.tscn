@@ -40,10 +40,10 @@ position = Vector2(320, 180)
 texture = ExtResource("1_7vrkn")
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=741104449]
-offset_left = 228.0
-offset_top = 6.0
-offset_right = 676.0
-offset_bottom = 183.0
+offset_left = 197.0
+offset_top = 5.0
+offset_right = 645.0
+offset_bottom = 182.0
 theme_override_colors/default_color = Color(0.172549, 0.0745098, 0.160784, 1)
 theme_override_colors/font_outline_color = Color(0.172549, 0.0745098, 0.160784, 1)
 theme_override_fonts/normal_font = ExtResource("2_fu7sn")
@@ -54,18 +54,41 @@ text = "My[font_size=32] Wizard [font_size=8][outline_size=8][color=dfbb89]Doesn
 horizontal_alignment = 1
 
 [node name="Label2" type="RichTextLabel" parent="." unique_id=1248694622]
-offset_left = 111.0
-offset_top = 70.0
-offset_right = 500.0
-offset_bottom = 199.0
+offset_left = 97.0
+offset_top = 79.0
+offset_right = 486.0
+offset_bottom = 208.0
 theme_override_colors/default_color = Color(0.172549, 0.0745098, 0.160784, 1)
 theme_override_colors/font_outline_color = Color(0.172549, 0.0745098, 0.160784, 1)
 theme_override_fonts/normal_font = ExtResource("2_fu7sn")
 bbcode_enabled = true
 text = "
-[font_size=16][outline_size=12][color=dfbb89]Now He's Sending[/color][/outline_size] [font_size=32][tornado radius=6.0]Brooms[/tornado] [font_size=8]
-to Pour Buckets of Water on
-my head ?!?!!?"
+[font_size=16][outline_size=12][color=dfbb89]Now He's Sending[/color][/outline_size]  [font_size=8]"
+horizontal_alignment = 1
+
+[node name="Label3" type="RichTextLabel" parent="." unique_id=946957175]
+offset_left = 312.0
+offset_top = 90.0
+offset_right = 701.0
+offset_bottom = 219.0
+theme_override_colors/default_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_fonts/normal_font = ExtResource("2_fu7sn")
+bbcode_enabled = true
+text = "[font_size=32][tornado radius=6.0] Brooms"
+horizontal_alignment = 1
+
+[node name="Label4" type="RichTextLabel" parent="." unique_id=1967488430]
+offset_left = 136.0
+offset_top = 136.0
+offset_right = 525.0
+offset_bottom = 265.0
+theme_override_colors/default_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.0745098, 0.160784, 1)
+theme_override_fonts/normal_font = ExtResource("2_fu7sn")
+bbcode_enabled = true
+text = "[font_size=16] to Pour Buckets of Water on
+my head ?!?!!?  "
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1163722457]
@@ -75,7 +98,7 @@ offset_right = 641.0
 offset_bottom = 332.0
 theme_override_constants/separation = 16
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=184353114]
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=184353114]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
@@ -83,15 +106,15 @@ text = "Play"
 alignment = 0
 script = ExtResource("3_fu7sn")
 
-[node name="Button4" type="Button" parent="VBoxContainer" unique_id=259398417]
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=259398417]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
-text = "Settings(X)"
+text = "Options"
 alignment = 0
 script = ExtResource("5_qe12f")
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1313371]
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1313371]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
@@ -99,7 +122,7 @@ text = "Credits"
 alignment = 0
 script = ExtResource("5_nlkkf")
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1838047287]
+[node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=1838047287]
 layout_mode = 2
 theme = SubResource("Theme_8qtwp")
 theme_override_fonts/font = ExtResource("3_nlkkf")
@@ -107,7 +130,7 @@ text = "How to play"
 alignment = 0
 script = ExtResource("5_glbon")
 
-[connection signal="button_down" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_button_down"]
-[connection signal="button_down" from="VBoxContainer/Button4" to="VBoxContainer/Button4" method="_on_button_down"]
-[connection signal="button_down" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_button_down"]
-[connection signal="button_down" from="VBoxContainer/Button3" to="VBoxContainer/Button3" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/Options" to="VBoxContainer/Options" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/Credits" to="VBoxContainer/Credits" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/Tutorial" to="VBoxContainer/Tutorial" method="_on_button_down"]

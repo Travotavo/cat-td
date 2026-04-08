@@ -48,8 +48,10 @@ func _on_scale_up():
 
 func _process(delta):
 	if Input.is_action_just_pressed("leave"):
-		Engine.time_scale = 1
-		SceneTransition.change_scene_to_file("res://main_menu.tscn")
+		Engine.time_scale = 0
+		$CanvasLayer/PauseOverlay.visible = !$CanvasLayer/PauseOverlay.visible
+		$"CanvasLayer/Control/Pause Button".button_pressed = true
+		$"CanvasLayer/Control/Pause Button".toggle = true
 	if LevelResources.game_end:
 		if Input.is_action_just_pressed("press"):
 			if LevelResources.Lives == 0:
