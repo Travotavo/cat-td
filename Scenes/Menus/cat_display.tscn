@@ -22,15 +22,15 @@ shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784,
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brtj4"]
 atlas = ExtResource("4_iinl0")
-region = Rect2(0, 0, 96, 32)
+region = Rect2(0, 0, 128, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7jon"]
 atlas = ExtResource("4_iinl0")
-region = Rect2(0, 64, 96, 32)
+region = Rect2(0, 64, 128, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nybq7"]
 atlas = ExtResource("4_iinl0")
-region = Rect2(0, 32, 96, 32)
+region = Rect2(0, 32, 128, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlkiy"]
 atlas = ExtResource("5_1vley")
@@ -47,9 +47,9 @@ script = ExtResource("1_fsu8v")
 material = SubResource("ShaderMaterial_okqra")
 layout_mode = 0
 offset_left = 6.0
-offset_top = -16.0
-offset_right = 102.0
-offset_bottom = 24.0
+offset_top = 2.0
+offset_right = 166.0
+offset_bottom = 42.0
 min_value = -37.0
 max_value = 120.0
 texture_under = SubResource("AtlasTexture_brtj4")
@@ -58,10 +58,10 @@ texture_progress = SubResource("AtlasTexture_nybq7")
 
 [node name="Label" type="Label" parent="TextureProgressBar" unique_id=638298319]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 6.0
-offset_right = 84.0
-offset_bottom = 29.0
+offset_left = 37.0
+offset_top = 7.0
+offset_right = 99.0
+offset_bottom = 30.0
 theme_override_fonts/font = ExtResource("5_dlkiy")
 theme_override_font_sizes/font_size = 8
 text = "GlepGlorp"
@@ -70,10 +70,10 @@ vertical_alignment = 1
 
 [node name="Feed_Button" type="TextureButton" parent="TextureProgressBar" unique_id=1510484736]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 8.0
-offset_right = 95.0
-offset_bottom = 25.0
+offset_left = 122.0
+offset_top = -2.0
+offset_right = 186.0
+offset_bottom = 62.0
 pivot_offset = Vector2(8, 8)
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_1vley")
@@ -83,21 +83,24 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="TextureProgressBar/Feed_Button" unique_id=685188013]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6
-anchor_top = 0.625
-anchor_right = 1.55
-anchor_bottom = 1.32813
+anchor_left = 0.203125
+anchor_top = 0.21875
+anchor_right = 1.1531249
+anchor_bottom = 0.92188
+offset_left = -26.0
+offset_top = 1.0
+offset_right = -26.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 1
-theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_color = Color(0.9411765, 0.8784314, 0.72156864, 1)
 theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_dlkiy")
 theme_override_font_sizes/font_size = 8
 text = "5"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Scavenge" type="Timer" parent="." unique_id=1340341878]
 wait_time = 0.5

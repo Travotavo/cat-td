@@ -458,10 +458,10 @@ layout_mode = 1
 
 [node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1046585287]
 layout_mode = 0
-offset_left = 528.0
+offset_left = 440.0
 offset_right = 640.0
-offset_bottom = 106.0
-theme_override_constants/separation = 18
+offset_bottom = 96.0
+theme_override_constants/separation = 32
 alignment = 1
 script = ExtResource("4_rjdov")
 
