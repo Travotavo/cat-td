@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://dmgnvo11dyno7" path="res://pause_button.gd" id="7_2xk72"]
 [ext_resource type="PackedScene" uid="uid://dmfmy7258pykw" path="res://Scenes/Towers/tower_slot.tscn" id="8_rjdov"]
 [ext_resource type="FontFile" uid="uid://djdfplpobr3ks" path="res://Assets/font/pixel_pirate.ttf" id="11_2kw24"]
-[ext_resource type="Texture2D" uid="uid://csypdykoaeq1b" path="res://Assets/Menus/UI buttons/ff_scroll.png" id="11_8mvp3"]
 [ext_resource type="Script" uid="uid://mtxio0n12ai2" path="res://fast_forward.gd" id="11_w12a1"]
 [ext_resource type="AudioStream" uid="uid://d2rhc8mirxb1h" path="res://Assets/sfx/loser.wav" id="12_xivb0"]
 [ext_resource type="Texture2D" uid="uid://dso0tpvclmsaj" path="res://Assets/Menus/round_counter.png" id="13_r7yy2"]
@@ -53,23 +52,27 @@ Button/styles/normal = SubResource("StyleBoxTexture_dg57v")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w12a1"]
 atlas = ExtResource("6_p0hjm")
-region = Rect2(0, 256, 64, 64)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8mvp3"]
 atlas = ExtResource("6_p0hjm")
-region = Rect2(64, 256, 64, 64)
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d18lo"]
 atlas = ExtResource("6_p0hjm")
-region = Rect2(0, 256, 64, 62)
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7rvm"]
-atlas = ExtResource("11_8mvp3")
-region = Rect2(0, 0, 64, 64)
+atlas = ExtResource("6_p0hjm")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvvbi"]
-atlas = ExtResource("11_8mvp3")
-region = Rect2(64, 0, 64, 64)
+atlas = ExtResource("6_p0hjm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyh7r"]
+atlas = ExtResource("6_p0hjm")
+region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_wl6r6"]
 frames = 10
@@ -481,10 +484,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -187.0
-offset_top = -77.0
-offset_right = -123.0
-offset_bottom = -13.0
+offset_left = -147.0
+offset_top = -83.0
+offset_right = -83.0
+offset_bottom = -19.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_xivb0")
@@ -501,16 +504,17 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -124.0
-offset_top = -77.0
-offset_right = -60.0
-offset_bottom = -13.0
+offset_left = -84.0
+offset_top = -83.0
+offset_right = -20.0
+offset_bottom = -19.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_xivb0")
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_i7rvm")
 texture_pressed = SubResource("AtlasTexture_nvvbi")
+texture_hover = SubResource("AtlasTexture_eyh7r")
 script = ExtResource("11_w12a1")
 
 [node name="Round Info" type="TextureRect" parent="CanvasLayer/Control" unique_id=762631645]

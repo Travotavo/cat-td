@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhm35hiyaj33k"
-path="res://.godot/imported/button_atlas.png-98658383cb009b68950c04dda4d7f9a4.ctex"
+uid="uid://c32syfkkfn00c"
+path="res://.godot/imported/questionmark.png-4136651cd37ba7adcec2120e49edfa6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menus/UI buttons/button_atlas.png"
-dest_files=["res://.godot/imported/button_atlas.png-98658383cb009b68950c04dda4d7f9a4.ctex"]
+source_file="res://Assets/Menus/UI buttons/questionmark.png"
+dest_files=["res://.godot/imported/questionmark.png-4136651cd37ba7adcec2120e49edfa6c.ctex"]
 
 [params]
 
