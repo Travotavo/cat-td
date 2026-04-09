@@ -23,18 +23,20 @@ shader_parameter/target_colors = PackedColorArray(0.172549, 0.0745098, 0.160784,
 [sub_resource type="AtlasTexture" id="AtlasTexture_brtj4"]
 atlas = ExtResource("4_iinl0")
 region = Rect2(0, 0, 128, 32)
+margin = Rect2(-9, -11, -12, -16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nybq7"]
+atlas = ExtResource("4_iinl0")
+region = Rect2(0, 32, 128, 32)
+margin = Rect2(-9, -11, -14, -16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7jon"]
 atlas = ExtResource("4_iinl0")
 region = Rect2(0, 64, 128, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nybq7"]
-atlas = ExtResource("4_iinl0")
-region = Rect2(0, 32, 128, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlkiy"]
 atlas = ExtResource("5_1vley")
-region = Rect2(0, -1, 15, 16)
+region = Rect2(0, -1, 64, 34)
 
 [node name="Cat Display" type="Control" unique_id=733667520]
 layout_mode = 3
@@ -43,6 +45,18 @@ offset_top = 14.0
 offset_bottom = 14.0
 script = ExtResource("1_fsu8v")
 
+[node name="ActualProgress" type="TextureProgressBar" parent="." unique_id=1873833189]
+material = SubResource("ShaderMaterial_okqra")
+layout_mode = 0
+offset_left = 41.0
+offset_top = 12.0
+offset_right = 129.0
+offset_bottom = 28.0
+value = 1.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_brtj4")
+texture_progress = SubResource("AtlasTexture_nybq7")
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=261303572]
 material = SubResource("ShaderMaterial_okqra")
 layout_mode = 0
@@ -50,11 +64,7 @@ offset_left = 6.0
 offset_top = 2.0
 offset_right = 166.0
 offset_bottom = 42.0
-min_value = -37.0
-max_value = 120.0
-texture_under = SubResource("AtlasTexture_brtj4")
 texture_over = SubResource("AtlasTexture_g7jon")
-texture_progress = SubResource("AtlasTexture_nybq7")
 
 [node name="Label" type="Label" parent="TextureProgressBar" unique_id=638298319]
 layout_mode = 0

@@ -5,15 +5,12 @@ extends Control
 func _load():
 	$TextureProgressBar.material.set("shader_parameter/colors",cat.color)
 	$TextureProgressBar/Label.text = cat.nickname
+	$ActualProgress.material.set("shader_parameter/colors",cat.color)
 	cat.connect('starve', scavenge)
 
 func _process(delta):
-	$TextureProgressBar.value = cat.Hunger
+	$ActualProgress.value = cat.Hunger
 	$TextureProgressBar/Feed_Button/Label.text = str(cat.feed_cost)
-	if LevelResources.Used_Cats.has(cat):
-		modulate = Color.DIM_GRAY
-	else:
-		modulate = Color.WHITE
 
 func scavenge():
 	LevelResources.Used_Cats.erase(cat)
