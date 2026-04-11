@@ -14,7 +14,7 @@ func _ready():
 	LevelResources.game_end = false
 	if not Bgm.playing:
 		Bgm.play()
-	LevelResources.Mana = 25
+	LevelResources.Mana = 10
 	LevelResources.Lives = 9
 	LevelResources.round = 1
 	LevelResources.Wave = 0
@@ -86,7 +86,7 @@ func _process(delta):
 				pass
 		Starting_Wave_Allowance /= 2
 		scaling_number = 3
-		if LevelResources.Wave == 4:
+		if LevelResources.Wave == 5:
 			Bgm.stop()
 			Engine.time_scale = 1
 			LevelResources.game_end = true

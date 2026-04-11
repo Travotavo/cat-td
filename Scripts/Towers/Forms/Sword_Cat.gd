@@ -15,7 +15,6 @@ func on_enter():
 	node.stats.feed_cost = 5
 
 func _attack(damage):
-	var lightning_targets = node.Near_Brooms.duplicate()
 	node.Near_Brooms.sort_custom(pick_sort(1))
 	var strike = projectile.instantiate()
 	face_target(node.Near_Brooms[0])

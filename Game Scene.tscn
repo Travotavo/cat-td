@@ -474,9 +474,6 @@ layout_mode = 2
 [node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" unique_id=521343010 instance=ExtResource("5_x4g8q")]
 layout_mode = 2
 
-[node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" unique_id=1045930323 instance=ExtResource("5_x4g8q")]
-layout_mode = 2
-
 [node name="Pause Button" type="TextureButton" parent="CanvasLayer/Control" unique_id=694042856]
 layout_mode = 1
 anchors_preset = 3

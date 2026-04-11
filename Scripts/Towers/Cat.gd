@@ -16,6 +16,7 @@ func _ready():
 	AddState("Base", Cat_Form.new())
 	AddState("Zap", Zap_Cat.new())
 	AddState("Sword", Sword_Cat.new())
+	AddState("Fish", Fisher_Cat.new())
 	SetState(stats.State)
 
 func set_range(new_range:int):

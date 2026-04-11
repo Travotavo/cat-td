@@ -42,6 +42,13 @@
 [ext_resource type="Texture2D" uid="uid://qvr2km578gs" path="res://Assets/Menus/Cat Select Buttons/Dispell Cat/catdispell10.png" id="35_w2aj8"]
 [ext_resource type="AudioStream" uid="uid://g14tv4367lgj" path="res://Assets/sfx/swipework.wav" id="39_8c63x"]
 [ext_resource type="AudioStream" uid="uid://dc58hshgb3p0b" path="res://Assets/sfx/meow.wav" id="39_vx6u6"]
+[ext_resource type="Texture2D" uid="uid://dit5aq6uhoitw" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/fish_normal.png" id="41_nhagr"]
+[ext_resource type="Texture2D" uid="uid://ck0bp857r4py0" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select1.png" id="42_y6d80"]
+[ext_resource type="Texture2D" uid="uid://c0n5vx6rw1nqi" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select2.png" id="43_lbbe5"]
+[ext_resource type="Texture2D" uid="uid://cfym7lf17bnjs" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select3.png" id="44_2583o"]
+[ext_resource type="Texture2D" uid="uid://csehnxgv24fjx" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select4.png" id="45_sip54"]
+[ext_resource type="Texture2D" uid="uid://dly433otxwacg" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select5.png" id="46_hglby"]
+[ext_resource type="Texture2D" uid="uid://ca24yrqehm65x" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select6.png" id="47_t20h3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyojs"]
 resource_local_to_scene = true
@@ -129,6 +136,21 @@ frame_7/texture = ExtResource("22_au1p0")
 frame_7/duration = 0.05
 frame_8/texture = ExtResource("23_ny76y")
 frame_8/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_j5f2o"]
+frames = 6
+frame_0/texture = ExtResource("42_y6d80")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("43_lbbe5")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("44_2583o")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("45_sip54")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("46_hglby")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("47_t20h3")
+frame_5/duration = 0.05
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8c63x"]
 random_pitch = 1.25
@@ -297,6 +319,41 @@ theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
 
+[node name="Fish_Button" type="Node2D" parent="Node2D/Enchant_Wheel" unique_id=349954431 node_paths=PackedStringArray("cat_parent")]
+script = ExtResource("4_yyojs")
+form = "Fish"
+cost = 25
+cat_parent = NodePath("../../..")
+
+[node name="Enchant_Button" type="TextureButton" parent="Node2D/Enchant_Wheel/Fish_Button" unique_id=390006066]
+offset_left = -7.0
+offset_top = -32.0
+offset_right = 53.0
+offset_bottom = 32.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 4
+texture_normal = ExtResource("41_nhagr")
+texture_hover = SubResource("AnimatedTexture_j5f2o")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Node2D/Enchant_Wheel/Fish_Button/Enchant_Button" unique_id=1033871326]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.466667
+anchor_top = 0.5
+anchor_right = 1.41667
+anchor_bottom = 1.20313
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.776471, 0.278431, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.164706, 0.129412, 0.207843, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("28_rwmmp")
+theme_override_font_sizes/font_size = 32
+text = "25"
+metadata/_edit_use_anchors_ = true
+
 [node name="BaseSwipe" type="AudioStreamPlayer" parent="." unique_id=706518787]
 stream = SubResource("AudioStreamRandomizer_8c63x")
 pitch_scale = 1.1
@@ -315,3 +372,4 @@ bus = &"Sfx"
 [connection signal="button_down" from="Node2D/Enchant_Wheel/Fire_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Fire_Button" method="_on_button_down"]
 [connection signal="button_down" from="Node2D/Enchant_Wheel/Zap_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Zap_Button" method="_on_button_down"]
 [connection signal="button_down" from="Node2D/Enchant_Wheel/Sword_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Sword_Button" method="_on_button_down"]
+[connection signal="button_down" from="Node2D/Enchant_Wheel/Fish_Button/Enchant_Button" to="Node2D/Enchant_Wheel/Fish_Button" method="_on_button_down"]

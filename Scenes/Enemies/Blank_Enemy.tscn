@@ -220,7 +220,7 @@ bg_color = Color(0.85098, 0.160784, 0.305882, 1)
 y_sort_enabled = true
 script = ExtResource("1_1ab6d")
 SPEED = 25
-reward = 2
+reward = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1228047102]
 libraries/ = SubResource("AnimationLibrary_s782l")

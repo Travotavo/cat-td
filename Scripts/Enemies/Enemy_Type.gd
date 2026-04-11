@@ -48,6 +48,8 @@ func take_damage(damage:int):
 	if Health <= 0:
 		LevelResources.Mana += reward
 		death()
+		return true
+	return false
 
 func _deal_damage():
 	marching = false

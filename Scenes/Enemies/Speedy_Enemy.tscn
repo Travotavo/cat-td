@@ -221,6 +221,7 @@ y_sort_enabled = true
 script = ExtResource("1_sfkyb")
 SPEED = 50
 Health = 6
+reward = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=587673041]
 libraries/ = SubResource("AnimationLibrary_s782l")

@@ -1,0 +1,2 @@
+extends Cat_Form
+class_name Litter_Cat

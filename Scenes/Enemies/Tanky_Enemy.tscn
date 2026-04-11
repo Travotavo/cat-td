@@ -220,8 +220,8 @@ bg_color = Color(0.85098, 0.160784, 0.305882, 1)
 y_sort_enabled = true
 script = ExtResource("1_sfkyb")
 SPEED = 20
-Health = 20
-reward = 3
+Health = 30
+reward = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=587673041]
 libraries/ = SubResource("AnimationLibrary_s782l")
