@@ -52,6 +52,7 @@ func take_damage(damage:int):
 	return false
 
 func _deal_damage():
+	living_enemies.erase(self)
 	marching = false
 	animator.play("Spill")
 	await animator.animation_finished

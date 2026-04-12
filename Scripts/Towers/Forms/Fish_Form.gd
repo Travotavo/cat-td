@@ -15,6 +15,7 @@ func on_enter():
 func _attack(damage):
 	var targets = Enemy.living_enemies.duplicate()
 	targets.sort_custom(pick_sort(4))
+	if (targets[0] as Enemy).is_queued_for_deletion():return
 	face_target(targets[0])
 	if (targets[0] as Enemy).take_damage(damage/2):
 		for cat in LevelResources.Used_Cats:
