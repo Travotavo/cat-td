@@ -5,6 +5,7 @@ var node:Cat
 @onready var visual = preload("res://Assets/Towers/Normal_Cat-Sheet.png")
 @onready var visual_lib = preload("res://Assets/Towers/Animation Resources/basic_cat.res")
 
+var attacks_anyways = false
 
 func on_enter():
 	#Set Animations, Particles, and whatever else necessary

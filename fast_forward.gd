@@ -1,12 +1,13 @@
 extends TextureButton
 
 var toggle = false
+var time_scale = 1
 
 func _on_button_down():
 	if toggle:
-		$"../Pause Button".time_scale = 1
-		Engine.time_scale = Engine.time_scale / 3
+		time_scale = 1
+		Engine.time_scale = time_scale
 	else:
-		$"../Pause Button".time_scale = 3
-		Engine.time_scale = Engine.time_scale * 3
+		time_scale = 3
+		Engine.time_scale = time_scale
 	toggle = not toggle

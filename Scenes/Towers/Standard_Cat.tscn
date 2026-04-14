@@ -164,6 +164,8 @@ streams_count = 1
 stream_0/stream = ExtResource("39_vx6u6")
 
 [node name="Cat" type="Node2D" unique_id=1254297430]
+process_mode = 1
+y_sort_enabled = true
 script = ExtResource("1_lixlc")
 
 [node name="Range" type="Area2D" parent="." unique_id=1344556450]
@@ -190,6 +192,7 @@ libraries/ = ExtResource("2_k5b2v")
 autoplay = &"Idle"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=733842490]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_03hq3")
 texture = ExtResource("2_rpm7p")
 offset = Vector2(0, -32)
@@ -198,6 +201,7 @@ vframes = 5
 frame = 10
 
 [node name="Node2D" type="Node2D" parent="." unique_id=929330399]
+process_mode = 3
 position = Vector2(0, -20)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D" unique_id=1442522783]

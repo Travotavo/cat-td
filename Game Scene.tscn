@@ -376,10 +376,12 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akm4a"]
 
 [node name="GameScene" type="Node2D" unique_id=899532236]
+process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_x4g8q")
 
 [node name="WaveTimers" type="Node2D" parent="." unique_id=649517513]
+process_mode = 1
 
 [node name="Density_Timer" type="Timer" parent="WaveTimers" unique_id=396592709]
 wait_time = 2.5
@@ -455,6 +457,7 @@ hframes = 10
 frame = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1905433016]
+process_mode = 3
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=81936926]
 layout_mode = 3
@@ -838,23 +841,33 @@ alignment = 0
 script = ExtResource("33_jkuog")
 
 [node name="Cat Spots" type="Node2D" parent="." unique_id=710898626]
+process_mode = 3
+y_sort_enabled = true
 position = Vector2(402, 264)
 
 [node name="Cat_Spot" parent="Cat Spots" unique_id=1567770788 instance=ExtResource("8_rjdov")]
-position = Vector2(0, -129)
+y_sort_enabled = true
+position = Vector2(0, -128)
 
 [node name="Cat_Spot2" parent="Cat Spots" unique_id=367058254 instance=ExtResource("8_rjdov")]
+y_sort_enabled = true
 
 [node name="Cat_Spot3" parent="Cat Spots" unique_id=599642393 instance=ExtResource("8_rjdov")]
-position = Vector2(-161, 16)
+y_sort_enabled = true
+position = Vector2(-160, 16)
 
 [node name="Cat_Spot4" parent="Cat Spots" unique_id=708088982 instance=ExtResource("8_rjdov")]
-position = Vector2(-96, -113)
+y_sort_enabled = true
+position = Vector2(-96, -112)
 
 [node name="Cat_Spot5" parent="Cat Spots" unique_id=786248260 instance=ExtResource("8_rjdov")]
-position = Vector2(-226, -16)
+y_sort_enabled = true
+position = Vector2(-224, -16)
 
 [node name="Projectile_Parent" type="Node2D" parent="." unique_id=1909179815 groups=["Projectile_Parent"]]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1829355616]
+position = Vector2(320, 180)
 
 [connection signal="timeout" from="WaveTimers/Density_Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WaveTimers/Wave_Timer" to="." method="_on_scale_up"]

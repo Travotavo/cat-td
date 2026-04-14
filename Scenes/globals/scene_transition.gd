@@ -5,3 +5,4 @@ func change_scene_to_file(file:String):
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file(file)
 	$AnimationPlayer.play_backwards("wipe")
+	get_tree().paused = false

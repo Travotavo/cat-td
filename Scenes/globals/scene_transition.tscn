@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://pbgpq3cbll8"]
+[gd_scene format=3 uid="uid://pbgpq3cbll8"]
 
 [ext_resource type="Script" uid="uid://bts8svqqjojjq" path="res://Scenes/globals/scene_transition.gd" id="1_w3kyk"]
 
@@ -39,11 +39,12 @@ _data = {
 &"wipe": SubResource("Animation_ee8c0")
 }
 
-[node name="transition" type="CanvasLayer"]
+[node name="transition" type="CanvasLayer" unique_id=2006513832]
+process_mode = 3
 layer = 100
 script = ExtResource("1_w3kyk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=226480562]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,7 +53,5 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_w3kyk")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=10325741]
+libraries/ = SubResource("AnimationLibrary_w3kyk")

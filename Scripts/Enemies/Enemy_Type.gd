@@ -2,7 +2,7 @@ extends Node2D
 class_name Enemy
 
 signal damage_cat
-
+signal is_kill
 #Unit stats
 @export var SPEED:int = 1
 @export var Health:int = 12
@@ -41,6 +41,7 @@ func _ready():
 	follow_point = PathFollow2D.new()
 	follow_point.loop = false
 	path.add_child(follow_point)
+	$ProgressBar.max_value = Health
 	living_enemies.append(self)
 
 func take_damage(damage:int):
@@ -59,9 +60,8 @@ func _deal_damage():
 	LevelResources.Lives -= 1
 	animator.play("Death")
 	await animator.animation_finished
-	damage_cat.emit()
 	follow_point.queue_free()
-	queue_free()
+	damage_cat.emit()
 
 func death():
 	marching = false
@@ -69,4 +69,4 @@ func death():
 	await animator.animation_finished
 	follow_point.queue_free()
 	living_enemies.erase(self)
-	queue_free()
+	is_kill.emit()

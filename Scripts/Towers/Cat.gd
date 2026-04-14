@@ -39,7 +39,7 @@ func _physics_process(delta):
 		return
 	if not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play("Idle")
-	if cooled and Near_Brooms.size() > 0:
+	if cooled and (Near_Brooms.size() > 0 or (form.attacks_anyways and not Enemy.living_enemies.is_empty())):
 		cooled = false
 		_cat_fire()
 

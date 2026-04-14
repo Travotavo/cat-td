@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b03hufwdn0h4g"]
+
+[ext_resource type="Script" uid="uid://bdje5i4psr420" path="res://Scripts/Towers/Projectiles/litter_pile.gd" id="1_i26oy"]
+[ext_resource type="Texture2D" uid="uid://dbdsr8ryc110f" path="res://Assets/Towers/Litter Cat/litter_path.png" id="2_s7mes"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hip84"]
+radius = 24.020819
+
+[node name="Litter" type="Node2D" unique_id=820008552]
+script = ExtResource("1_i26oy")
+
+[node name="visual" type="Sprite2D" parent="." unique_id=309325244]
+texture = ExtResource("2_s7mes")
+offset = Vector2(0, -16)
+
+[node name="Range" type="Area2D" parent="." unique_id=1227186653]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=153944934]
+rotation = -1.5708
+scale = Vector2(0.5, 1)
+shape = SubResource("CircleShape2D_hip84")
+debug_color = Color(0.995026, 0, 0.212353, 0.42)
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_range_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://cf6baax68ubya"]
+[gd_scene format=4 uid="uid://cf6baax68ubya"]
 
 [ext_resource type="Script" uid="uid://cb71mwu6k5k48" path="res://tutorial.gd" id="1_ncphv"]
 [ext_resource type="TileSet" uid="uid://cedcotmulrtlr" path="res://Assets/world tiles/tile_atlas.tres" id="1_yb1ct"]
@@ -699,54 +699,54 @@ frame_7/duration = 0.05
 frame_8/texture = ExtResource("64_f4q7g")
 frame_8/duration = 1.0
 
-[node name="Tutorial" type="Node2D"]
+[node name="Tutorial" type="Node2D" unique_id=433502184]
 script = ExtResource("1_ncphv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979861132]
 z_index = -2
 position = Vector2(320, 180)
 texture = ExtResource("2_ehuit")
 metadata/_edit_lock_ = true
 
-[node name="floor" type="TileMapLayer" parent="."]
+[node name="floor" type="TileMapLayer" parent="." unique_id=963561905]
 z_index = -1
 position = Vector2(13, 37)
-tile_map_data = PackedByteArray("AAAIAAMAAAADAA4AAAAJAAMAAAADAA4AAAAKAAMAAAADAA4AAAALAAMAAAABAAAAAAAMAAMAAAAAAA4AAAANAAMAAAABAAAAAAAOAAIAAAABAAAAAAAOAAEAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAAAAAAAAAAIAAAAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAAKAAEAAAABAAAAAAAKAAAAAAACAA4AAAAJAAAAAAADAA4AAAAJAP//AAACAA4AAAAIAP//AAABAAAAAAAIAP7/AAACAA4AAAAJAAEAAAABAAAAAAAJAP7/AAADAA4AAAAKAP7/AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAAMAAAAAAACAA4AAAANAAAAAAADAA4AAAANAAEAAAADAA4AAAALAAAAAAACAA4AAAAKAP//AAABAAAAAAALAAIAAAABAAAAAAALAAEAAAABAAAAAAANAAIAAAADAA4AAAAMAAQAAAADAA4AAAALAAQAAAABAAAAAAAKAAQAAAADAA4AAAAJAAQAAAABAAAAAAAIAAQAAAAAAA4AAAAIAAUAAAABAA4AAAAJAAUAAAABAAAAAAAKAAUAAAABAA4AAAALAAUAAAAAAA4AAAAHAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAABAAAAAAAGAAMAAAABAAAAAAAGAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAABAAAAAAAFAAIAAAABAAQAAAAFAAEAAAAEAAQAAAAFAAAAAAADAAQAAAAFAP//AAABAAQAAAAGAP7/AAABAA4AAAAHAP7/AAABAA4AAAAHAP3/AAAAAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAAIAPz/AAAAAA4AAAAJAPz/AAADAA4AAAAFAAMAAAAEAAQAAAAGAAQAAAABAAAAAAAKAP3/AAABAAAAAAALAP7/AAADAA4AAAAEAAIAAAADAAQAAAAEAAEAAAACAAQAAAAEAAAAAAAAAAQAAAAEAP//AAACAAQAAAAKAPz/AAAAAA4AAAALAP3/AAACAA4AAAAMAP7/AAADAA4AAAANAP//AAABAAAAAAAOAAAAAAABAAAAAAALAPz/AAAAAA4AAAAMAP3/AAABAAAAAAANAP7/AAABAA4AAAAOAP//AAABAAAAAAAMAAUAAAADAA4AAAANAAUAAAABAAAAAAANAAQAAAABAAAAAAAOAAMAAAABAAAAAAAGAP3/AAADAA4AAAAHAPz/AAABAA4AAAAGAPz/AAADAA4AAAAOAAQAAAABAAAAAAAOAAUAAAABAAAAAAANAP3/AAABAAAAAAAOAP7/AAABAAAAAAAPAAQAAAABAAAAAAAPAAMAAAABAAAAAAAPAAIAAAABAAAAAAAPAAEAAAABAAAAAAAPAAAAAAACAAQAAAAPAP//AAAAAAQAAAAHAAYAAAAAAAAAAAAGAAYAAAABAAAAAAAGAAUAAAABAA4AAAAFAAUAAAACAAQAAAAFAAQAAAAEAAQAAAAEAAQAAAAEAAQAAAAEAAMAAAAEAAQAAAAKAAYAAAABAAAAAAALAAYAAAAAAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAABAAAAAAAPAAUAAAABAAAAAAAPAAYAAAABAAAAAAADAAQAAAABAAAAAAADAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAFAP3/AAABAAAAAAAFAPz/AAABAAAAAAAMAPz/AAABAAAAAAANAPz/AAABAAAAAAAFAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAABAAAAAAAKAPv/AAABAAAAAAALAPv/AAABAAAAAAAMAPv/AAABAAAAAAANAPv/AAABAAAAAAAFAAYAAAACAAQAAAAEAAUAAAADAAQAAAAEAAYAAAABAAQAAAADAAUAAAABAAAAAAAMAAIAAAABAA4AAAAMAAEAAAAAAAAAAAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAQAAAAAAACAAQAAAAQAP//AAAEAAQAAAARAAAAAAAAAAoAAAARAP//AAAAAAoAAAAIAPv/AAABAAAAAAAJAPv/AAABAAAAAAAOAPz/AAABAAAAAAAOAP3/AAABAAAAAAAPAP7/AAABAAAAAAAPAP3/AAABAAAAAAAHAAUAAAADAA4AAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAEAAcAAAAEAAQAAAAFAAcAAAAAAAQAAAA=")
+tile_map_data = PackedByteArray("AAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAIAAAABAAAAAAAOAAEAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAABAAAAAAAIAAAAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAAKAAEAAAABAAAAAAAKAAAAAAABAAAAAAAJAAAAAAABAAAAAAAJAP//AAABAAAAAAAIAP//AAABAAAAAAAIAP7/AAABAAAAAAAJAAEAAAABAAAAAAAJAP7/AAABAAAAAAAKAP7/AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAANAAEAAAABAAAAAAALAAAAAAABAAAAAAAKAP//AAABAAAAAAALAAIAAAABAAAAAAALAAEAAAABAAAAAAANAAIAAAABAAAAAAAMAAQAAAABAAAAAAALAAQAAAABAAAAAAAKAAQAAAAAAAAAAAAJAAQAAAABAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAHAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAAAAAAAAAAGAAMAAAABAAAAAAAGAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAABAAAAAAAFAAIAAAABAAAAAAAFAAEAAAABAAAAAAAFAAAAAAABAAAAAAAFAP//AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAHAP3/AAABAAAAAAAJAP3/AAABAAAAAAAIAPz/AAABAAAAAAAJAPz/AAABAAAAAAAFAAMAAAABABAAAAAGAAQAAAABAAAAAAAKAP3/AAABAAAAAAALAP7/AAABAAAAAAAEAAIAAAAEAAQAAAAEAAEAAAAEAAQAAAAEAAAAAAAAAAQAAAAEAP//AAABAAQAAAAKAPz/AAABAAAAAAALAP3/AAABAAAAAAAMAP7/AAABAAAAAAANAP//AAABAAAAAAAOAAAAAAABAAAAAAALAPz/AAABAAAAAAAMAP3/AAABAAAAAAANAP7/AAABAAAAAAAOAP//AAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAANAAQAAAABAAAAAAAOAAMAAAAIABAAAAAGAP3/AAABAAAAAAAHAPz/AAABAAAAAAAGAPz/AAACABAAAAAOAAQAAAAAAAQAAAAOAAUAAAACAAQAAAANAP3/AAABAAAAAAAOAP7/AAABAAAAAAAPAAQAAAACAAQAAAAPAAMAAAAAAAQAAAAPAAIAAAABAAQAAAAPAAEAAAABAAQAAAAPAAAAAAACAAQAAAAPAP//AAAAAAQAAAAHAAYAAAABAAAAAAAGAAYAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAACAAQAAAAFAAQAAAABAAQAAAAEAAQAAAAEAAQAAAAEAAMAAAABAAQAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAAAAAQAAAAPAAUAAAAEAAQAAAAPAAYAAAAEAAQAAAADAAQAAAAAAAQAAAADAAMAAAAEAAQAAAADAAIAAAAEAAQAAAADAAEAAAACAAQAAAADAAAAAAADAAQAAAADAP//AAAAAAQAAAADAP7/AAAAAAQAAAAMAPz/AAABAAAAAAANAPz/AAAAABAAAAAFAPv/AAACAAQAAAAGAPv/AAACAAQAAAAHAPv/AAAAAAQAAAAKAPv/AAABAAQAAAALAPv/AAABAAQAAAAMAPv/AAACAAQAAAAFAAYAAAAGABAAAAAEAAUAAAADAAQAAAAEAAYAAAABAAQAAAADAAUAAAADAAQAAAAMAAIAAAABAAAAAAAMAAEAAAAAAAAAAAAQAAAAAAACAAQAAAAQAP//AAAEAAQAAAARAAAAAAAAAAoAAAARAP//AAAAAAoAAAAOAP3/AAAAABAAAAAPAP7/AAACAAQAAAAPAP3/AAAEAAQAAAAHAAUAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAAAABAAAAAPAAcAAAADAAQAAAAEAAcAAAAEAAQAAAAFAAcAAAABAAAAAAAGAPr/AAABAAQAAAAHAPr/AAABAAQAAAAJAPr/AAABAAQAAAAKAPr/AAAAAAQAAAALAPr/AAACAAQAAAAMAPr/AAABAAQAAAAFAPr/AAAGABAAAAAEAPv/AAACABIAAAADAAYAAAAEAAQAAAANAPr/AAABAAQAAAAOAPv/AAADAAQAAAAPAPz/AAAAAAQAAAAGAPn/AAAJABAAAAAHAPn/AAABAAQAAAAIAPn/AAAEAAQAAAAJAPn/AAACAAQAAAAKAPn/AAADAAQAAAALAPn/AAAAAAQAAAAMAPn/AAAEAAQAAAANAPn/AAAAAAQAAAAFAP7/AAABAAAAAAAFAP3/AAACABAAAAAEAP3/AAAEAAQAAAAEAPz/AAAAAAQAAAAFAPz/AAABAAQAAAAIAPr/AAACAAQAAAAIAPv/AAABAAQAAAAJAPv/AAACAAQAAAANAPv/AAADAAQAAAAOAPz/AAAEAAQAAAAEAP7/AAACAAQAAAALAAYAAAABAAAAAAAKAAYAAAABAAAAAAAJAAYAAAABAAAAAAAIAAYAAAABAAAAAAADAPz/AAAJABAAAAADAP3/AAADAAQAAAAIAP3/AAAAAAAAAAA=")
 tile_set = ExtResource("1_yb1ct")
-metadata/_edit_lock_ = true
 
-[node name="wall" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=548281040]
+z_index = -1
+position = Vector2(13, 37)
+tile_map_data = PackedByteArray("AAAHAP7/AgAGAAAAAAAGAP7/AgAHAAAAAAAHAP3/AgADAAAAAAAHAPz/AgAHAAAAAAAIAPz/AgACAAAAAAANAAAAAgAFAAAAAAAJAAMAAgAFAAAAAAANAAIAAgAGAAAAAAALAAUAAgAGAAAAAAALAAIAAgAHAAAAAAAHAAMAAgAHAAAAAAAJAAUAAgAEAAAAAAAGAAAAAgAEAAAAAAALAP7/AgACAAAAAAAHAAUAAgAGAAAAAAAGAAUAAgABAAAAAAAIAAMAAgACAAAAAAAKAAUAAgACAAAAAAAMAAIAAgACAAAAAAAMAAAAAgACAAAAAAALAAAAAgACAAAAAAAIAAAAAgAFAAAAAAAHAAAAAgACAAAAAAAMAP7/AgACAAAAAAANAP7/AgAAAAAAAAAGAP//AgADAAAAAAALAAMAAgADAAAAAAALAAQAAgADAAAAAAAHAAQAAgADAAAAAAAJAAQAAgADAAAAAAANAAEAAgADAAAAAAAKAP7/AgACAAAAAAAKAAAAAgAHAAAAAAAJAP7/AgAEAAAAAAAJAP3/AgADAAAAAAAJAPz/AgAFAAAAAAAIAAEAAgAEAAAAAAAKAAEAAgAGAAAAAAAJAAEAAgACAAAAAAA=")
+tile_set = ExtResource("1_yb1ct")
+
+[node name="wall" type="TileMapLayer" parent="." unique_id=601907025]
 z_index = -1
 position = Vector2(-46, 37)
-tile_map_data = PackedByteArray("AAAEAAIAAwABAAAAAAAEAAEAAAAIAAwAAAAEAAAAAwABAAAAAAAEAP//AAAIAAwAAAAEAP7/AwABAAAAAAAGAPz/AAACAAwAAAAGAPv/AAACAAwAAAAHAPr/AAAFAAwAAAAMAPr/AAALAAwAAAANAPr/AAAFAAwAAAAOAPr/AAAFAAwAAAAGAPr/AAAAAAgAAAAEAP3/AAAAAAgAAAAFAP3/AwAAAAAAAAAGAP3/AAACAAYAAAADAP7/AAAIAAwAAAAEAAMAAwABAAAAAAAEAAQAAAACAAwAAAAKAPr/AAALAAwAAAAIAPn/AAABAAoAAAAJAPn/AAABAAoAAAADAP//AwABAAAAAAAIAPr/AAALAAwAAAAJAPr/AwAAAAAAAAALAPr/AwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAPv/AAACABIAAAAHAPj/AAACABIAAAAEAPr/AAAFABIAAAAIAPn/AwAAAAAAAAAJAPn/AwAAAAAAAAAKAPn/AwAAAAAAAAALAPn/AwAAAAAAAAAMAPn/AwAAAAAAAAANAPn/AwAAAAAAAAADAP3/AwABAAAAAAADAP7/AwABAAAAAAADAP//AwABAAAAAAADAAAAAwABAAAAAAADAAEAAAACAAwAAAADAAIAAAAIAAwAAAADAAMAAAACAAwAAAAFAPj/AAABABIAAAACAPv/AAABABIAAAAGAPj/AAAEAAwAAAADAPz/AAACABIAAAAFAPr/AAACABIAAAAGAPn/AAACABIAAAAHAPn/AAAFAAwAAAA=")
 tile_set = ExtResource("1_yb1ct")
-metadata/_edit_lock_ = true
 
-[node name="wall 2" type="TileMapLayer" parent="."]
+[node name="wall 2" type="TileMapLayer" parent="." unique_id=1521498897]
 position = Vector2(-46, 37)
-tile_map_data = PackedByteArray("AAADAAEAAwABAAAAAAADAAAAAAAHAAwAAAADAP//AwABAAAAAAADAP7/AAAHAAwAAAADAP3/AwABAAAAAAAFAPv/AAABAAwAAAAFAPr/AAABAAwAAAAHAPn/AAAKAAwAAAALAPn/AAAKAAwAAAAGAPn/AAAEAAwAAAAMAPn/AAAEAAwAAAANAPn/AAAEAAwAAAAFAPn/AAABAAgAAAADAPz/AAABAAgAAAAEAPz/AwABAAAAABAFAPz/AAABAAYAAAADAAIAAwABAAAAAAADAAMAAAABAAwAAAAKAPn/AAAEAAwAAAAIAPn/AAAEAAwAAAAJAPn/AAAKAAwAAAA=")
+tile_map_data = PackedByteArray("AAADAPr/AAABABIAAAAEAPn/AAABABIAAAAFAPj/AAABABIAAAAHAPj/AwAAAAAAAAAIAPj/AwAAAAAAAAAJAPj/AAAEAAwAAAAKAPj/AAAEAAwAAAALAPj/AAAHAAwAABAMAPj/AAAEAAwAAAAGAPf/AAABABIAAAACAPv/AAABABIAAAACAPz/AwABAAAAAAACAP3/AwABAAAAAAACAP7/AAABAAwAAAACAP//AAABAAwAAAACAAAAAAABAAwAAAACAAEAAAAHAAwAAAACAAIAAAABAAwAAAABAPr/AAAAABIAAAAEAPf/AAAAABIAAAAGAPj/AAAEAAwAAAA=")
 tile_set = ExtResource("1_yb1ct")
-metadata/_edit_lock_ = true
 
-[node name="wall 3" type="TileMapLayer" parent="."]
+[node name="wall 3" type="TileMapLayer" parent="." unique_id=72237104]
 position = Vector2(-46, 37)
-tile_map_data = PackedByteArray("AAACAP//AAAGAAwAAAACAP3/AAAGAAwAAAAGAPj/AAAJAAwAAAAKAPj/AAAJAAwAAAAEAPj/AAACAAgAAAACAPv/AAACAAgAAAADAPv/AAADAAwAAAAFAPj/AAADAAwAAAALAPj/AAADAAwAAAAMAPj/AAADAAwAAAAEAPn/AAAAAAwAAAAEAPr/AAAAAAwAAAACAPz/AAAAAAwAAAACAP7/AAAAAAwAAAACAAAAAAAAAAwAAAAEAPv/AAAAAAYAAAACAAEAAAAAAAwAAAACAAIAAAAAAAwAAAAIAPj/AAAJAAwAAAAHAPj/AAADAAwAAAAJAPj/AAADAAwAAAA=")
+tile_map_data = PackedByteArray("AAAEAPf/AAAAABIAAAADAPj/AAAAABIAAAAFAPf/AAADAAwAAAAGAPf/AAADAAwAAAAHAPf/AAADAAwAAAAIAPf/AAADAAwAAAAJAPf/AAADAAwAAAAKAPf/AAAGAAwAABALAPf/AAADAAwAAAACAPn/AAAAABIAAAABAPr/AAAAABIAAAABAPv/AAAAAAwAAAABAPz/AAAAAAwAAAABAP3/AAAAAAwAAAABAP7/AAAAAAwAAAABAAAAAAAGAAwAAAABAP//AAAAAAwAAAABAAEAAAAAAAwAAAA=")
 tile_set = ExtResource("1_yb1ct")
-metadata/_edit_lock_ = true
 
-[node name="Objects" type="TileMapLayer" parent="."]
+[node name="Objects" type="TileMapLayer" parent="." unique_id=911149907]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAQAAIABQAEAAAAAAAQAP7/BQAEAAAAABAIAAUABQACAAAAABAJAAAABQAAAAAAAAAOAP3/BQACAAIAABAPAAUABQAAAAIAABAFAAUABQAAAAAAABAFAAQABQAAAAAAAAAGAAMABQAEAAAAAAAIAAMABQAEAAIAABA=")
+tile_map_data = PackedByteArray("AAAQAP7/BQAEAAAAABAFAAQABQAAAAAAABAFAP7/BQAEAAAAAAAHAPz/BQAEAAAAAAAIAAcABQACAAAAAAAIAAIABQAAAAAAAAALAAMABQAAAAAAABAOAP7/BQAAAAAAAAAIAAMABQACAAIAAAAKAAAABQACAAAAAAAQAAEABQAAAAIAABAPAAYABQACAAIAABA=")
 tile_set = ExtResource("1_yb1ct")
-metadata/_edit_lock_ = true
 
-[node name="Decor" type="TileMapLayer" parent="."]
+[node name="Decor" type="TileMapLayer" parent="." unique_id=1850380307]
 z_index = 1
-metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1711895668]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1246264186]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -755,7 +755,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Mana Display" type="Control" parent="CanvasLayer/Control"]
+[node name="Mana Display" type="Control" parent="CanvasLayer/Control" unique_id=782284456]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -763,7 +763,7 @@ anchor_bottom = 1.0
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control/Mana Display"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control/Mana Display" unique_id=1450135398]
 layout_mode = 0
 offset_top = -64.0
 offset_right = 192.0
@@ -775,7 +775,7 @@ texture_under = SubResource("AtlasTexture_7nme8")
 texture_over = SubResource("AtlasTexture_l0gwj")
 texture_progress = SubResource("AtlasTexture_lnyph")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Mana Display/TextureProgressBar"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/Mana Display/TextureProgressBar" unique_id=827162674]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.234375
@@ -791,39 +791,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Mana Display"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Mana Display" unique_id=726031611]
 layout_mode = 0
 offset_top = -64.0
 offset_right = 192.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_lp3y4")
 
-[node name="CatContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 528.0
-offset_right = 640.0
-offset_bottom = 106.0
-theme_override_constants/separation = 18
-alignment = 1
-script = ExtResource("7_k62om")
-
-[node name="Cat Display" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("8_bb16k")]
-layout_mode = 2
-
-[node name="Cat Display2" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("8_bb16k")]
-layout_mode = 2
-
-[node name="Cat Display3" parent="CanvasLayer/Control/CatContainer" instance=ExtResource("8_bb16k")]
-layout_mode = 2
-
-[node name="Round Info" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="Round Info" type="TextureRect" parent="CanvasLayer/Control" unique_id=1752559810]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("9_0yspx")
 script = ExtResource("10_pm7ge")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Round Info"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Round Info" unique_id=7402725]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 25.0
@@ -831,7 +813,7 @@ offset_right = 53.0
 offset_bottom = 40.0
 texture = SubResource("AnimatedTexture_7t0w2")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Round Info"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/Round Info" unique_id=1168447375]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.317708
@@ -844,7 +826,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/Round Info"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Round Info" unique_id=65638717]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.572917
@@ -857,7 +839,7 @@ text = "Round 1"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Game_Over" type="Control" parent="CanvasLayer"]
+[node name="Game_Over" type="Control" parent="CanvasLayer" unique_id=249414297]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -866,12 +848,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Game_Over"]
-libraries = {
-&"": SubResource("AnimationLibrary_xivb0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Game_Over" unique_id=857991663]
+libraries/ = SubResource("AnimationLibrary_xivb0")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Game_Over"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Game_Over" unique_id=1481544054]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -884,17 +864,17 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Game_Over/Panel" unique_id=1802065196]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.382651
 anchor_top = -0.16272
 anchor_right = 0.888901
 anchor_bottom = 0.090058
-offset_left = -92.599
-offset_top = 169.263
+offset_left = -92.59898
+offset_top = 169.26343
 offset_right = -92.599
-offset_bottom = 169.263
+offset_bottom = 169.26343
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("21_fac2q")
@@ -904,7 +884,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+[node name="Label2" type="Label" parent="CanvasLayer/Game_Over/Panel" unique_id=119316516]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -921,7 +901,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/Game_Over/Panel"]
+[node name="Label3" type="Label" parent="CanvasLayer/Game_Over/Panel" unique_id=2117715502]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -938,10 +918,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Game_Over"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Game_Over" unique_id=60359159]
 stream = ExtResource("22_85t2i")
 
-[node name="Win_State" type="Control" parent="CanvasLayer"]
+[node name="Win_State" type="Control" parent="CanvasLayer" unique_id=1927075188]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -950,12 +930,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Win_State"]
-libraries = {
-&"": SubResource("AnimationLibrary_aggam")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Win_State" unique_id=575087837]
+libraries/ = SubResource("AnimationLibrary_aggam")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Win_State"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Win_State" unique_id=1747680074]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -968,7 +946,7 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Win_State/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Win_State/Panel" unique_id=798386133]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -987,7 +965,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Win_State/Panel"]
+[node name="Label2" type="Label" parent="CanvasLayer/Win_State/Panel" unique_id=1216660689]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -1004,7 +982,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/Win_State/Panel"]
+[node name="Label3" type="Label" parent="CanvasLayer/Win_State/Panel" unique_id=216821529]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -1021,40 +999,52 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Win_State"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Win_State" unique_id=1390665756]
 stream = ExtResource("23_8kc7p")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Win_State"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Win_State" unique_id=1126694962]
 stream = ExtResource("24_ermjs")
 
-[node name="Slide1" type="CanvasLayer" parent="."]
+[node name="CatContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=974472527]
+offset_left = 440.0
+offset_right = 640.0
+offset_bottom = 40.0
+theme_override_constants/separation = 32
+alignment = 1
+script = ExtResource("7_k62om")
 
-[node name="Enemy2" type="Node2D" parent="Slide1" groups=["Enemy"]]
+[node name="Cat Display" parent="CanvasLayer/CatContainer" unique_id=733667520 instance=ExtResource("8_bb16k")]
+layout_mode = 2
+
+[node name="Cat Display2" parent="CanvasLayer/CatContainer" unique_id=694337665 instance=ExtResource("8_bb16k")]
+layout_mode = 2
+
+[node name="Slide1" type="CanvasLayer" parent="." unique_id=1250561045]
+
+[node name="Enemy2" type="Node2D" parent="Slide1" unique_id=622406426 groups=["Enemy"]]
 y_sort_enabled = true
 position = Vector2(571, 258)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide1/Enemy2"]
-libraries = {
-&"": SubResource("AnimationLibrary_0gmok")
-}
-autoplay = "Walk_Left"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide1/Enemy2" unique_id=1747635765]
+libraries/ = SubResource("AnimationLibrary_0gmok")
+autoplay = &"Walk_Left"
 blend_times = [&"Walk_Right", &"Walk_Right", 0.05]
 
-[node name="HurtBox" type="Area2D" parent="Slide1/Enemy2" groups=["Enemy"]]
+[node name="HurtBox" type="Area2D" parent="Slide1/Enemy2" unique_id=1392308048 groups=["Enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slide1/Enemy2/HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slide1/Enemy2/HurtBox" unique_id=2016629953]
 y_sort_enabled = true
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_xgg7d")
 debug_color = Color(0.999097, 0, 0.123677, 0.42)
 
-[node name="Icon" type="Sprite2D" parent="Slide1/Enemy2"]
+[node name="Icon" type="Sprite2D" parent="Slide1/Enemy2" unique_id=1419741362]
 y_sort_enabled = true
 texture = ExtResource("3_0gmok")
 offset = Vector2(0, -32)
 hframes = 12
 
-[node name="ProgressBar" type="ProgressBar" parent="Slide1/Enemy2"]
+[node name="ProgressBar" type="ProgressBar" parent="Slide1/Enemy2" unique_id=1367622262]
 self_modulate = Color(1, 1, 1, 0.505882)
 z_index = 1
 offset_left = -18.0
@@ -1069,13 +1059,13 @@ value = 1.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Slide1/Enemy2"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Slide1/Enemy2" unique_id=863901870]
 stream = ExtResource("4_ns12n")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Slide1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Slide1" unique_id=1828134454]
 offset_left = 178.0
-offset_top = 305.0
-offset_right = 247.0
+offset_top = 319.0
+offset_right = 291.0
 offset_bottom = 353.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
@@ -1084,7 +1074,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect" unique_id=457940496]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1096,16 +1086,16 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide1/NinePatchRect/MarginContainer"]
+[node name="Label" type="Label" parent="Slide1/NinePatchRect/MarginContainer" unique_id=1248468314]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
 theme_override_fonts/font = ExtResource("26_cd6k6")
 theme_override_font_sizes/font_size = 8
-text = "Win by reaching 100 mana"
+text = "Progress further by obtaining mana"
 autowrap_mode = 3
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="Slide1"]
+[node name="NinePatchRect3" type="NinePatchRect" parent="Slide1" unique_id=115739217]
 offset_left = 36.0
 offset_top = 52.0
 offset_right = 167.0
@@ -1117,7 +1107,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect3"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect3" unique_id=41439789]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1129,7 +1119,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide1/NinePatchRect3/MarginContainer"]
+[node name="Label" type="Label" parent="Slide1/NinePatchRect3/MarginContainer" unique_id=982634063]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
@@ -1138,7 +1128,7 @@ theme_override_font_sizes/font_size = 8
 text = "When Brooms reach the end of the track. You lose a life. After all lives are lost, the game is over."
 autowrap_mode = 3
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Slide1"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Slide1" unique_id=663286611]
 offset_left = 511.0
 offset_top = 165.0
 offset_right = 610.0
@@ -1150,7 +1140,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect2"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide1/NinePatchRect2" unique_id=1630181035]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1162,7 +1152,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide1/NinePatchRect2/MarginContainer"]
+[node name="Label" type="Label" parent="Slide1/NinePatchRect2/MarginContainer" unique_id=1582470342]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
@@ -1171,19 +1161,17 @@ theme_override_font_sizes/font_size = 8
 text = "Obtain mana by slaying Brooms"
 autowrap_mode = 3
 
-[node name="Slide2" type="CanvasLayer" parent="."]
+[node name="Slide2" type="CanvasLayer" parent="." unique_id=2108657671]
 visible = false
 
-[node name="Cat" type="Node2D" parent="Slide2"]
-position = Vector2(365, 117)
+[node name="Cat" type="Node2D" parent="Slide2" unique_id=409732516]
+position = Vector2(398, 133)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide2/Cat"]
-libraries = {
-&"": ExtResource("27_ncphv")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide2/Cat" unique_id=359107022]
+libraries/ = ExtResource("27_ncphv")
+autoplay = &"Idle"
 
-[node name="Sprite" type="Sprite2D" parent="Slide2/Cat"]
+[node name="Sprite" type="Sprite2D" parent="Slide2/Cat" unique_id=442330264]
 material = SubResource("ShaderMaterial_34a04")
 texture = ExtResource("29_5lgmm")
 offset = Vector2(0, -32)
@@ -1191,20 +1179,20 @@ hframes = 5
 vframes = 5
 frame = 10
 
-[node name="BaseSwipe" type="AudioStreamPlayer" parent="Slide2/Cat"]
+[node name="BaseSwipe" type="AudioStreamPlayer" parent="Slide2/Cat" unique_id=1297141331]
 stream = SubResource("AudioStreamRandomizer_8c63x")
 pitch_scale = 1.1
 
-[node name="Meow" type="AudioStreamPlayer" parent="Slide2/Cat"]
+[node name="Meow" type="AudioStreamPlayer" parent="Slide2/Cat" unique_id=26144991]
 stream = SubResource("AudioStreamRandomizer_vx6u6")
 volume_db = -10.0
 pitch_scale = 0.9
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Slide2"]
-offset_left = 304.0
-offset_top = 126.0
-offset_right = 439.0
-offset_bottom = 160.0
+[node name="NinePatchRect" type="NinePatchRect" parent="Slide2" unique_id=21506853]
+offset_left = 337.0
+offset_top = 142.0
+offset_right = 472.0
+offset_bottom = 176.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
 patch_margin_left = 3
@@ -1212,7 +1200,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect" unique_id=874631877]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1224,7 +1212,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide2/NinePatchRect/MarginContainer"]
+[node name="Label" type="Label" parent="Slide2/NinePatchRect/MarginContainer" unique_id=1506753996]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
@@ -1233,11 +1221,11 @@ theme_override_font_sizes/font_size = 8
 text = "Click on purple tiles to summon your cats"
 autowrap_mode = 3
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Slide2"]
-offset_left = 401.0
-offset_top = 36.0
-offset_right = 532.0
-offset_bottom = 70.0
+[node name="NinePatchRect2" type="NinePatchRect" parent="Slide2" unique_id=112260829]
+offset_left = 315.0
+offset_top = 21.0
+offset_right = 446.0
+offset_bottom = 55.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
 patch_margin_left = 3
@@ -1245,7 +1233,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect2"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect2" unique_id=1211582666]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1257,7 +1245,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide2/NinePatchRect2/MarginContainer"]
+[node name="Label" type="Label" parent="Slide2/NinePatchRect2/MarginContainer" unique_id=1903506434]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
@@ -1266,11 +1254,11 @@ theme_override_font_sizes/font_size = 8
 text = "Cats get hungry the more they attack"
 autowrap_mode = 3
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="Slide2"]
-offset_left = 504.0
-offset_top = 85.0
-offset_right = 635.0
-offset_bottom = 131.0
+[node name="NinePatchRect3" type="NinePatchRect" parent="Slide2" unique_id=351431439]
+offset_left = 471.0
+offset_top = 73.0
+offset_right = 634.0
+offset_bottom = 107.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
 patch_margin_left = 3
@@ -1278,7 +1266,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect3"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide2/NinePatchRect3" unique_id=1044261145]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1290,28 +1278,26 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide2/NinePatchRect3/MarginContainer"]
+[node name="Label" type="Label" parent="Slide2/NinePatchRect3/MarginContainer" unique_id=130864540]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
 theme_override_fonts/font = ExtResource("26_cd6k6")
 theme_override_font_sizes/font_size = 8
-text = "Click the fish to feed them in exchange for mana"
+text = "Click the icon to feed them in exchange for mana"
 autowrap_mode = 3
 
-[node name="Slide3" type="CanvasLayer" parent="."]
+[node name="Slide3" type="CanvasLayer" parent="." unique_id=2051560975]
 visible = false
 
-[node name="Cat2" type="Node2D" parent="Slide3"]
-position = Vector2(365, 117)
+[node name="Cat2" type="Node2D" parent="Slide3" unique_id=2114133954]
+position = Vector2(301, 149)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide3/Cat2"]
-libraries = {
-&"": ExtResource("27_ncphv")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slide3/Cat2" unique_id=1102376446]
+libraries/ = ExtResource("27_ncphv")
+autoplay = &"Idle"
 
-[node name="Sprite" type="Sprite2D" parent="Slide3/Cat2"]
+[node name="Sprite" type="Sprite2D" parent="Slide3/Cat2" unique_id=585861729]
 material = SubResource("ShaderMaterial_4x0dt")
 texture = ExtResource("29_5lgmm")
 offset = Vector2(0, -32)
@@ -1319,30 +1305,30 @@ hframes = 5
 vframes = 5
 frame = 10
 
-[node name="Node2D" type="Node2D" parent="Slide3/Cat2"]
+[node name="Node2D" type="Node2D" parent="Slide3/Cat2" unique_id=1135202662]
 position = Vector2(0, -20)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Slide3/Cat2/Node2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Slide3/Cat2/Node2D" unique_id=631093360]
 stream = ExtResource("32_3emqg")
 
-[node name="TowerWheel" type="Sprite2D" parent="Slide3/Cat2/Node2D"]
+[node name="TowerWheel" type="Sprite2D" parent="Slide3/Cat2/Node2D" unique_id=2005078058]
 position = Vector2(0, -3)
 texture = ExtResource("33_nvrx2")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Slide3/Cat2/Node2D"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Slide3/Cat2/Node2D" unique_id=711731287]
 stream = ExtResource("34_yrkc0")
 volume_db = -5.0
 
-[node name="Enchant_Wheel" type="Node2D" parent="Slide3/Cat2/Node2D"]
+[node name="Enchant_Wheel" type="Node2D" parent="Slide3/Cat2/Node2D" unique_id=205655637]
 z_index = 2
 position = Vector2(0, -3)
 script = ExtResource("35_g7qnt")
 radius = 24
 offset = 150
 
-[node name="Fire_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
+[node name="Fire_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel" unique_id=1568601799]
 
-[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button" unique_id=1428961769]
 offset_left = -7.0
 offset_top = -31.5
 offset_right = 49.0
@@ -1354,7 +1340,7 @@ texture_normal = ExtResource("36_ksqha")
 texture_hover = SubResource("AnimatedTexture_8nc00")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Fire_Button/Enchant_Button" unique_id=959224459]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -1368,9 +1354,9 @@ theme_override_font_sizes/font_size = 32
 text = "(25)"
 metadata/_edit_use_anchors_ = true
 
-[node name="Zap_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
+[node name="Zap_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel" unique_id=1721566666]
 
-[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button" unique_id=387835040]
 offset_left = -7.0
 offset_top = -32.0
 offset_right = 53.0
@@ -1382,7 +1368,7 @@ texture_normal = ExtResource("46_mks64")
 texture_hover = SubResource("AnimatedTexture_yyojs")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Zap_Button/Enchant_Button" unique_id=1712120794]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.466667
@@ -1399,9 +1385,9 @@ theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sword_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel"]
+[node name="Sword_Button" type="Node2D" parent="Slide3/Cat2/Node2D/Enchant_Wheel" unique_id=1863589934]
 
-[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button"]
+[node name="Enchant_Button" type="TextureButton" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button" unique_id=321736820]
 offset_left = -7.0
 offset_top = -32.0
 offset_right = 53.0
@@ -1413,7 +1399,7 @@ texture_normal = ExtResource("55_6sd4y")
 texture_hover = SubResource("AnimatedTexture_5bt8e")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button/Enchant_Button"]
+[node name="Label" type="Label" parent="Slide3/Cat2/Node2D/Enchant_Wheel/Sword_Button/Enchant_Button" unique_id=870878234]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.466667
@@ -1430,20 +1416,20 @@ theme_override_font_sizes/font_size = 32
 text = "25"
 metadata/_edit_use_anchors_ = true
 
-[node name="BaseSwipe" type="AudioStreamPlayer" parent="Slide3/Cat2"]
+[node name="BaseSwipe" type="AudioStreamPlayer" parent="Slide3/Cat2" unique_id=574819174]
 stream = SubResource("AudioStreamRandomizer_8c63x")
 pitch_scale = 1.1
 
-[node name="Meow" type="AudioStreamPlayer" parent="Slide3/Cat2"]
+[node name="Meow" type="AudioStreamPlayer" parent="Slide3/Cat2" unique_id=2116151959]
 stream = SubResource("AudioStreamRandomizer_vx6u6")
 volume_db = -10.0
 pitch_scale = 0.9
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Slide3"]
-offset_left = 298.0
-offset_top = 130.0
-offset_right = 433.0
-offset_bottom = 234.0
+[node name="NinePatchRect" type="NinePatchRect" parent="Slide3" unique_id=1816437956]
+offset_left = 240.0
+offset_top = 162.0
+offset_right = 365.0
+offset_bottom = 250.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
 patch_margin_left = 3
@@ -1451,7 +1437,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect" unique_id=973166426]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1463,20 +1449,20 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide3/NinePatchRect/MarginContainer"]
+[node name="Label" type="Label" parent="Slide3/NinePatchRect/MarginContainer" unique_id=1280770008]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
 theme_override_fonts/font = ExtResource("26_cd6k6")
 theme_override_font_sizes/font_size = 8
-text = "You can enchant cats with powerful magic in exchange for mana, these cats are powerful, but be careful not to let them go hungry"
+text = "You can enchant cats with powerful magic in exchange for mana. Cats will keep their upgrades when dismissed!"
 autowrap_mode = 3
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Slide3"]
-offset_left = 505.0
-offset_top = 85.0
-offset_right = 636.0
-offset_bottom = 173.0
+[node name="NinePatchRect2" type="NinePatchRect" parent="Slide3" unique_id=1083320761]
+offset_left = 481.0
+offset_top = 72.0
+offset_right = 612.0
+offset_bottom = 160.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
 patch_margin_left = 3
@@ -1484,7 +1470,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect2"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect2" unique_id=561967095]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1496,20 +1482,20 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide3/NinePatchRect2/MarginContainer"]
+[node name="Label" type="Label" parent="Slide3/NinePatchRect2/MarginContainer" unique_id=1711383494]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)
 theme_override_fonts/font = ExtResource("26_cd6k6")
 theme_override_font_sizes/font_size = 8
-text = "When a cat runs out of food, it will run away to find some. It will return for redeployment after a short time."
+text = "When a cat goes hungry, it will run away to find some food. It's meter will fill up slowly when dismissed"
 autowrap_mode = 3
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="Slide3"]
-offset_left = 298.0
-offset_top = 12.0
-offset_right = 429.0
-offset_bottom = 58.0
+[node name="NinePatchRect3" type="NinePatchRect" parent="Slide3" unique_id=1667129607]
+offset_left = 237.0
+offset_top = 45.0
+offset_right = 368.0
+offset_bottom = 91.0
 texture = ExtResource("3_ehuit")
 region_rect = Rect2(0, 0, 128, 64)
 patch_margin_left = 3
@@ -1517,7 +1503,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect3"]
+[node name="MarginContainer" type="MarginContainer" parent="Slide3/NinePatchRect3" unique_id=1641744230]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1529,7 +1515,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="Slide3/NinePatchRect3/MarginContainer"]
+[node name="Label" type="Label" parent="Slide3/NinePatchRect3/MarginContainer" unique_id=790135447]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.305882, 0.172549, 0.196078, 1)

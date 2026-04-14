@@ -2,13 +2,14 @@ extends Cat_Form
 class_name Fisher_Cat
 
 func _ready():
+	attacks_anyways = true
 	visual = preload("res://Assets/Towers/Fish Cat/fish_cat.png")
 	visual_lib = preload("res://Assets/Towers/Animation Resources/fish_cat.res")
 
 func on_enter():
 	#Set Animations, Particles, and whatever else necessary
 	node.set_cooldown(4)
-	node.set_range(500)
+	node.set_range(1)
 	node.set_visuals(visual,4,3,visual_lib)
 	node.stats.feed_cost = 5
 

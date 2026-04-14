@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xgyvxq45r2yj"]
 
-[ext_resource type="Script" uid="uid://dy4uawt487jbl" path="res://lightning_bolt.gd" id="1_irvl1"]
+[ext_resource type="Script" uid="uid://dy4uawt487jbl" path="res://Scripts/Towers/Projectiles/lightning_bolt.gd" id="1_irvl1"]
 [ext_resource type="Texture2D" uid="uid://n25qm28pfqc7" path="res://Assets/Towers/Zap Cat/Projectile/Lightning-Sheet.png" id="2_af1ar"]
 [ext_resource type="AudioStream" uid="uid://bfveardqliw7l" path="res://Assets/sfx/lightningwork.wav" id="3_af1ar"]
 
