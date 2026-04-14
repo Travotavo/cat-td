@@ -17,6 +17,7 @@ func _ready():
 	AddState("Zap", Zap_Cat.new())
 	AddState("Sword", Sword_Cat.new())
 	AddState("Fish", Fisher_Cat.new())
+	AddState("Litter", Litter_Cat.new())
 	SetState(stats.State)
 
 func set_range(new_range:int):
@@ -25,10 +26,11 @@ func set_range(new_range:int):
 func set_cooldown(new_time:int):
 	cooldown.wait_time = new_time
 
-func set_visuals(sheet, hframes, vframes ,lib: AnimationLibrary):
+func set_visuals(sheet, hframes, vframes ,lib: AnimationLibrary, offset:int=-32):
 	$Sprite.texture = sheet
 	$Sprite.hframes = hframes
 	$Sprite.vframes = vframes
+	$Sprite.offset.y = offset
 	$AnimationPlayer.remove_animation_library("")
 	$AnimationPlayer.add_animation_library("",lib)
 
