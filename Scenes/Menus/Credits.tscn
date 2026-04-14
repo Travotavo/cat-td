@@ -5,7 +5,9 @@
 [ext_resource type="Script" uid="uid://csrx4k3uuy6lh" path="res://Scenes/Menus/MainMenu_button.gd" id="2_s3uxa"]
 [ext_resource type="Theme" uid="uid://diak8m1a3fsj7" path="res://Assets/font/creditsTheme2.tres" id="2_tqkf6"]
 [ext_resource type="FontFile" uid="uid://b2evra4h57n3w" path="res://Assets/font/PrStart.ttf" id="4_tqkf6"]
+[ext_resource type="StyleBox" uid="uid://dp2rk6ipknium" path="res://UIbox.tres" id="5_u4td2"]
 [ext_resource type="Texture2D" uid="uid://c8i77avx08u0r" path="res://Assets/world tiles/world_background.png" id="6_a2kxq"]
+[ext_resource type="StyleBox" uid="uid://38a4wgipwa74" path="res://hover.tres" id="6_po7rp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
 bg_color = Color(0, 0, 0, 0.596078)
@@ -42,72 +44,63 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1800784428]
 layout_mode = 0
-offset_left = 18.0
+offset_left = 26.0
 offset_top = 20.0
-offset_right = 333.0
+offset_right = 341.0
 offset_bottom = 331.0
 texture = ExtResource("1_tqkf6")
-region_rect = Rect2(15, 15, 226, 225)
+region_rect = Rect2(15, 12.65, 231.905, 253.23)
 patch_margin_left = 18
 patch_margin_top = 12
 patch_margin_right = 18
 patch_margin_bottom = 12
 
-[node name="Label" type="Label" parent="NinePatchRect" unique_id=1091427219]
+[node name="credits" type="Label" parent="NinePatchRect" unique_id=1091427219]
 layout_mode = 0
-offset_left = 102.0
-offset_top = 19.0
-offset_right = 222.0
-offset_bottom = 42.0
+offset_left = 98.0
+offset_top = 23.0
+offset_right = 218.0
+offset_bottom = 46.0
 theme = ExtResource("1_bktca")
 text = "CREDITS"
 
-[node name="Label2" type="Label" parent="NinePatchRect" unique_id=209722576]
+[node name="the team" type="Label" parent="NinePatchRect" unique_id=209722576]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 43.0
-offset_right = 285.0
-offset_bottom = 92.0
+offset_left = 25.0
+offset_top = 46.0
+offset_right = 281.0
+offset_bottom = 95.0
 theme = ExtResource("2_tqkf6")
-text = "TEAM
-Athena Patronas, Travis Carlen, 
-Yasmin Roberts"
+text = "THE TEAM"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="NinePatchRect" unique_id=1156810022]
+[node name="team roles" type="Label" parent="NinePatchRect" unique_id=1156810022]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 625.0
-offset_bottom = 291.0
+offset_left = 31.0
+offset_top = 63.0
+offset_right = 633.0
+offset_bottom = 239.0
 theme = ExtResource("2_tqkf6")
-text = "Athena: Production Coordinator, 
-UI Artist, Environmental World 
-Designer and Art Implentation 
+text = "Athena Patronas: 
+ Production Coordinator, 
+ UI Artist, Environmental World 
+ Designer and Art Implentation 
 
-Travis: Programmer, Character
- Animator, and Asset Implementation
+Travis Carlen: 
+ Programmer, Character Animator, 
+ and Asset Implementation
 
-Yasmin: Character Color 
-Animator and Sound Designer
-
+Yasmin Roberts: 
+ Character Animator and 
+ Sound Designer
 "
 
-[node name="Label4" type="Label" parent="NinePatchRect" unique_id=1744339458]
+[node name="jam" type="Label" parent="NinePatchRect" unique_id=54112216]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 96.0
-offset_right = 185.0
-offset_bottom = 119.0
-theme = ExtResource("2_tqkf6")
-text = "ROLES"
-
-[node name="Label6" type="Label" parent="NinePatchRect" unique_id=54112216]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 265.0
-offset_right = 292.0
-offset_bottom = 351.0
+offset_left = 19.0
+offset_top = 242.0
+offset_right = 288.0
+offset_bottom = 328.0
 theme = ExtResource("2_tqkf6")
 text = "@ecaroh.games for hosting the
  2025 Alchemy Jam
@@ -117,12 +110,12 @@ text = "@ecaroh.games for hosting the
 "
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="NinePatchRect" unique_id=2118032127]
+[node name="Special Thanks" type="Label" parent="NinePatchRect" unique_id=2118032127]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 241.0
-offset_right = 271.0
-offset_bottom = 290.0
+offset_left = 40.0
+offset_top = 216.0
+offset_right = 264.0
+offset_bottom = 265.0
 theme = ExtResource("1_bktca")
 text = "SPECIAL THANKS"
 
@@ -150,10 +143,10 @@ text = "ASSETS USED"
 
 [node name="Label3" type="Label" parent="NinePatchRect2" unique_id=125929633]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 53.0
-offset_right = 620.0
-offset_bottom = 241.0
+offset_left = 19.0
+offset_top = 45.0
+offset_right = 621.0
+offset_bottom = 262.0
 theme = ExtResource("2_tqkf6")
 text = "Art Assets:
 	@ecaroh.games : Given Animated 
@@ -178,12 +171,14 @@ pixel-arial-11.font "
 
 [node name="Button" type="Button" parent="." unique_id=1049036437]
 layout_mode = 0
-offset_left = 477.0
-offset_top = 12.0
-offset_right = 638.0
-offset_bottom = 43.0
+offset_left = 469.0
+offset_top = 17.0
+offset_right = 630.0
+offset_bottom = 48.0
 theme = SubResource("Theme_u4td2")
 theme_override_fonts/font = ExtResource("4_tqkf6")
+theme_override_styles/normal = ExtResource("5_u4td2")
+theme_override_styles/hover = ExtResource("6_po7rp")
 text = "Main Menu"
 script = ExtResource("2_s3uxa")
 
