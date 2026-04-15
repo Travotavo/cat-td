@@ -43,6 +43,7 @@
 [ext_resource type="AudioStream" uid="uid://g14tv4367lgj" path="res://Assets/sfx/swipework.wav" id="39_8c63x"]
 [ext_resource type="AudioStream" uid="uid://dc58hshgb3p0b" path="res://Assets/sfx/meow.wav" id="39_vx6u6"]
 [ext_resource type="Texture2D" uid="uid://dit5aq6uhoitw" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/fish_normal.png" id="41_nhagr"]
+[ext_resource type="Texture2D" uid="uid://d24l61ojhku22" path="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover10.png" id="41_u5rd8"]
 [ext_resource type="Texture2D" uid="uid://ck0bp857r4py0" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select1.png" id="42_y6d80"]
 [ext_resource type="Texture2D" uid="uid://c0n5vx6rw1nqi" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select2.png" id="43_lbbe5"]
 [ext_resource type="Texture2D" uid="uid://cfym7lf17bnjs" path="res://Assets/Menus/Cat Select Buttons/Fish Cat/Animated Hover/fish_select3.png" id="44_2583o"]
@@ -125,7 +126,7 @@ frame_7/texture = ExtResource("13_pesc0")
 frame_7/duration = 0.05
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_5bt8e"]
-frames = 9
+frames = 10
 one_shot = true
 frame_0/texture = ExtResource("15_k5b2v")
 frame_0/duration = 0.05
@@ -145,6 +146,8 @@ frame_7/texture = ExtResource("22_au1p0")
 frame_7/duration = 0.05
 frame_8/texture = ExtResource("23_ny76y")
 frame_8/duration = 1.0
+frame_9/texture = ExtResource("41_u5rd8")
+frame_9/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_j5f2o"]
 frames = 6

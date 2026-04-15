@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp6xpsuxrhwie"
-path="res://.godot/imported/sword-hover1.png-19fc3800b9f4fac0c35df4ed0e682398.ctex"
+uid="uid://d24l61ojhku22"
+path="res://.godot/imported/sword-hover10.png-f894e2ddc0b4320144a745291fb905db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover1.png"
-dest_files=["res://.godot/imported/sword-hover1.png-19fc3800b9f4fac0c35df4ed0e682398.ctex"]
+source_file="res://Assets/Menus/Cat Select Buttons/Sword Cat/Animated Hover/sword-hover10.png"
+dest_files=["res://.godot/imported/sword-hover10.png-f894e2ddc0b4320144a745291fb905db.ctex"]
 
 [params]
 
