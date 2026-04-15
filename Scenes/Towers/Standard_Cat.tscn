@@ -249,8 +249,8 @@ bus = &"Sfx"
 z_index = 2
 position = Vector2(0, -3)
 script = ExtResource("3_w3uv3")
-radius = 24
-offset = 150
+radius = 22
+offset = 18
 
 [node name="Fire_Button" type="Node2D" parent="Node2D/Enchant_Wheel" unique_id=1389865451]
 script = ExtResource("6_lb3i7")
