@@ -71,19 +71,25 @@ func _process(delta):
 			return
 		LevelResources.Wave += 1
 		await clear_board()
+		$Cat/AnimationPlayer.play("Clear")
 		match(LevelResources.Wave):
+			1:
+				$"CanvasLayer/Wave 1".visible = true
 			2:
 				$CanvasLayer/Control/CatContainer._addCat()
 				LevelResources.Mana = 0
 				spawnables.append(additional_enemy_templates[1])
+				$"CanvasLayer/Wave 2".visible = true
 			3:
 				$CanvasLayer/Control/CatContainer._addCat()
 				LevelResources.Mana = 0
 				spawnables.append(additional_enemy_templates[0])
+				$"CanvasLayer/Wave 3".visible = true
 			4:
 				$CanvasLayer/Control/CatContainer._addCat()
 				LevelResources.Mana = 0
 				spawnables.remove_at(0)
+				$"CanvasLayer/Wave 4".visible = true
 			5:
 				var Wizard:Enemy = preload("res://Scenes/Enemies/Wizard_Enemy.tscn").instantiate()
 				Wizard.path = $Path2D
@@ -91,7 +97,10 @@ func _process(delta):
 				spawned += Wizard.reward
 				Wizard.connect("is_kill",game_win)
 				Wizard.connect("damage_cat",game_lose)
-				return
+				$"CanvasLayer/Wave 5".visible = true
+		get_tree().paused = true
+		$"CanvasLayer/Control/Pause Button".button_pressed = true
+		$"CanvasLayer/Control/Pause Button".toggle = true
 
 func clear_board():
 	Starting_Wave_Allowance /= 2
@@ -112,6 +121,7 @@ func game_win():
 func game_lose():
 	LevelResources.Lives = 0
 	Bgm.stop()
+	$Cat/AnimationPlayer.play("Lose")
 	Engine.time_scale = 1
 	LevelResources.game_end = true
 	$CanvasLayer/Game_Over.visible = true

@@ -422,11 +422,13 @@ text = "25"
 metadata/_edit_use_anchors_ = true
 
 [node name="BaseSwipe" type="AudioStreamPlayer" parent="." unique_id=706518787]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_8c63x")
 pitch_scale = 1.1
 bus = &"Sfx"
 
 [node name="Meow" type="AudioStreamPlayer" parent="." unique_id=1898413733]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_vx6u6")
 volume_db = -10.0
 pitch_scale = 0.9

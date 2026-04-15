@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i80fiepely15"
-path="res://.godot/imported/Hat_Cat.png-15c3fa10c7cd1883401f1420a45536dd.ctex"
+uid="uid://bnhlpkuydbdaa"
+path="res://.godot/imported/9SpliceFrame.png-44bcbf762771e5ad8df9e61b48b1d4b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Towers/Hat_Cat.png"
-dest_files=["res://.godot/imported/Hat_Cat.png-15c3fa10c7cd1883401f1420a45536dd.ctex"]
+source_file="res://Assets/Menus/UI buttons/9SpliceFrame.png"
+dest_files=["res://.godot/imported/9SpliceFrame.png-44bcbf762771e5ad8df9e61b48b1d4b6.ctex"]
 
 [params]
 

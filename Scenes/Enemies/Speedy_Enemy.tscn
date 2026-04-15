@@ -252,6 +252,7 @@ offset = Vector2(0, -32)
 hframes = 12
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=188450949]
+process_mode = 3
 self_modulate = Color(1, 1, 1, 0.505882)
 z_index = 1
 offset_left = -18.0
