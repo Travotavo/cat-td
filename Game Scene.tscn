@@ -50,8 +50,8 @@ point_count = 25
 
 [sub_resource type="Animation" id="Animation_aggam"]
 resource_name = "Clear"
-length = 1.3
-step = 0.1
+length = 2.6
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -59,7 +59,7 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.59999996, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 18]
@@ -180,6 +180,14 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyh7r"]
 atlas = ExtResource("6_p0hjm")
 region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl6r6"]
+atlas = ExtResource("37_x6hyd")
+region = Rect2(6, 1, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akm4a"]
+atlas = ExtResource("37_x6hyd")
+region = Rect2(37, 0, 22, 32)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_wl6r6"]
 frames = 10
@@ -542,7 +550,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:frame")
+tracks/0/path = NodePath("Node2D/Icon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -554,14 +562,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Icon:scale")
+tracks/1/path = NodePath("Node2D/Icon:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1, 1)]
+"values": [Vector2(1, -1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wl6r6"]
@@ -584,14 +592,6 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl6r6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akm4a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wl6r6"]
-atlas = ExtResource("37_x6hyd")
-region = Rect2(6, 1, 20, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_akm4a"]
-atlas = ExtResource("37_x6hyd")
-region = Rect2(37, 0, 22, 32)
 
 [node name="GameScene" type="Node2D" unique_id=899532236]
 process_mode = 3
@@ -745,6 +745,18 @@ texture_normal = SubResource("AtlasTexture_i7rvm")
 texture_pressed = SubResource("AtlasTexture_nvvbi")
 texture_hover = SubResource("AtlasTexture_eyh7r")
 script = ExtResource("11_w12a1")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control" unique_id=287148747]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 314.0
+offset_right = 448.0
+offset_bottom = 344.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = SubResource("AtlasTexture_wl6r6")
+texture_pressed = SubResource("AtlasTexture_wl6r6")
+texture_hover = SubResource("AtlasTexture_akm4a")
 
 [node name="Round Info" type="TextureRect" parent="CanvasLayer/Control" unique_id=762631645]
 layout_mode = 0
@@ -1009,7 +1021,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Wave 1/WaveDisplay/NinePatchRect/Control" unique_id=1145430296]
-position = Vector2(21, 36)
+position = Vector2(21, 17)
+scale = Vector2(2, 2)
 texture = ExtResource("33_atjd2")
 hframes = 5
 vframes = 2
@@ -1025,7 +1038,7 @@ theme_override_fonts/normal_font = ExtResource("30_8ywvc")
 theme_override_font_sizes/normal_font_size = 8
 text = "You have enough mana to enchant a cat!
 
-Enchanting a cat changes it's attack behaviors and fully feeds it. You can read more about what each tower does in the pause menu by clicking [?].
+Enchanting a cat changes it's attack behaviors and fully feeds it. You can read more about what each tower does by clicking [?].
 
 Future waves will consume your mana to advance, so don't be frugal! Enchant your cats while you can."
 vertical_alignment = 1
@@ -1099,6 +1112,7 @@ grow_vertical = 2
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Wave 2/WaveDisplay/NinePatchRect/Control" unique_id=1009256731]
 y_sort_enabled = true
 position = Vector2(22.411766, 68)
+scale = Vector2(2, 2)
 offset = Vector2(0, -32)
 hframes = 12
 frame = 6
@@ -1202,6 +1216,7 @@ blend_times = [&"Walk_Right", &"Walk_Right", 0.05]
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Wave 3/WaveDisplay/NinePatchRect/Control" unique_id=2078365637]
 y_sort_enabled = true
 position = Vector2(22.411766, 68)
+scale = Vector2(2, 2)
 offset = Vector2(0, -32)
 hframes = 12
 frame = 6
@@ -1301,6 +1316,7 @@ blend_times = [&"Walk_Right", &"Walk_Right", 0.05]
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Wave 4/WaveDisplay/NinePatchRect/Control" unique_id=864130756]
 y_sort_enabled = true
 position = Vector2(22.411766, 68)
+scale = Vector2(2, 2)
 offset = Vector2(0, -32)
 hframes = 12
 frame = 6
@@ -1396,13 +1412,19 @@ libraries/ = SubResource("AnimationLibrary_wl6r6")
 autoplay = &"Walk_Right"
 blend_times = [&"Walk_Right", &"Walk_Right", 0.05]
 
-[node name="Icon" type="Sprite2D" parent="CanvasLayer/Wave 5/WaveDisplay/NinePatchRect/Control" unique_id=40825764]
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Wave 5/WaveDisplay/NinePatchRect/Control" unique_id=912087164]
+position = Vector2(-24.588234, -57)
+scale = Vector2(2, 2)
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/Wave 5/WaveDisplay/NinePatchRect/Control/Node2D" unique_id=40825764]
 y_sort_enabled = true
 position = Vector2(22.411766, 68)
-scale = Vector2(-1, 1)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 texture = ExtResource("36_jkuog")
 offset = Vector2(0, -32)
 hframes = 13
+frame = 11
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Wave 5/WaveDisplay" unique_id=663800104]
 layout_mode = 0
@@ -1542,14 +1564,6 @@ text = "Main Menu"
 flat = true
 alignment = 0
 script = ExtResource("33_jkuog")
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/PauseOverlay/MarginContainer" unique_id=287148747]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-texture_normal = SubResource("AtlasTexture_wl6r6")
-texture_pressed = SubResource("AtlasTexture_wl6r6")
-texture_hover = SubResource("AtlasTexture_akm4a")
 
 [node name="CatOverlay" type="Control" parent="CanvasLayer" unique_id=705406862]
 visible = false
@@ -1700,6 +1714,8 @@ position = Vector2(320, 180)
 [connection signal="timeout" from="WaveTimers/Wave_Timer" to="." method="_on_scale_up"]
 [connection signal="button_down" from="CanvasLayer/Control/Pause Button" to="CanvasLayer/Control/Pause Button" method="_on_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Fast Forward" to="CanvasLayer/Control/Fast Forward" method="_on_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/TextureButton" to="." method="_force_pause"]
+[connection signal="button_down" from="CanvasLayer/Control/TextureButton" to="CanvasLayer/CatOverlay" method="set_visible" binds= [true]]
 [connection signal="button_down" from="CanvasLayer/Wave 1/Play" to="CanvasLayer/Wave 1" method="set_visible" binds= [false]]
 [connection signal="button_down" from="CanvasLayer/Wave 2/Play" to="CanvasLayer/Wave 2" method="set_visible" binds= [false]]
 [connection signal="button_down" from="CanvasLayer/Wave 3/Play" to="CanvasLayer/Wave 3" method="set_visible" binds= [false]]
@@ -1707,5 +1723,4 @@ position = Vector2(320, 180)
 [connection signal="button_down" from="CanvasLayer/Wave 5/Play" to="CanvasLayer/Wave 5" method="set_visible" binds= [false]]
 [connection signal="drag_ended" from="CanvasLayer/PauseOverlay/MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/SFX HSlider2" to="CanvasLayer/PauseOverlay/MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/SFX HSlider2" method="_on_drag_ended"]
 [connection signal="button_down" from="CanvasLayer/PauseOverlay/MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/Button" to="CanvasLayer/PauseOverlay/MarginContainer/MarginContainer2/MarginContainer/VBoxContainer/Button" method="_on_button_down"]
-[connection signal="button_down" from="CanvasLayer/PauseOverlay/MarginContainer/TextureButton" to="CanvasLayer/CatOverlay" method="set_visible" binds= [true]]
 [connection signal="button_down" from="CanvasLayer/CatOverlay/Play" to="CanvasLayer/CatOverlay" method="set_visible" binds= [false]]

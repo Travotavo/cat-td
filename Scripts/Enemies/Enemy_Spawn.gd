@@ -70,8 +70,9 @@ func _process(delta):
 		if LevelResources.Wave == 5: 
 			return
 		LevelResources.Wave += 1
-		await clear_board()
 		$Cat/AnimationPlayer.play("Clear")
+		await $Cat/AnimationPlayer.animation_finished
+		await clear_board()
 		match(LevelResources.Wave):
 			1:
 				$"CanvasLayer/Wave 1".visible = true
@@ -96,6 +97,7 @@ func _process(delta):
 				add_child(Wizard)
 				spawned += Wizard.reward
 				Wizard.connect("is_kill",game_win)
+				Wizard.connect("is_kill",clear_board)
 				Wizard.connect("damage_cat",game_lose)
 				$"CanvasLayer/Wave 5".visible = true
 		get_tree().paused = true
@@ -134,3 +136,9 @@ func spawn_enemy():
 	enemy.connect("is_kill",enemy.queue_free)
 	enemy.connect("damage_cat",enemy.queue_free)
 	return enemy.reward
+
+
+func _force_pause() -> void:
+	get_tree().paused = true
+	$"CanvasLayer/Control/Pause Button".button_pressed = true
+	$"CanvasLayer/Control/Pause Button".toggle = true
